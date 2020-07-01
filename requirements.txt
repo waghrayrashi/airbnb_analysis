@@ -7,5 +7,5 @@ numpy==1.18.5
 pandas==1.0.5
 psycopg2==2.8.4
 python-dateutil==2.8.1
-SQLAlchemy @ file:///C:/ci/sqlalchemy_1593445271541/work
+SQLAlchemy==1.3
 
