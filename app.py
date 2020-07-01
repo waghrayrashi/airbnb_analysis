@@ -13,7 +13,6 @@ import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
-from config import (postgres_id, postgres_pw)
 
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
@@ -27,14 +26,13 @@ app = Flask(__name__)
 # Database Connection Set up
 ##########################################
 
-#Setup the PostgreSQL database
-# Create engine
-conn_str = f"{postgres_id}:{postgres_pw}@localhost:5432/airbnb_db"
-engine = create_engine(f'postgresql://{conn_str}')
-
 # Setup SQLAlchemy with flask
-app.config["SQLALCHEMY_DATABASE_URI"] = f'postgresql://{conn_str}'
-airbnb_db = SQLAlchemy(app)
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL', '')
+db = SQLAlchemy(app)
+
+# Create engine
+conn_str = "postgres://jngclzmcgbofnm:226e0e08a5d686ad2b3932b64fb783f8d0cc221311aa0862b16ad70bc5a6a5ec@ec2-34-233-226-84.compute-1.amazonaws.com:5432/d8jm8bn39mr3qe"
+engine = create_engine(conn_str)
 
 # Reflect the database 
 Base = automap_base()
@@ -48,12 +46,12 @@ Base.prepare(engine, reflect=True)
 # Reviews_Details = Base.classes.reviews_details
 
 # Save references to each transformed data table 
-Listings = Base.classes.listings
-Listings_by_roomtype = Base.classes.listings_by_roomtype
-Listings_by_propertytype = Base.classes.listings_by_propertytype
-Top_propertytypes = Base.classes.top_propertytypes
-Highest_priced_neighbourhoods = Base.classes.highest_priced_neighbourhoods
-Listings_by_neighbourhood = Base.classes.listings_by_neighbourhood
+# Listings = Base.classes.listings
+# Listings_by_roomtype = Base.classes.listings_by_roomtype
+# Listings_by_propertytype = Base.classes.listings_by_propertytype
+# Top_propertytypes = Base.classes.top_propertytypes
+# Highest_priced_neighbourhoods = Base.classes.highest_priced_neighbourhoods
+# Listings_by_neighbourhood = Base.classes.listings_by_neighbourhood
 
 # Create session
 session = Session(engine)
