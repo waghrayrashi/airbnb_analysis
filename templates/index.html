@@ -1,114 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Asheville Airbnb Data Analysis</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
-  integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
-  crossorigin=""/>
-
-  <!-- d3 JavaScript -->
-  <script src="https://d3js.org/d3.v4.min.js"></script>
-
-  <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="static/css/style.css">
-</head>
-
-<body>
-
-  <div class="container">
-    
-    <div class="row">
-      
-      <div class="col-md-12 jumbotron text-center" href="static/images/Asheville_at_dusk.jpg">
-        <h1>Asheville Airbnb Data Analysis</h1>
-        <p>Exploratory Analysis of Airbnb’s in Asheville, NC</p>
-      </div>
-    
-    </div>
-    <div class="row">
-      <p>This is an exploratory analysis of Airbnb listings in Asheville, North Carolina.</p>
-      <p>Through this analysis, we hope to undersand the Airbnb rental landscape in Ashville through various static and interactive visualizations.</p> 
-      
-      <p>The dataset for the analysis is sourced from Inside Airbnb.</p>
-      <p>The analysis has been done in Python and Source Code can be found on Github: </p>
-    
-    </div>
-
-    <div class="row">
-      <h2>Description of Data</h2>
-      <p>The dataset comprises of three main tables:</p>
-      
-      <ul>
-          <li>Listings: Detailed listings data showing 106 attributes for each listing</li>
-          <li>Reviews: Detailed reviews given by the guests (Date, listing_id, reviewer_id, comment)</li>
-          <li>Calendar: Provdies details of booking for teh next year by listing (listing_id, date, available, price)</li>
-      </ul>
-    
-    </div>
-    
-             
-    <div class="row">
-      <h2>Data Analysis</h2>
-      <h4>Room Types Available in Ashville, NC</h4>
-        <div id="roomType">
-                    
-        </div>
-    </div>
-
-    <div class="row">
-      <h4>Types of Airbnb Listings in Ashville, NC</h4>
-        <div id="propertyType">
-            
-            
-        </div>
-    </div>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
   
-    <div class="row">
-      <!-- Property Finder div -->
-      <h4>Property Finder</h4>
-      <p>Ashville has over 2300 Airbnb listings as of May 2020.</p>
-      <div id="propertyfinder"> 
+    <title>Asheville Airbnb Data Analysis</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin=""/>
+
+    <!-- d3 JavaScript -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+  </head>
+
+  <body>
+    
+    <!-- Navigation Section Begins -->
+    <div class="navigation">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Asheville Airbnb Data Analysis</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
       
-      </div>
-      
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <!-- List of items in the Navigation section -->
+          <ul class="navbar-nav">
+            
+            <!-- Author Information in the Navigation Section -->
+            <li class="nav-item">
+              <a class="nav-link" href="rw_authors.html">Authors</a>
+            </li>
+          
+            <!-- Description of Dataset in the Navigation Section -->
+            <li class="nav-item">
+              <a class="nav-link" href="rw_data.html">Description of Data</a>
+            </li>
+            
+            <!-- Data Anaysis DropDown Menu in the Navigation Section -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="rw_dashboard.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dashboard
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="rw_neighbourhoods.html">Neighbourhood Analysis</a>
+                <a class="dropdown-item" href="rw_growth.html">Airbnb Growth in Asheville</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- Navigation Section Ends -->
+
+    <!--Content Section Begins-->
+    <div class="container">
       <div class="row">
-        <h4>Top 5 Neighbourhoods</h4>
-        <p>The Top 5</p>
-        <div id="top5"> 
-        
-        </div>
-    </div> 
-  </div> 
-  <!-- Leaflet JavaScript -->
-  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
-  integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
-  crossorigin=""></script>
- 
-   <!--Chloropeth Dependency -->
-  <!-- <script type="text/javascript" src="static/js/choropleth.js"></script> -->
-  
-  <!-- Mapbox API key -->
-  <script type="text/javascript" src="static/js/config.js"></script>
+        <!-- Left Box for Project Overview Begins-->
+        <!-- <div class="col-lg-8 col-md-12"> -->
+          <div class="box">
+            <h3 class="title">Data Analysis Project Overview</h3>
+            <hr>
+              <!-- <img src="Resources/assets/images/Fig1.png" class="vizualization rounded float-left" alt="Graph"> -->
+              <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">Purpose</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="row">The purpose of this project was to perform an exploratory analysis of Airbnb's rental landscape in Asheville, North Carolina.This site provides the source data and visualizations created as part of the analysis, 
+                      as well as explanations and descriptions of any trends and correlations witnessed.</td>
+                  </tr>
+                </tbody>
+              </table>
 
-  <!--D3 Dependency -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-  
-  <!-- Bar Plot Script -->
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="static/js/barplot.js"></script>
-  
-  <!-- Top5 neighbourhoods Script -->
-  <script src="static/js/top5.js"></script>
+              <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">Data Source</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="row">The dataset for the analysis was sourced from Inside Airbnb.</td>
+                  </tr>
+                </tbody>
+              </table>
 
-  <!-- Property Finder Script   -->
+              <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">ETL Processes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="row">Changed datatypes of relevant attributes</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Filtered, grouped and performed aggregations on relevant attributes using Pandas</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Deleted null values from analysis</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Renamed attiributes for standardization and consistency</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Developed the table schema for load into PostgreSQL database</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Created a connection with the PostgreSQL database using SQLAlchemy</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Stored the final datasets into PostgreSQL using SQLAlchemy</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">Data Analysis performed in Python</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="row">Changed datatypes of relevant attributes</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Filtered, grouped and performed aggregations on relevant attributes using Pandas</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Deleted null values from analysis</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Renamed attiributes for standardization and consistency</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Developed the table schema for load into PostgreSQL database</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Created a connection with the PostgreSQL database using SQLAlchemy</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Stored transformed dataset into PostgreSQL database using SQLAlchemy</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">Web Visualizations using HTML, CSS, JavaScript</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="row">Created a dashboard page with multiple, static and dynamic charts</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Property search by User driven interfaces</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Javascript Libraries use: Leaflet, Chloropeth, Plotly, ONE MORE?</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">Application Deployment using Python Flask powered API</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="row">Created a Flask App</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Deployed it on Heroku</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">Source Code on Github</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="row">https://github.com/waghrayrashi/airbnb_analysis</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </hr>             
+          </div>
+        <!-- </div> -->
+        <!-- Left Box for Project Overview Ends-->
+
+        <!-- Right Box for Visualizations Begins -->
+<!--         <div class="col-lg-4 col-md-12">
+          <div class="box">
+            <h3 class="title">Visualizations</h3>
+            <hr>
+              <div class="container">
+                <div class="row" style="padding-bottom: 30px;"> -->
+                  <!-- Neighbourhood Data Visualization in right box -->
+                  <!-- <div class="col-6">
+                    <a href="rw_neighbourhoods.html">
+                    <img class="panel" id ="activeimage" src="static/images/Fig1.png" alt="Neighbourhood Analysis">
+                    </a>
+                  </div> -->
+                  <!-- Airbnb growth Visualization in right box -->  
+<!--                   <div class="col-6">
+                    <a href="rw_growth.html">
+                    <img class="panel" id ="activeimage" src="static/images/Fig1.png" alt="Growth Analysis">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </hr>
+          </div> -->
+        <!-- Right Box for Visualizations Ends -->
+      <!--Content Section Ends-->
+  
+      <!-- Footer Section Begins-->
+  <footer>
+      <div class="footer">Copyright &copy; Rashi Waghray 2020</div>
+  </footer>
+  <!-- Footer Section Ends-->
+    
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script type="text/javascript" src="static/js/propertyfinder.js"></script>
-  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
 </body>
 </html>
