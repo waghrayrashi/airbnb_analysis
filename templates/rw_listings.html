@@ -28,7 +28,7 @@
     <!-- Navigation Section Begins -->
     <div class="navigation">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">Asheville Airbnb Data Analysis</a>
+        <a class="navbar-brand" href="{{ url_for ('index') }}">Asheville Airbnb Data Analysis</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -39,22 +39,27 @@
             
             <!-- Author Information in the Navigation Section -->
             <li class="nav-item">
-              <a class="nav-link" href="rw_authors.html">Authors</a>
+              <a class="nav-link" href="{{ url_for ('authors') }}">Authors</a>
             </li>
           
-            <!-- Description of Dataset in the Navigation Section -->
+            <!-- Listings in the Navigation Section -->
             <li class="nav-item">
-              <a class="nav-link" href="rw_data.html">Description of Data</a>
+              <a class="nav-link" href="{{ url_for ('listings') }}">Listings</a>
             </li>
             
+            <!-- Dashboard in the Navigation Section -->
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for ('dashboard') }}">Dashboard</a>
+            </li>
+
             <!-- Data Anaysis DropDown Menu in the Navigation Section -->
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="rw_dashboard.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dashboard
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Visualizations
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="rw_neighbourhoods.html">Neighbourhood Analysis</a>
-                <a class="dropdown-item" href="rw_growth.html">Analysis of Airbnb Growth in Asheville</a>
+                <a class="dropdown-item" href="{{ url_for ('plot1') }}">Plot 1</a>
+                <a class="dropdown-item" href="{{ url_for ('plot2') }}">Plot 2</a>
               </div>
             </li>
           </ul>
@@ -66,15 +71,6 @@
     <!--Content Section Begins-->
     <div class="container">
         <div class="box">
-            <h3 class="title">Description of Data</h3>
-            <hr>
-            <p>The dataset sourced from Inside Airbnb, consists of the following information:</p>
-            <ul>
-                <li>Listing Details: Provides details of all Airbnb listings in Asheville with 106 attributes for each listing.</li>
-                <li>Reviews: Provides detailed reviews given by the guests with attributes - Date, listing_id, reviewer_id & comment.</li>
-                <li>Calendar: Provides details of booking for teh next year by listing - listing_id, date, availability & price.</li>
-            </ul>
-            <br>
             <div class="table-responsive-lg"></div>
                 <!-- <table class="table table-striped"> -->
                 <!-- Copy Data from dataset.html here -->
@@ -91,7 +87,6 @@
     <!-- Footer Section Ends-->
   
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script type="text/javascript" src="static/js/propertyfinder.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

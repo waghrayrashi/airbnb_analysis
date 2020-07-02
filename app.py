@@ -49,10 +49,10 @@ def index():
 #######################################################
 # Render the Data Description HTML on the second route
 #######################################################
-@app.route("/data")
-def data():
-    """Return the data description page."""
-    return render_template("rw_data.html")
+@app.route("/listings")
+def listings():
+    """Return a page showing the listings with a user driven menu."""
+    return render_template("rw_listings.html")
 
 #######################################################
 # Render the Authors HTML on the third route
@@ -65,18 +65,18 @@ def authors():
 #######################################################
 # Render the Neighbourhood Analysis HTML on the fourth route
 #######################################################
-@app.route("/neighbourhoods")
-def neighbourhoods():
+@app.route("/plot1")
+def plot1():
     """Return the neighbourhoods analysis page."""
-    return render_template("rw_neighbourhoods.html")
+    return render_template("rw_plot1.html")
 
 #######################################################
 # Render the Growth Analysis HTML on the fifth route
 #######################################################
-@app.route("/growth")
-def growth():
+@app.route("/plot2")
+def plot2():
     """Return the growth analysis page."""
-    return render_template("rw_growth.html")
+    return render_template("rw_plot2.html")
 
 #######################################################
 # Render the Dashboard HTML on the sixth route
