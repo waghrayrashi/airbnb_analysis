@@ -20,11 +20,14 @@
     
     // Define the plot layout
       var roomTypeLayout = {
-        title: "Listings categorized by Room Type"
+        title: "Listings categorized by Room Type",
+        innerHeight: 100,
+        outerHeight: 150
+      
       // xaxis: { title: "Room Type" }
       // yaxis: { title: "Room Type" }
     };
-    
+    var config = {responsive: true}
     // Plot the chart to a div tag with id "roomType"
-    Plotly.newPlot("roomtype", roomTypeData, roomTypeLayout);
+    Plotly.newPlot("roomtype", roomTypeData, roomTypeLayout, config);
     });  

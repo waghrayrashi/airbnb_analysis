@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+    <title>Asheville Airbnb Data Analysis</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin=""/>
+
+    <!-- d3 JavaScript -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+  </head>
+
+  <body>
+    
+    <!-- Navigation Section Begins -->
+    <div class="navigation">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{ url_for ('index') }}">Asheville Airbnb Data Analysis</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <!-- List of items in the Navigation section -->
+          <ul class="navbar-nav">
+            <!-- Dashboard in the Navigation Section -->
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for ('dashboard') }}">Dashboard</a>
+            </li>
+
+            <!-- Rental Landscape in the Navigation Section -->
+            <li class="nav-item">
+            <a class="nav-link" href="{{ url_for ('landscape') }}">Rental Landscape</a>
+            </li>
+
+            <!-- Demand and Pricing in the Navigation Section -->
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for ('demand') }}">Demand & Pricing</a>
+            </li> 
+
+            <!-- Listings in the Navigation Section -->
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for ('listings') }}">Listings</a>
+            </li>
+
+            <!-- Airbnb Growth in the Navigation Section -->
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for ('growth') }}">Growth in Asheville</a>
+            </li>
+
+            <!-- Reviews in the Navigation Section -->
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for ('reviews') }}">Reviews</a>
+            </li>
+
+            <!-- Visualizations DropDown Menu in the Navigation Section -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Visualizations
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="{{ url_for ('plot1') }}">Plot 1</a>
+                <a class="dropdown-item" href="{{ url_for ('plot2') }}">Plot 2</a>
+              </div>
+            </li>
+
+            <!-- Analysis Methodology in the Navigation Section -->
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for ('methodology') }}">Methodology</a>
+            </li>
+
+            <!-- Acknowledgements in the Navigation Section -->
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for ('acknowledgements') }}">Acknowledgements</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- Navigation Section Ends -->
+    <!--Content Section Begins-->
+    <div class="container">
+        <div class="row">
+          <!-- Left Box for Project Overview Begins-->
+          <!-- <div class="col-lg-8 col-md-12"> -->
+            <div class="box">
+              <h3 class="title">Overview</h3>
+              <hr>
+                <!-- <img src="Resources/assets/images/Fig1.png" class="vizualization rounded float-left" alt="Graph"> -->
+                  
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col">Data Source</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td scope="row">The dataset for the analysis was sourced from Inside Airbnb and consists of:</td>
+                    </tr>
+                    <tr>
+                      <td scope="row"> - Listings: Details of all Airbnb listings in Asheville with 106 attributes for each listing.</td>
+                    </tr>
+                    <tr>
+                      <td scope="row"> - Reviews: Provides detailed reviews given by the guests with attributes - Date, listing_id, reviewer_id & comment.</td>
+                    </tr>
+                    <tr>
+                      <td scope="row"> - Calendar: Provides details of available booking times by listing_id, date, availability & price.</td>
+                    </tr>
+                  </tbody>
+                </table>
+  
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col">ETL Processes</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td scope="row">Changed datatypes of relevant attributes</td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Filtered, grouped and performed aggregations on relevant attributes using Pandas</td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Deleted null values from analysis</td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Renamed attiributes for standardization and consistency</td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Developed the table schema for load into PostgreSQL database</td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Created a connection with the PostgreSQL database using SQLAlchemy</td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Stored the final datasets into PostgreSQL using SQLAlchemy</td>
+                    </tr>
+                  </tbody>
+                </table>
+  
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col">Data Analysis performed in Python</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td scope="row">Changed datatypes of relevant attributes</td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Filtered, grouped and performed aggregations on relevant attributes using Pandas</td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Deleted null values from analysis</td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Renamed attiributes for standardization and consistency</td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Developed the table schema for load into PostgreSQL database</td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Created a connection with the PostgreSQL database using SQLAlchemy</td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Stored transformed dataset into PostgreSQL database using SQLAlchemy</td>
+                    </tr>
+                  </tbody>
+                </table>
+  
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col">Web Visualizations using HTML, CSS, JavaScript</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td scope="row">Created a dashboard page with multiple, static and dynamic charts</td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Property search by User driven interfaces</td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Javascript Libraries use: Leaflet, Chloropeth, Plotly, ONE MORE?</td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col">Application Deployment using Python Flask powered API</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td scope="row">Created a Flask App</td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Deployed it on Heroku</td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col">Source Code on Github</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td scope="row">https://github.com/waghrayrashi/airbnb_analysis</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              
+                </hr>             
+            </div>
+        </div>
+    </div>
+<!-- Footer Section Begins-->
+<footer>
+    <div class="footer">Copyright &copy; Data Science Enthusiasts 2020</div>
+</footer>
+<!-- Footer Section Ends-->
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  </body> 
+</html>

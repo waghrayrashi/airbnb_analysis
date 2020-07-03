@@ -35,6 +35,23 @@ db = SQLAlchemy(app)
 conn_str = "postgres://jngclzmcgbofnm:226e0e08a5d686ad2b3932b64fb783f8d0cc221311aa0862b16ad70bc5a6a5ec@ec2-34-233-226-84.compute-1.amazonaws.com:5432/d8jm8bn39mr3qe"
 engine = create_engine(conn_str)
 
+# # Reflect the database 
+# Base = automap_base()
+
+# # Reflect the tables
+# Base.prepare(engine, reflect=True)
+
+# # Create session
+# session = Session(engine)
+
+# Save references to each transformed data table 
+# Listings = Base.classes.rw_listings
+# Listings_by_roomtype = Base.classes.rw_listings_by_roomtype
+# Listings_by_propertytype = Base.classes.rw_listings_by_propertytype
+# Top_propertytypes = Base.classes.rw_top_propertytypes
+# Highest_priced_neighbourhoods = Base.classes.rw_highest_priced_neighbourhoods
+# Listings_by_neighbourhood = Base.classes.rw_listings_by_neighbourhood
+
 ###################################################################
 # SET FLASK ROUTES
 ###################################################################
@@ -46,49 +63,90 @@ engine = create_engine(conn_str)
 def index():
     """Return the homepage."""
     return render_template("index.html")
-#######################################################
-# Render the Data Description HTML on the second route
-#######################################################
-@app.route("/listings")
-def listings():
-    """Return a page showing the listings with a user driven menu."""
-    return render_template("rw_listings.html")
 
 #######################################################
-# Render the Authors HTML on the third route
-#######################################################
-@app.route("/authors")
-def authors():
-    """Return the Authors page."""
-    return render_template("rw_authors.html")
-
-#######################################################
-# Render the Neighbourhood Analysis HTML on the fourth route
-#######################################################
-@app.route("/plot1")
-def plot1():
-    """Return the neighbourhoods analysis page."""
-    return render_template("rw_plot1.html")
-
-#######################################################
-# Render the Growth Analysis HTML on the fifth route
-#######################################################
-@app.route("/plot2")
-def plot2():
-    """Return the growth analysis page."""
-    return render_template("rw_plot2.html")
-
-#######################################################
-# Render the Dashboard HTML on the sixth route
+# Render the Dashboard HTML 
 #######################################################
 @app.route("/dashboard")
 def dashboard():
     """Return the Dashboard page."""
     return render_template("rw_dashboard.html")
 
+#######################################################
+# Render the Rental Landscape HTML 
+#######################################################
+@app.route("/landscape")
+def landscape():
+    """Return the Landscape page."""
+    return render_template("rw_landscape.html")
+
+#######################################################
+# Render the Demand HTML 
+#######################################################
+@app.route("/demand")
+def demand():
+    """Return the Demand page."""
+    return render_template("rw_demand.html")
+
+#######################################################
+# Render the Listings HTML 
+#######################################################
+@app.route("/listings")
+def listings():
+    """Return the listings page."""
+    return render_template("rw_listings.html")
+
+#######################################################
+# Render the Growth HTML 
+#######################################################
+@app.route("/growth")
+def growth():
+    """Return the growth page."""
+    return render_template("rw_growth.html")
+
+#######################################################
+# Render the Reviews HTML 
+#######################################################
+@app.route("/reviews")
+def reviews():
+    """Return the reviews page."""
+    return render_template("rw_reviews.html")
+
+#######################################################
+# Render plot1
+#######################################################
+@app.route("/plot1")
+def plot1():
+    """Return the plot1 page."""
+    return render_template("rw_plot1.html")
+
+#######################################################
+# Render plot2
+#######################################################
+@app.route("/plot2")
+def plot2():
+    """Return the plot2 page."""
+    return render_template("rw_plot2.html")
+
+#######################################################
+# Render the Analysis Methodology HTML
+#######################################################
+@app.route("/methodology")
+def methodology():
+    """Return the Methodology page."""
+    return render_template("rw_methodology.html")
+
+########################################################
+# Render the Acknowledgements HTML 
+#######################################################
+@app.route("/acknowledgements")
+def acknowledgements():
+    """Return the acknowledgements page."""
+    return render_template("rw_acknowledgements.html")
+
 ###################################################################
 # Code to actually run the app
 ###################################################################
 if __name__ == "__main__":
     app.run(debug = True)
-##################### END OF APP #########################
+##################### END OF APP #############################################
