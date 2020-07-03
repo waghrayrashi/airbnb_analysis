@@ -26,5 +26,5 @@
     };
     
     // Plot the chart to a div tag with id "roomType"
-    Plotly.newPlot("roomType", roomTypeData, roomTypeLayout);
+    Plotly.newPlot("roomtype", roomTypeData, roomTypeLayout);
     });  

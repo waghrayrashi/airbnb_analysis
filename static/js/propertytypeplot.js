@@ -25,5 +25,5 @@
   };
   
   // Plot the chart to a div tag with id "propertyType"
-  Plotly.newPlot("propertyType", propertyTypeData, propertyTypeLayout);
+  Plotly.newPlot("propertytype", propertyTypeData, propertyTypeLayout);
     });
