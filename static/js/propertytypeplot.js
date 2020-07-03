@@ -1,6 +1,6 @@
   // PLOT LISTINGS BY PROPERTY TYPE
   // Load data from listings_details.csv
-  d3.csv("static/data/property_types.csv").then(function(d) {
+  d3.csv("static/data/rw_listings_by_propertytype.csv").then(function(d) {
     // console.log(d);
     var propertyTypes = d.map((item) => item.propertytype);
     var propertyTypeListings = d.map((item) => item.listings);

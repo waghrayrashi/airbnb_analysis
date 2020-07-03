@@ -6,10 +6,6 @@ body{
   height: 100%;
 }
 
-/* set property finder map to 80% of the screen size */
-#propertyfinder{
-  height: 80%;
-}
 
 /* Paragraph Element */
 p{

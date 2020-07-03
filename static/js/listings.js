@@ -1,7 +1,7 @@
 // Creating map object centered at Ashville, NC
 console.log("hello");
-var myMap = L.map("propertyfinder", {
-    center: [35.5951, 82.5515],
+var myMap = L.map("listings", {
+    center: [45.52, -122.67],
     zoom: 11
   });
   
