@@ -129,6 +129,38 @@ def plot2():
     return render_template("rw_plot2.html")
 
 #######################################################
+# Render Listed Property Types Plot
+#######################################################
+@app.route("/propertytypesplot")
+def propertytypesplot():
+    """Return the property types plot page."""
+    return render_template("rw_propertytypesplot.html")
+
+#######################################################
+# Render Listings by Neighbourhood Plot
+#######################################################
+@app.route("/listingsplot")
+def listingsplot():
+    """Return the listingsplot page."""
+    return render_template("rw_listingsplot.html")
+
+#######################################################
+# Render Average Rating by Neighbourhood
+#######################################################
+@app.route("/avgratingplot")
+def avgratingplot():
+    """Return the avgratingplot page."""
+    return render_template("rw_avgratingplot.html")
+
+#######################################################
+# Render Average Price by Neighbourhood
+#######################################################
+@app.route("/avgpriceplot")
+def avgpriceplot():
+    """Return the avgpriceplot page."""
+    return render_template("rw_avgpriceplot.html")
+
+#######################################################
 # Render the Analysis Methodology HTML
 #######################################################
 @app.route("/methodology")
