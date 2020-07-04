@@ -30,7 +30,7 @@ var myMap = L.map("map", {
   }).addTo(myMap);
   
   // Loop through the listingIds array and create one marker for each listing object
-  for (var i = 0; i < listingIds.length; i++) {
+  for (var i = 0; i < listingReviewScoresRatings.length; i++) {
   
     // Conditionals for coloring the listings based on reviewScore ratings 
     var color = "";
