@@ -60,7 +60,7 @@ function readData(){
         data =[trace];
 
         layout = {
-            title : 'Growth analysis of Airbnb',
+            title : 'Growth of Airbnb in Asheville',
                 xaxis :{
                     title:'Year'
                 },
