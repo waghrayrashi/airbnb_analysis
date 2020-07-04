@@ -15,12 +15,10 @@ d3.csv("static/data/rw_listings.csv").then(function(d) {
     listingReviewScoresRatings = d.map((listing) => listing.review_scores_rating);
     listingPropertyTypes = d.map((listing) => listing.property_type);
     listingPrices = d.map((listing) => listing.price);
-    console.log(`check1: ${listingIds}`);
     console.log(listingIds.length);
     console.log(listingLatitudes);
     console.log(listingLongitudes);
     console.log(listingReviewScoresRatings);
-    console.log(`check2: ${listingReviewScoresRatings.length}`);
     console.log(listingPropertyTypes);
     console.log(listingPrices);
 });
@@ -39,7 +37,6 @@ var myMap = L.map("map", {
     accessToken: API_KEY
   }).addTo(myMap);
   
-  console.log(`check3  ${listingReviewScoresRatings.id}`);
   // Loop through the listingIds array and create one marker for each listing object
   for (var i = 0; i < listingReviewScoresRatings.length; i++) {
   
