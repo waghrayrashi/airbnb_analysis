@@ -15,7 +15,7 @@
     console.log(listingRatings);
 
     // CREATE LEAFLET MAP OBJECT 
-    // Create a map object centeered at Asheville, NC [35.5950581, -82.5514869]
+    // Create a map object centered at Asheville, NC [35.5950581, -82.5514869]
     var myMap = L.map("mapid").setView([35.5950581, -82.5514869], 12);
     
     // ADD STREET MAP TILE LAYER USING MAPBOX 
@@ -55,7 +55,7 @@
       fillColor: color,
       // Adjust radius of circle marker 
       radius: listingRatings[i]
-    }).bindPopup("<h4>" + listingIds[i] + "</h4> <hr> <p>Property Type: " + listingPropertyTypes[i] + "</p> <hr> <p>Rating: " + listingRatings[i] + "</p> + <hr> <hp>Price: " + listingPrices[i] + "</p>").addTo(myMap);
+    }).bindPopup("<h4>" + listingIds[i] + "</h4> <hr> <p>Property Type: " + listingPropertyTypes[i] + "</p> <hr> <p>Rating: " + listingRatings[i] + "</p>").addTo(myMap);
   };
 }); 
 
