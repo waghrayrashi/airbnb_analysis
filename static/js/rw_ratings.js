@@ -15,7 +15,7 @@ d3.csv("static/data/rw_listings.csv").then(function(d) {
     listingReviewScoresRatings = d.map((listing) => listing.review_scores_rating);
     listingPropertyTypes = d.map((listing) => listing.property_type);
     listingPrices = d.map((listing) => listing.price);
-    console.log(listingIds.length);
+    console.log(listingIds);
     console.log(listingLatitudes);
     console.log(listingLongitudes);
     console.log(listingReviewScoresRatings);
@@ -38,7 +38,8 @@ var myMap = L.map("map", {
   }).addTo(myMap);
   
   // Loop through the listingIds array and create one marker for each listing object
-  for (var i = 0; i < listingReviewScoresRatings.length; i++) {
+  //for (var i = 0; i < listingReviewScoresRatings.length; i++) {
+    for (var i = 0; i < 2171; i++) {
   
     // Conditionals for coloring the listings based on reviewScore ratings 
     var color = "";
