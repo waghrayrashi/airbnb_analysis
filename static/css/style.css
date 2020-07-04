@@ -3,12 +3,8 @@ body{
   background-color: #EDEDED;
 }
 
-
 /* Paragraph element */
 p{
-  /* color: #6D8092;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 17px; */
   text-align: justify;
  }
 
@@ -16,25 +12,17 @@ a{
   color: #6D8092;
   font-size: 15px; 
 }
-/* List element */
-li {
-  color: #6D8092;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 17px;
-  text-align: left;
-}
 
 /* Map ID */
 /* Set height of map */
-  #mapid {height: 500px; width: 400px;}
+  #mapid {height: 600px; width: 800px;}
 
 /* Navbar */
 .navigation{
-  color:green; 
   margin-left: 30px; 
   padding: inherit; 
   font-weight: bold; 
-  background-color: #0BADA6;
+  background-color: #13a56d;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -43,7 +31,7 @@ li {
   margin-left: 30px; 
   padding: inherit; 
   font-weight: bold; 
-  background-color: #0BADA6;
+  background-color: #13a56d;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .navbar-brand:hover{
@@ -72,21 +60,19 @@ li {
   background-color:#E7E7E7 !important; 
 }
 
-
-
 /* Images */
 img{
   width:100% !important;
   height:100% !important;
 }
 #activeimage:hover{
-  border-color:#0BADA6;
+  border-color:#13a56d;
   border-style: solid; 
   
 } 
 
 .panel:hover{
-  border-color:#0BADA6;
+  border-color:#13a56d;
   border-style: solid; 
 
 }
@@ -99,7 +85,6 @@ img{
 
 /* Title Class  */
 .title{
-  /* color: #0BADA6;   */
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: bolder; 
   padding-top: 25px; 
@@ -112,7 +97,6 @@ img{
   padding: 10px 20px 15px; 
   color:black;
   background-color: white; 
-
 }
 
 /* Table */
@@ -126,7 +110,7 @@ footer{
 background-color: #666666; 
 border-top-style: solid; 
 border-top-width: 5px; 
-border-top-color: #0BADA6;
+border-top-color: #13a56d;
 color: white; 
 min-height: 55px; 
 font-family: Arial, Helvetica, sans-serif;
@@ -142,7 +126,7 @@ padding-top: 15px;
 /* Media Queries */
 @media(max-width: 992px){
 .navbar-expand-lg{
-background-color: #0BADA6 !important;
+background-color: #13a56d !important;
 }
 .navbar{
   max-height: none; 
