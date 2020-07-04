@@ -1,18 +1,26 @@
+
+    var listingIds;
+    var listingLatitudes;
+    var listingLongitudes;
+    var listingReviewScoresRatings;
+    var listingPropertyTypes;
+    var listingPrices;
+
 // Load data from listings_details.csv
 d3.csv("static/data/rw_listings.csv").then(function(d) {
     console.log(d);
-    var listingIds = d.map((listing) => listing.id);
-    var listingLatitudes = d.map((listing) => listing.latitude);
-    var listingLongitudes = d.map((listing) => listing.longitude);
-    var listingReviewScoresRatings = d.map((listing) => listing.review_scores_rating);
-    var listingPropertyTypes = d.map((listing) => listing.property_type);
-    var listingPrices = d.map((listing) => listing.price);
-    console.log("check1"+listingIds);
+    listingIds = d.map((listing) => listing.id);
+    listingLatitudes = d.map((listing) => listing.latitude);
+    listingLongitudes = d.map((listing) => listing.longitude);
+    listingReviewScoresRatings = d.map((listing) => listing.review_scores_rating);
+    listingPropertyTypes = d.map((listing) => listing.property_type);
+    listingPrices = d.map((listing) => listing.price);
+    console.log(`check1: ${listingIds}`);
     console.log(listingIds.length);
     console.log(listingLatitudes);
     console.log(listingLongitudes);
     console.log(listingReviewScoresRatings);
-    console.log("check2"+listingReviewScoresRatings.length);
+    console.log(`check2: ${listingReviewScoresRatings.length}`);
     console.log(listingPropertyTypes);
     console.log(listingPrices);
 });
@@ -31,7 +39,7 @@ var myMap = L.map("map", {
     accessToken: API_KEY
   }).addTo(myMap);
   
-  console.log("check3"+listingReviewScoresRatings.id);
+  console.log(`check3  ${listingReviewScoresRatings.id}`);
   // Loop through the listingIds array and create one marker for each listing object
   for (var i = 0; i < listingReviewScoresRatings.length; i++) {
   
