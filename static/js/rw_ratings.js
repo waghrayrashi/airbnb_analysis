@@ -1,7 +1,7 @@
 // Load data from listings_details.csv
 d3.csv("static/data/rw_listings.csv").then(function(d) {
     console.log(d);
-    var listingIds = d.id.map((listing) => listing.id);
+    var listingIds = d.map((listing) => listing.id);
     var listingLatitudes = d.map((listing) => listing.latitude);
     var listingLongitudes = d.map((listing) => listing.longitude);
     var listingReviewScoresRatings = d.map((listing) => listing.review_scores_rating);
