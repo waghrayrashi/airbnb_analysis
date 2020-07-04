@@ -6,9 +6,9 @@ body{
 
 /* Paragraph element */
 p{
-  color: #6D8092;
+  /* color: #6D8092;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 17px;
+  font-size: 17px; */
   text-align: justify;
  }
 
