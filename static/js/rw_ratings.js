@@ -1,26 +1,19 @@
 
-    var listingIds;
-    var listingLatitudes;
-    var listingLongitudes;
-    var listingReviewScoresRatings;
-    var listingPropertyTypes;
-    var listingPrices;
-
 // Load data from listings_details.csv
-d3.csv("static/data/rw_listings.csv").then(function(d) {
+var listings = d3.csv("static/data/rw_listings.csv").then(function(d) {
     console.log(d);
-    listingIds = d.map((listing) => listing.id);
-    listingLatitudes = d.map((listing) => listing.latitude);
-    listingLongitudes = d.map((listing) => listing.longitude);
-    listingReviewScoresRatings = d.map((listing) => listing.review_scores_rating);
-    listingPropertyTypes = d.map((listing) => listing.property_type);
-    listingPrices = d.map((listing) => listing.price);
-    console.log(listingIds);
-    console.log(listingLatitudes);
-    console.log(listingLongitudes);
-    console.log(listingReviewScoresRatings);
-    console.log(listingPropertyTypes);
-    console.log(listingPrices);
+    // listingIds = d.map.((listing) => listing.id);
+    // listingLatitudes = d.map((listing) => listing.latitude);
+    // listingLongitudes = d.map((listing) => listing.longitude);
+    // listingReviewScoresRatings = d.map((listing) => listing.review_scores_rating);
+    // listingPropertyTypes = d.map((listing) => listing.property_type);
+    // listingPrices = d.map((listing) => listing.price);
+    // console.log(listingIds);
+    // console.log(listingLatitudes);
+    // console.log(listingLongitudes);
+    // console.log(listingReviewScoresRatings);
+    // console.log(listingPropertyTypes);
+    // console.log(listingPrices);
 });
 // Create a map object centeered at Asheville, NC [35.5950581, -82.5514869]
 var myMap = L.map("map", {
@@ -39,30 +32,43 @@ var myMap = L.map("map", {
   
   // Loop through the listingIds array and create one marker for each listing object
   //for (var i = 0; i < listingReviewScoresRatings.length; i++) {
-    for (var i = 0; i < 2171; i++) {
+    for (var i = 0; i < listings.length; i++) {
   
     // Conditionals for coloring the listings based on reviewScore ratings 
     var color = "";
-    if (listingReviewScoresRatings[i] > 96) {
+    if (listings.review_scores_rating[i] > 96) {
       color = "green";
     }
-    else if (listingReviewScoresRatings[i] > 91) {
+    else if (listings.review_scores_rating[i] > 91) {
       color = "yellow";
     }
-    else if (listingReviewScoresRatings[i] > 81) {
+    else if (listings.review_scores_rating[i] > 81) {
       color = "orange";
     }
     else {
       color = "blue";
     }
   
+    // var color = "";
+    // if (listingReviewScoresRatings[i] > 96) {
+    //   color = "green";
+    // }
+    // else if (listingReviewScoresRatings[i] > 91) {
+    //   color = "yellow";
+    // }
+    // else if (listingReviewScoresRatings[i] > 81) {
+    //   color = "orange";
+    // }
+    // else {
+    //   color = "blue";
+    // }
     // Add circles to map L.circle([lat,lng], radius).addTo(map); Bind the id, price and rating and add to map
-    L.circle([listingLatitudes[i], listingLongitudes[i]], {
+    L.circle([listings.latitudes[i], listings.longitudes[i]], {
       fillOpacity: 0.75,
       color: "white",
       fillColor: color,
       // Adjust radius
-      radius: listingReviewScoresRatings[i] * 1500
-    }).bindPopup("<h1>" + listingIds[i] + "</h1> <hr> <h3>Review Rating: " + listingReviewScoresRatings[i] + "</h3>").addTo(myMap);
+      radius: listings.review_scores_rating[i] * 1500
+    }).bindPopup("<h1>" + listings.id[i] + "</h1> <hr> <h3>Rating: " + review_scores_rating[i] + "</h3> + <hr> <h3>Price: " + review_scores_rating[i] + "</h3>").addTo(myMap);
   };
 
