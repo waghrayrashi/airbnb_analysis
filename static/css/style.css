@@ -16,6 +16,10 @@ a{
   color: #6D8092;
   font-size: 15px; 
 }
+/* Map ID */
+/* Set height of map */
+  #mapid {height: 600px;
+    width: 600px;}
 
 /* Navbar */
 .navigation{
@@ -94,7 +98,7 @@ img{
   padding-top: 25px; 
 }
 
-/* Box Class */
+/* Box Class*/
 .box {
   margin-top: 60px; 
   margin-bottom: 62px; 
