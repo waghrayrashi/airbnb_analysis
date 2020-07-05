@@ -24,8 +24,8 @@
     // Define the plot layout
       var roomTypeLayout = {
         title: "Types of Listings in Asheville",
-        innerHeight: 100,
-        outerHeight: 150
+        // innerHeight: 100,
+        // outerHeight: 150
       
       // xaxis: { title: "Room Type" }
       // yaxis: { title: "Room Type" }
