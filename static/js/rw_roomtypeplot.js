@@ -13,10 +13,10 @@
     
     // Create the Trace for the bar chart
       var roomTypeTrace = {
-        y: roomTypes,
-        x: roomTypePercent,
+        x: roomTypes,
+        y: roomTypePercent,
         type: "bar",
-        orientation: 'h'};
+        };
     
     // Create the data array for the plot
       var roomTypeData = [roomTypeTrace];
