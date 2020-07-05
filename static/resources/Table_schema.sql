@@ -35,12 +35,14 @@ CREATE TABLE rw_listings (
 
 CREATE TABLE rw_listings_by_roomtype (
     roomtype VARCHAR(30) NOT NULL,
-    listings INT NOT NULL
+    listings INT NOT NULL,
+	percent DECIMAL NOT NULL
 );
 
 CREATE TABLE rw_listings_by_propertytype (
     propertytype VARCHAR(30) NOT NULL,
-    listings INT NOT NULL
+    listings INT NOT NULL,
+	percent DECIMAL NOT NULL
 );
 
 CREATE TABLE rw_top_propertytypes (

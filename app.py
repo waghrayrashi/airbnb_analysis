@@ -113,12 +113,12 @@ def reviews():
     return render_template("rw_reviews.html")
 
 #######################################################
-# Render plot1
+# Render Room Type Plot
 #######################################################
-@app.route("/plot1")
-def plot1():
-    """Return the plot1 page."""
-    return render_template("rw_plot1.html")
+@app.route("/roomtypeplot")
+def roomtypeplot():
+    """Return the roomtypeplot page."""
+    return render_template("rw_roomtypeplot.html")
 
 #######################################################
 # Render plot2

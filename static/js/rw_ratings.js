@@ -29,7 +29,7 @@
       accessToken: API_KEY
     }).addTo(myMap);
 
-    // ADD CIRCLE MARKERS TO SHOW RATING SCORE ON THE MAP FOR EACH LISTING
+    // ADD CIRCLE MARKER LAYER TO SHOW RATING SCORE ON THE MAP FOR EACH LISTING
     // Loop through the listingIds array and create one marker for each listing object
     for (var i = 0; i < listingIds.length; i++) {
 

@@ -72,8 +72,8 @@
               Visualizations
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="{{ url_for ('plot1') }}">Plot 1</a>
-                <a class="dropdown-item" href="{{ url_for ('plot2') }}">Plot 2</a>
+                <a class="dropdown-item" href="{{ url_for ('roomtypeplot') }}">Types of Listings</a>
+                <a class="dropdown-item" href="{{ url_for ('plot2') }}">Listings by Property Type</a>
                 <a class="dropdown-item" href="{{ url_for ('propertytypesplot') }}">Listed Property Types</a>
                 <a class="dropdown-item" href="{{ url_for ('listingsplot') }}">Listings by Neighbourhood</a>
                 <a class="dropdown-item" href="{{ url_for ('avgratingplot') }}">Average Rating by Neighbourhood</a>
@@ -114,7 +114,7 @@
 <!-- Footer Section Ends-->
   
 <!-- JavaScript Files-->
-<script src="static/js/roomtypeplot.js"></script>
+<script src="static/js/rw_roomtypeplot.js"></script>
 
 <!-- Plotly Script -->
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
