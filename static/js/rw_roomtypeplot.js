@@ -23,14 +23,16 @@
     
     // Define the plot layout
       var roomTypeLayout = {
-        title: "Types of Listings in Asheville",
+        title: "Types of Listings",
         // innerHeight: 100,
         // outerHeight: 150
       
       // xaxis: { title: "Room Type" }
       // yaxis: { title: "Room Type" }
     };
+    // Define a variable to make the chart responsive
     var config = {responsive: true}
+    
     // Plot the chart to a div tag with id "roomType"
-    Plotly.newPlot("roomtype", roomTypeData, roomTypeLayout, config);
+    Plotly.newPlot("roomtypeplot", roomTypeData, roomTypeLayout, config);
     });  

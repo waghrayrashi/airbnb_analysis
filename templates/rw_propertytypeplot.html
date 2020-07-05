@@ -16,6 +16,9 @@
     integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
     crossorigin=""/>
 
+    <!-- Plotly JavaScript -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
     <!-- d3 JavaScript -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
 
@@ -95,23 +98,38 @@
       </nav>
     </div>
     <!-- Navigation Section Ends -->
-     <!--Content Section Begins-->
+    
+    <!--Content Section Begins-->
      <div class="container">
         <div class="row">
-            <div class="box">
-            <h4>Listings by Neighbourhood</h4>
-            <p>Neighbourhood with most listings is....</p>
-            </div>
+          <!--Left pane for description-->
+          <div class="col-md-4">
+            <h5>Types of Properties on Rent</h5>
+            <p>Most Airbnb listings in Asheville are Houses. Loft style properties are not quite common in Asheville unlike larger cities like NYC.</p>
+          </div>
+          
+          <!--Right pane for plot-->
+          <div class="col-md-8">
+            <!--Div for plot-->
+            <div id="propertytypeplot"> 
+            </div>  
+          </div>
         </div>
-    </div>
+      </div>
     <!--Content Section Ends-->
     
-      <!-- Footer Section Begins-->
-      <footer>
-        <div class="footer">Copyright &copy; Data Science Enthusiasts 2020</div>
-      </footer>
-      <!-- Footer Section Ends-->
-      
+    <!-- Footer Section Begins-->
+    <footer>
+      <div class="footer">Copyright &copy; Data Science Enthusiasts 2020</div>
+    </footer>
+    <!-- Footer Section Ends-->
+    
+    <!-- JavaScript Files-->
+    <script src="static/js/rw_propertytypeplot.js"></script>
+
+    <!--D3 Dependency -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
