@@ -107,18 +107,18 @@ def propertytypesplot():
 #######################################################
 # Render Average Price by Neighbourhood plot
 #######################################################
-@app.route("/hoodavgpricesplot")
-def hoodavgpricesplot():
+@app.route("/hoodsavgpricesplot")
+def hoodsavgpricesplot():
     """Return the avgprices plot page."""
-    return render_template("rw_hoodavgpricesplot.html")
+    return render_template("rw_hoodsavgpricesplot.html")
 
 #######################################################
 # Render Average Ratings by Neighbourhood plot
 #######################################################
-@app.route("/hoodavgratingsplot")
-def hoodavgratingsplot():
+@app.route("/hoodsavgratingsplot")
+def hoodsavgratingsplot():
     """Return the avgratings plot page."""
-    return render_template("rw_hoodavgratingsplot.html")
+    return render_template("rw_hoodsavgratingsplot.html")
 
 #######################################################
 # Render Listings by Neighbourhood Map
