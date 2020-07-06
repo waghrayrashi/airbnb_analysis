@@ -11,7 +11,7 @@
     var propertyTypePercent = d.map((item) => item.percent);
 
     console.log(propertyTypes);
-    console.log(propertyTypeCounts);
+    console.log(propertyTypeListings);
     console.log(propertyPercent);
 
     // Create the Trace for the bar chart
