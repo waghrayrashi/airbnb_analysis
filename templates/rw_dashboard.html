@@ -94,15 +94,15 @@
                 <div class="row">
                     <div class="col-lg-6" style="padding: 30px;">
                         <div class="title">Types of Listings</div>
-                            <a href="rw_roomtypeplot.html">
+                            <a href="{{ url_for ('roomtypeplot') }}">
                             <img class="panel" id="activeimage" src="static/images/roomtypeplot.png" alt="Types of Listings">
                             </a>
                         </div>
 
                     <div class="col-lg-6" style="padding: 30px;">
                         <div class="title">Listings by Neighbourhood</div>
-                            <a href="rw_listingcountsplot.html">
-                            <!-- <img class="panel" id="activeimage" src="" alt="Listings by Neighbourhood"> -->
+                            <a href="{{ url_for ('propertytypesplot') }}">
+                            <img class="panel" id="activeimage" src="static/images/propertytypesplot.png" alt="Listed Property Types">
                             </a>
                         </div>
                     </div>
@@ -110,15 +110,15 @@
                 <div class="row">
                     <div class="col-lg-6" style="padding: 30px;">
                         <div class="title">Best Neighbourhoods by Rating</div>
-                            <a href="rw_avgratingplot.html">
-                            <!-- <img class="panel" id="activeimage" src="" alt="Best Neighbourhoods by Rating"> -->
+                            <a href="{{ url_for ('hoodavgratingsmap') }}">
+                            <img class="panel" id="activeimage" src="" alt="static/images/roomtypeplot.png">
                             </a>
                         </div>
                     
                     <div class="col-lg-6" style="padding: 30px;">
                         <div class="title">Best Neighbourhoods by Price</div>
-                            <a href="rw_avgpriceplot.html">
-                            <!-- <img class="panel" id="activeimage" src="" alt="Best Neighbourhoods by Price"> -->
+                            <a href="{{ url_for ('hoodavgpricesmap') }}">
+                            <img class="panel" id="activeimage" src="" alt="static/images/roomtypeplot.png">
                             </a>
                         </div>
                     </div>

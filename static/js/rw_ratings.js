@@ -54,7 +54,7 @@
       color: "white",
       fillColor: color,
       // Adjust radius of circle marker 
-      radius: listingRatings[i]
+      radius: listingRatings[i]/4
     }).bindPopup("<h4>" + listingIds[i] + "</h4> <hr> <p>Property Type: " + listingPropertyTypes[i] + "</p> <hr> <p>Rating: " + listingRatings[i] + "</p>").addTo(myMap);
   };
 }); 
