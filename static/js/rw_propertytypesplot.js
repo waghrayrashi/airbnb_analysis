@@ -20,8 +20,7 @@
         y: propertyTypePercent,
         type: "bar",
         barmode: 'relative',
-        width: 1,
-        bargap: 4
+        bargap: 0.3
       };
   
   // Create the data array for the plot
