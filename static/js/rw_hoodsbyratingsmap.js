@@ -15,13 +15,13 @@ var myMap = L.map("hoodsbyratingsmapid", {
   }).addTo(myMap);
   
   // Load in geojson data
-  var geoData = "static/data/rw_listings.geojson";
-  
+  // var geoData = "static/data/rw_listings.geojson";
+  var geoData = "static/data/rw_listings.json";
   var geojson;
   
   // Grab data with d3
   d3.json(geoData, function(data) {
-  console.log(data);
+    console.log(data);
     // Create a new choropleth layer
     geojson = L.choropleth(data, {
   
