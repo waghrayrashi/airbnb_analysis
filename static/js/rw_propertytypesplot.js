@@ -16,10 +16,9 @@
 
     // Create the Trace for the bar chart
       var propertyTypeTrace = {
-        y: propertyTypes,
-        x: propertyTypePercent,
+        x: propertyTypes,
+        y: propertyTypePercent,
         type: "bar",
-        orientation: "h",
         barmode: 'relative',
         width: 1,
         bargap: 0.5
@@ -30,8 +29,8 @@
   
   // Define the plot layout
       var propertyTypeLayout = {
-        title: "Listed Property Types"
-    // yaxis: { title: "Property Type" }
+        title: "Top Property Types by Listings",
+        yaxis: { title: "Percentage of Listings" }
 
   };
   
