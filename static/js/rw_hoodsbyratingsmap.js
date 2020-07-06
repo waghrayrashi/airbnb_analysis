@@ -1,8 +1,10 @@
 // Creating map object
-var myMap = L.map("hoodsbyratingsmapid", {
-    center: [35.5950581, -82.5514869],
-    zoom: 8
-  });
+var myMap = L.map("hoodsbyratingsmapid").setView([35.5950581, -82.5514869], 13);
+console.log(myMap);
+// var myMap = L.map("hoodsbyratingsmapid", {
+//     center: [35.5950581, -82.5514869],
+//     zoom: 8
+//   });
   
   // Adding tile layer
   L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -16,11 +18,11 @@ var myMap = L.map("hoodsbyratingsmapid", {
   
   // Load in geojson data
   // var geoData = "static/data/rw_listings.geojson";
-  var geoData = "static/data/rw_listings.json";
+  var geoData = "static/data/rw_listings.geojson";
   var geojson;
   
   // Grab data with d3
-  d3.json(geoData, function(data) {
+  var geojsondata = d3.json(geoData, function(data) {
     console.log(data);
     // Create a new choropleth layer
     geojson = L.choropleth(data, {
