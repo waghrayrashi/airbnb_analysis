@@ -14,7 +14,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(myMap);
 
 // Create a group of layers
-var layerGroup = L.layerGroup().addTo(mymap);
+var layerGroup = L.layerGroup().addTo(myMap);
 
 // FUNCTION TO CREATE MAP LAYERS TO SHOW RATING SCORE FOR EACH LISTING 
 function createMarker(neighbourhood){
@@ -31,18 +31,18 @@ function createMarker(neighbourhood){
         var listing = d[i];
         
         // Conditionals for coloring the circles for each listing based on reviewScore ratings 
-        var color = "";
+        var fillcolor = "";
         if ((listing.review_scores_rating/10) == 10) {
-              color = "green"
+              fillcolor = "green"
             }
             else {
-              color = "red"
+              fillcolor = "red"
             }
 
         L.circle([listing.latitude, listing.longitude], {
-          fillOpacity: 0.75,
+          fillOpacity: 0.65,
           color: "white",
-          fillColor: color,
+          fillColor: fillcolor,
           // Adjust radius of circle marker 
           radius: review_scores_rating/4
         }).bindPopup("<h4>" + listing.id + "</h4> <hr> <p>Property Type: " + listing.property_type + "</p> <hr> <p>Rating: " + listing.review_scores_rating + "</p>")
