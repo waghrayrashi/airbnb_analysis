@@ -6,24 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
   
-    <title>Best Neighbourhoods by Ratings</title>
+    <title>Average Ratings by Neighbourhood</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
     crossorigin=""/>
-    
-    <!-- Leaflet JavaScript (added after Leaflet CSS)-->
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-    crossorigin=""></script>
 
-    <!-- Mapbox JavaScript & Stylesheet -->
-    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- d3 JavaScript -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+ 
+    <!-- Plotly JavaScript -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="static/css/style.css">
@@ -87,21 +84,60 @@
       </nav>
     </div>
     <!-- Navigation Section Ends -->
-    
+
     <!--Content Section Begins-->
     <div class="container">
       <!-- Row 1 Section Begins-->
       <div class="row">
         <!--Left pane for plot description begins-->
         <div class="col-md-4">
-          <div class="box">
-            <h5>Which area is the best?</h5>
-            <h6>Map showing Average Ratings by Neighbourhood</h6>
-            <p>Highly rated neighbourhoods also tend to be the most expensive ones.</p>
-          </div>
+          <h5>Average Ratings by Neighbourhood</h5>
+          <br>
+          <p>Add plot description</p>
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col">Neighbourhood</th>
+                <th scope="col">Average Rating</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Arden-28704</th>
+                <td>97.91</td>
+              </tr>
+              <tr>
+                <th scope="row">Fletcher-28732</th>
+                <td>97.84</td>
+              </tr>
+              <tr>
+                <th scope="row">Candler-28715</th>
+                <td>97.60</td>
+              </tr>
+              <tr>                            
+                <th scope="row">Asheville-28804</th>
+                <td>97.60</td>
+              </tr>
+              <tr>                            
+                <th scope="row">Asheville-28806</th>
+                <td>97.56</td>
+              </tr>
+              <tr>                            
+                <th scope="row">Asheville-28801</th>
+                <td>97.38</td>
+              </tr>
+              <tr>                            
+                <th scope="row">Asheville-28803</th>
+                <td>98.18</td>
+              </tr>
+              <tr>                            
+                <th scope="row">Asheville-28805</th>
+                <td>98.03</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <!--Left pane for plot description ends-->
-
         <!--Right pane for plot begins-->
         <div class="col-md-8">
           <!--Div for plot begins-->
@@ -113,19 +149,16 @@
       </div>
       <!-- Row 1 Section Ends-->
     </div>
-    <!--Content Section Ends-->    
-    
+    <!--Content Section Ends-->
+  
     <!-- Footer Section Begins-->
     <footer>
-      <div class="footer">Copyright &copy; Data Science Enthusiasts 2020</div>
+        <div class="footer">Copyright &copy; Data Science Enthusiasts 2020</div>
     </footer>
     <!-- Footer Section Ends-->
-    
-    <!-- Mapbox API key -->
-    <script type="text/javascript" src="static/js/config.js"></script>
-
-    <!-- JavaScript Files-->
-    <script src="static/js/rw_hoodsRating.js"></script>
+      
+    <!-- Plot JavaScript Files-->
+    <script src="static/js/rw_hoodsrating.js"></script>
 
     <!--D3 Dependency -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
@@ -134,7 +167,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  
-    </body>
-  </html>
-  
+
+    </body> 
+</html>

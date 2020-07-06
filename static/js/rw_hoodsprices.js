@@ -1,76 +1,40 @@
-//  CHLOROPETH OF NEIGHBOURHOODS BY PRICES
-// Create basic leaflet map centered around Ashville, NC[35.5951, -82.5515]
-var myMap = L.map('highpricehoodsmapid').setView([35.5951, -82.5515], 13);
 
-// Add a streets tile layer to the leaflet map
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/light-v10',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: API_KEY
-}).addTo(myMap)
-
-// Create a group of layers
-// var layerGroup = L.layerGroup().addTo(mymap);
-
-// Create a function to read the neighbourhood for each listing 
-
-
-
-// Create function for change in the event
-
-
-// Create function for initial data rendering via dropdown begins
-
-
-
-// Call function init
-// init();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- // Load the property type data from rw_listings_by_propertytype.csv
+// PLOT PRICES BY NEIGHBOURHOOD
+  // Load Room type counts from the csv file
   d3.csv("static/data/rw_listings_by_neighbourhood2.csv").then(function(d) {
-    // confirm that the data was read accurately
-    console.log(d);
+    // console.log(d);
+    //  Load the data into arrays Room Types, Listings and Percent
+    var hoods = d.map((item) => item.neighbourhood);
+    var avgprices = d.map((item) => item.avgprice);
+    // Confirm that the 3 arrays loaded correctly
+    console.log(hoods);
+    console.log(avgprices);
 
     
-  });
-
+    // Create the Trace for the bar chart
+      var trace = {
+        x: hoods,
+        y: avgprices,
+        type: "bar",
+        };
+    
+    // Create the data array for the plot
+      var data = [trace];
+    
+    // Define the plot layout
+      var layout = {
+        title: "Average Pricing Per Neighbouhood",
+        // innerHeight: 100,
+        // outerHeight: 150
+      
+      // xaxis: { title: "Room Type" }
+      // yaxis: { title: "Room Type" }
+    };
+    // Define a variable to make the chart responsive
+    var config = {responsive: true}
+    
+    // Plot the chart to a div tag with id "roomType"
+    Plotly.newPlot("hoodspriceplotid", data, layout, config);
+    });  
 
   
