@@ -12,7 +12,7 @@
 
     console.log(propertyTypes);
     console.log(propertyTypeListings);
-    console.log(propertyPercent);
+    console.log(propertyTypePercent);
 
     // Create the Trace for the bar chart
       var propertyTypeTrace = {
