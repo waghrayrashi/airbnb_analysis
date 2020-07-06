@@ -155,7 +155,7 @@ def hoodavgratingsmap():
 #######################################################
 # Render Average Price by Neighbourhood
 #######################################################
-@app.route("/hoodavgpricesplot")
+@app.route("/hoodavgpricesmap")
 def hoodavgpricesmap():
     """Return the avgprices map page."""
     return render_template("rw_hoodavgpricesmap.html")
