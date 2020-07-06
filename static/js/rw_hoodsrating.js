@@ -21,7 +21,7 @@
     
     // Define the plot layout
       var layout = {
-        title: "Average Ratings Per Neighbouhood",
+        title: "Average Ratings Per Neighbourhood",
         // innerHeight: 100,
         // outerHeight: 150
       
