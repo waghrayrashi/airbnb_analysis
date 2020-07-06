@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
   
-    <title>Listings Visualization</title>
+    <title>Neighbourhood Analysis</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -42,14 +42,14 @@
             </li>
 
             <!-- Rental Landscape in the Navigation Section -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
             <a class="nav-link" href="{{ url_for ('landscape') }}">Rental Landscape</a>
-            </li>
+            </li> -->
 
             <!-- Demand and Pricing in the Navigation Section -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="{{ url_for ('demand') }}">Demand/Pricing</a>
-            </li> 
+            </li>  -->
 
             <!-- Listings in the Navigation Section -->
             <li class="nav-item">
@@ -57,9 +57,9 @@
             </li>
 
             <!-- Airbnb Growth in the Navigation Section -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="{{ url_for ('growth') }}">Growth</a>
-            </li>
+            </li> -->
 
             <!-- Reviews in the Navigation Section -->
             <li class="nav-item">
@@ -73,11 +73,11 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="{{ url_for ('roomtypeplot') }}">Types of Listings</a>
-                <a class="dropdown-item" href="{{ url_for ('plot2') }}">Plot 2</a>
+                <!-- <a class="dropdown-item" href="{{ url_for ('plot2') }}">Plot 2</a> -->
                 <a class="dropdown-item" href="{{ url_for ('propertytypesplot') }}">Listed Property Types</a>
-                <a class="dropdown-item" href="{{ url_for ('listingsplot') }}">Listings by Neighbourhood</a>
-                <a class="dropdown-item" href="{{ url_for ('avgratingplot') }}">Average Rating by Neighbourhood</a>
-                <a class="dropdown-item" href="{{ url_for ('avgpriceplot') }}">Average Price by Neighbourhood</a>
+                <a class="dropdown-item" href="{{ url_for ('hoodlistingsmap') }}">Popular Neighbourhoods</a>
+                <a class="dropdown-item" href="{{ url_for ('hoodavgratingsmap') }}">Best Neighbourhoods by Rating</a>
+                <a class="dropdown-item" href="{{ url_for ('hoodavgpricesplot') }}">Best Neighbourhoods by Price</a>
               </div>
             </li>
 
@@ -111,7 +111,13 @@
     <div class="footer">Copyright &copy; Data Science Enthusiasts 2020</div>
     </footer>
     <!-- Footer Section Ends-->
-      
+    
+    <!-- JavaScript Files-->
+    <script src="static/js/rw_hood.js"></script>
+
+    <!--D3 Dependency -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
+     
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

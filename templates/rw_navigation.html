@@ -15,14 +15,14 @@
             </li>
 
             <!-- Rental Landscape in the Navigation Section -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
             <a class="nav-link" href="{{ url_for ('landscape') }}">Rental Landscape</a>
-            </li>
+            </li> -->
 
             <!-- Demand and Pricing in the Navigation Section -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="{{ url_for ('demand') }}">Demand/Pricing</a>
-            </li> 
+            </li>  -->
 
             <!-- Listings in the Navigation Section -->
             <li class="nav-item">
@@ -30,9 +30,9 @@
             </li>
 
             <!-- Airbnb Growth in the Navigation Section -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="{{ url_for ('growth') }}">Growth</a>
-            </li>
+            </li> -->
 
             <!-- Reviews in the Navigation Section -->
             <li class="nav-item">
@@ -46,11 +46,11 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="{{ url_for ('roomtypeplot') }}">Types of Listings</a>
-                <a class="dropdown-item" href="{{ url_for ('plot2') }}">Plot 2</a>
+                <!-- <a class="dropdown-item" href="{{ url_for ('plot2') }}">Plot 2</a> -->
                 <a class="dropdown-item" href="{{ url_for ('propertytypesplot') }}">Listed Property Types</a>
-                <a class="dropdown-item" href="{{ url_for ('listingsplot') }}">Listings by Neighbourhood</a>
-                <a class="dropdown-item" href="{{ url_for ('avgratingplot') }}">Average Rating by Neighbourhood</a>
-                <a class="dropdown-item" href="{{ url_for ('avgpriceplot') }}">Average Price by Neighbourhood</a>
+                <a class="dropdown-item" href="{{ url_for ('hoodlistingsmap') }}">Popular Neighbourhoods</a>
+                <a class="dropdown-item" href="{{ url_for ('hoodavgratingsmap') }}">Best Neighbourhoods by Rating</a>
+                <a class="dropdown-item" href="{{ url_for ('hoodavgpricesplot') }}">Best Neighbourhoods by Price</a>
               </div>
             </li>
 

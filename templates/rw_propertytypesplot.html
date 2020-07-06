@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
   
-    <title>Listing Types</title>
+    <title>Listed Property Types</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -78,9 +78,9 @@
                 <a class="dropdown-item" href="{{ url_for ('roomtypeplot') }}">Types of Listings</a>
                 <!-- <a class="dropdown-item" href="{{ url_for ('plot2') }}">Plot 2</a> -->
                 <a class="dropdown-item" href="{{ url_for ('propertytypesplot') }}">Listed Property Types</a>
-                <a class="dropdown-item" href="{{ url_for ('listingsplot') }}">Listings by Neighbourhood</a>
-                <a class="dropdown-item" href="{{ url_for ('avgratingplot') }}">Average Rating by Neighbourhood</a>
-                <a class="dropdown-item" href="{{ url_for ('avgpriceplot') }}">Average Price by Neighbourhood</a>
+                <a class="dropdown-item" href="{{ url_for ('hoodlistingsmap') }}">Popular Neighbourhoods</a>
+                <a class="dropdown-item" href="{{ url_for ('hoodavgratingsmap') }}">Best Neighbourhoods by Rating</a>
+                <a class="dropdown-item" href="{{ url_for ('hoodavgpricesplot') }}">Best Neighbourhoods by Price</a>
               </div>
             </li>
 
@@ -113,7 +113,7 @@
         <!--Row 1 Right pane for Plot-->
         <div class="col-md-8">
           <!--Div for plot Begins-->
-          <div id="propertytypeplot"> 
+          <div id="propertytypesplotid"> 
           </div>
           <!--Div for plot Ends-->
         </div>

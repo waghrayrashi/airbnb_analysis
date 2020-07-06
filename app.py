@@ -137,28 +137,28 @@ def propertytypesplot():
     return render_template("rw_propertytypesplot.html")
 
 #######################################################
-# Render Listings by Neighbourhood Plot
+# Render Listings by Neighbourhood Map
 #######################################################
-@app.route("/listingsplot")
-def listingsplot():
-    """Return the listingsplot page."""
-    return render_template("rw_listingsplot.html")
+@app.route("/hoodlistingsmap")
+def hoodlistingsmap():
+    """Return the listings map page."""
+    return render_template("rw_hoodlistingsmap.html")
 
 #######################################################
 # Render Average Rating by Neighbourhood
 #######################################################
-@app.route("/avgratingplot")
-def avgratingplot():
-    """Return the avgratingplot page."""
-    return render_template("rw_avgratingplot.html")
+@app.route("/hoodavgratingsmap")
+def hoodavgratingsmap():
+    """Return the avgratings map page."""
+    return render_template("rw_hoodavgratingsmap.html")
 
 #######################################################
 # Render Average Price by Neighbourhood
 #######################################################
-@app.route("/avgpriceplot")
-def avgpriceplot():
-    """Return the avgpriceplot page."""
-    return render_template("rw_avgpriceplot.html")
+@app.route("/hoodavgpricesplot")
+def hoodavgpricesmap():
+    """Return the avgprices map page."""
+    return render_template("rw_hoodavgpricesmap.html")
 
 #######################################################
 # Render the Analysis Methodology HTML

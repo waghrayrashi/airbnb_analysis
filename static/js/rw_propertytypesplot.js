@@ -22,7 +22,7 @@
         orientation: "h",
         barmode: 'relative',
         width: 1,
-        bargap: 0.3
+        bargap: 0.5
       };
   
   // Create the data array for the plot
@@ -36,6 +36,6 @@
   };
   
   // Plot the chart to a div tag with id "propertyType"
-  Plotly.newPlot("propertytypeplot", propertyTypeData, propertyTypeLayout);
+  Plotly.newPlot("propertytypesplotid", propertyTypeData, propertyTypeLayout);
     });
   // }
