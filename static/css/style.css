@@ -70,6 +70,11 @@ img{
   border-style: solid; 
   
 } 
+/* For Asheville image */
+.ashevilleimage{
+  width: 800px;
+  height: 300px;
+}
 
 .panel:hover{
   border-color:#13a56d;
