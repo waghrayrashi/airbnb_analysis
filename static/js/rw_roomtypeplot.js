@@ -34,5 +34,5 @@
     var config = {responsive: true}
     
     // Plot the chart to a div tag with id "roomType"
-    Plotly.newPlot("roomtypesplotid", roomTypeData, roomTypeLayout, config);
+    Plotly.newPlot("roomtypeplotid", roomTypeData, roomTypeLayout, config);
     });  
