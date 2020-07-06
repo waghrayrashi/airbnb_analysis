@@ -21,7 +21,7 @@
         type: "bar",
         barmode: 'relative',
         width: 1,
-        bargap: 0.5
+        bargap: 4
       };
   
   // Create the data array for the plot
