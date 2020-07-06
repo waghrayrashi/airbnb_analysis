@@ -21,7 +21,7 @@ var myMap = L.map("hoodsbyratingsmapid", {
   
   // Grab data with d3
   d3.json(geoData, function(data) {
-  
+  console.log(data);
     // Create a new choropleth layer
     geojson = L.choropleth(data, {
   
