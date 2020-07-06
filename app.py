@@ -116,9 +116,9 @@ def hoodavgpricesplot():
 # Render Average Ratings by Neighbourhood plot
 #######################################################
 @app.route("/hoodavgratingsplot")
-def hoodavgpricesplot():
+def hoodavgratingsplot():
     """Return the avgratings plot page."""
-    return render_template("rw_hoodavgpricesplot.html")
+    return render_template("rw_hoodavgratingsplot.html")
 
 #######################################################
 # Render Listings by Neighbourhood Map
