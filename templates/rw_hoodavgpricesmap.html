@@ -121,7 +121,12 @@
       </footer>
       <!-- Footer Section Ends-->
 
-      <!-- Leaflet-Choropleth JavaScript -->
+    <!-- Leaflet JavaScript (added after Leaflet CSS)-->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+    
+    <!-- Leaflet-Choropleth JavaScript -->
       <script type="text/javascript" src="static/js/choropleth.js"></script>
       
       <!-- Mapbox API key -->
@@ -131,8 +136,9 @@
       <script src="static/js/rw_hoodsbypricemap.js"></script>
 
       <!--D3 Dependency -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
-        
+      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script> -->
+      <script src="https://d3js.org/d3.v4.min.js"></script>
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
