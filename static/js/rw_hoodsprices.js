@@ -23,18 +23,16 @@
     
     // Define the plot layout
       var layout = {
-        title: "Average Pricing Per Neighbouhood",
+        title: "Average Prices by Neighbouhood",
         // innerHeight: 100,
         // outerHeight: 150
-      
-      // xaxis: { title: "Room Type" }
-      // yaxis: { title: "Room Type" }
+
     };
     // Define a variable to make the chart responsive
     var config = {responsive: true}
     
     // Plot the chart to a div tag with id "roomType"
-    Plotly.newPlot("hoodspriceplotid", data, layout, config);
+    Plotly.newPlot("hoodspricesplotid", data, layout, config);
     });  
 
   

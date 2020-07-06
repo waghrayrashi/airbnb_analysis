@@ -7,7 +7,7 @@ var myMap = L.map("ratingsmapid").setView([35.5950581, -82.5514869], 13);
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
   maxZoom: 18,
-  id: 'mapbox/streets-v11',
+  id: 'mapbox/light-v10',
   tileSize: 512,
   zoomOffset: -1,
   accessToken: API_KEY
@@ -45,7 +45,7 @@ function createMarker(neighbourhood){
           fillColor: fillcolor,
           // Adjust radius of circle marker 
           radius: review_scores_rating/4
-        }).bindPopup("<h4>" + listing.id + "</h4> <hr> <p>Property Type: " + listing.property_type + "</p> <hr> <p>Rating: " + listing.review_scores_rating + "</p>")
+        }).bindPopup("<h5>" + listing.id + "</h5><hr><h6>Property Type: " + listing.property_type + "</h6><hr><p>Rating: " + listing.review_scores_rating + "</p>")
         .addTo(layerGroup);
       }
     }
@@ -67,9 +67,9 @@ function init() {
     console.log(data);
     
     // Append zipcodes into the dropdown menu
-    for (i=0; i < data.length; i++) {
-      var area = data[i].neighbourhood
-      dropdown.append("option").text(area).property("value");
+    for (j=0; j < data.length; j++) {
+      var hood = data[j].neighbourhood
+      dropdown.append("option").text(hood).property("value");
     }
   });
 };
