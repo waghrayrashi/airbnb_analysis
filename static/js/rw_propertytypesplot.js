@@ -16,9 +16,11 @@
 
     // Create the Trace for the bar chart
       var propertyTypeTrace = {
-        x: propertyTypes,
-        y: propertyTypePercent,
-        type: "bar"
+        y: propertyTypes,
+        x: propertyTypePercent,
+        type: "bar",
+        orientation: "h",
+        barmode: 'relative'
       };
   
   // Create the data array for the plot
