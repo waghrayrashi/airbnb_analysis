@@ -85,21 +85,25 @@
       </nav>
     </div>
     <!-- Navigation Section Ends -->
+    
     <!--Content Section Begins-->
-    <div>
+    <div class="container">
       <!-- Row 1 Section Begins-->
       <div class="row">
         <!--Left pane for plot description begins-->
         <div class="col-md-4">
+          <div class="box">
             <h5>Which area is the best?</h5>
             <h6>Map showing Average Prices by Neighbourhood</h6>
             <p>Highly rated neighbourhoods also tend to be the most expensive ones.</p>
+          </div>
         </div>
         <!--Left pane for plot description ends-->
+
         <!--Right pane for plot begins-->
         <div class="col-md-8">
           <!--Div for plot begins-->
-          <div id="hoodsratingplotid"> 
+          <div id="highratedhoodsmapid"> 
           </div>
           <!--Div for plot ends-->
         </div>
@@ -107,23 +111,23 @@
       </div>
       <!-- Row 1 Section Ends-->
     </div>
-    <!--Content Section Ends-->
+    <!--Content Section Ends-->   
+    
+    <!-- Footer Section Begins-->
+      <footer>
+        <div class="footer">Copyright &copy; Data Science Enthusiasts 2020</div>
+      </footer>
+      <!-- Footer Section Ends-->
 
-   <!-- Footer Section Begins-->
-    <footer>
-      <div class="footer">Copyright &copy; Data Science Enthusiasts 2020</div>
-    </footer>
-    <!-- Footer Section Ends-->
+      <!-- Mapbox API key -->
+      <script type="text/javascript" src="static/js/config.js"></script>
 
-    <!-- Mapbox API key -->
-    <script type="text/javascript" src="static/js/config.js"></script>
+      <!-- JavaScript Files-->
+      <script src="static/js/rw_hoodsprices.js"></script>
 
-    <!-- JavaScript Files-->
-    <script src="static/js/rw_hoodsprices.js"></script>
-
-    <!--D3 Dependency -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
-      
+      <!--D3 Dependency -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
+        
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
