@@ -73,36 +73,12 @@ def dashboard():
     return render_template("rw_dashboard.html")
 
 #######################################################
-# Render the Rental Landscape HTML 
-#######################################################
-# @app.route("/landscape")
-# def landscape():
-#     """Return the Landscape page."""
-#     return render_template("rw_landscape.html")
-
-#######################################################
-# Render the Demand HTML 
-#######################################################
-# @app.route("/demand")
-# def demand():
-#     """Return the Demand page."""
-#     return render_template("rw_demand.html")
-
-#######################################################
 # Render the Listings HTML 
 #######################################################
 @app.route("/listings")
 def listings():
     """Return the listings page."""
     return render_template("rw_listings.html")
-
-#######################################################
-# Render the Growth HTML 
-#######################################################
-# @app.route("/growth")
-# def growth():
-#     """Return the growth page."""
-#     return render_template("rw_growth.html")
 
 #######################################################
 # Render the Reviews HTML 
@@ -119,14 +95,6 @@ def reviews():
 def roomtypeplot():
     """Return the roomtypeplot page."""
     return render_template("rw_roomtypeplot.html")
-
-#######################################################
-# Render plot2
-#######################################################
-# @app.route("/plot2")
-# def plot2():
-#     """Return the plot2 page."""
-#     return render_template("rw_plot2.html")
 
 #######################################################
 # Render Listed Property Types Plot
