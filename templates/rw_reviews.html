@@ -131,26 +131,33 @@
               </tr>
             </tbody>
           </table>
+          <!--Div for dropdown begins-->
+          <div class="container2">
+            <h5>Filter by Neighbourhood:</h5>
+            <select id="zipCode" onchange="optionChanged(this.value)"></select>
+          </div>
+        <!--Div for dropdown begins-->
         </div>
         <!--Left pane for description ends-->
 
         <!--Right pane for map begins-->
         <div class="col-md-8">
-        <!--Div for map-->
+        <!--Div for map begins-->
           <div id="mapid">       
           </div>
+          <!--Div for map ends-->
         </div>
-        <!--Right pane for map begins-->
+        <!--Right pane for map ends-->
       </div>
       <!--Row 1 Section ends -->
     </div>
-    <!--Content Section Ends-->
+    <!--Content Section ends-->
     
-    <!-- Footer Section Begins-->
+    <!-- Footer Section begins-->
     <footer>
       <div class="footer">Copyright &copy; Data Science Enthusiasts 2020</div>
     </footer>
-    <!-- Footer Section Ends-->
+    <!-- Footer Section ends-->
 
     <!-- d3 JavaScript -->
     <script src="https://d3js.org/d3.v5.min.js"></script>

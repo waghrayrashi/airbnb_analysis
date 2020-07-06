@@ -1,61 +1,80 @@
-// DATA SOURCE
-// Load data from listings_details.csv
-  var listings = d3.csv("static/data/rw_listings.csv").then(function(d) {
+// CREATE LEAFLET MAP OBJECT 
+// Create a map object centered at Asheville, NC [35.5950581, -82.5514869]
+  var myMap = L.map("mapid").setView([35.5950581, -82.5514869], 13);
+    
+// ADD STREET MAP TILE LAYER USING MAPBOX 
+// Add a tile layer to display the streets on the map using Mapbox tiles
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+  maxZoom: 18,
+  id: 'mapbox/streets-v11',
+  tileSize: 512,
+  zoomOffset: -1,
+  accessToken: API_KEY
+}).addTo(myMap);
+
+// Create a group of layers
+var layerGroup = L.layerGroup().addTo(mymap);
+
+// FUNCTION TO CREATE MAP LAYERS TO SHOW RATING SCORE FOR EACH LISTING 
+function createMarker(neighbourhood){
+  // Load data from rw_listings.csv
+  d3.csv("static/data/listings_details.csv").then(function(d) {
     // Confirm that the listings data was read accurately
     console.log(d);
-    // From the listings object, prepare individual arrays for: listing IDs, latitudes, longitudes, ratings, prices and property types
-    var listingIds = d.map((listing) => listing.id);
-    var listingLatitudes = d.map((listing) => listing.latitude);
-    var listingLongitudes = d.map((listing) => listing.longitude);
-    var listingRatings = d.map((listing) => listing.review_scores_rating);
-    var listingPropertyTypes = d.map((listing) => listing.property_type);
-    var listingPrices = d.map((listing) => listing.price);
-    // Confirm that the arrays have the data as expected
-    console.log(listingIds);
-    console.log(listingRatings);
 
-    // CREATE LEAFLET MAP OBJECT 
-    // Create a map object centered at Asheville, NC [35.5950581, -82.5514869]
-    var myMap = L.map("mapid").setView([35.5950581, -82.5514869], 12);
+    // Loop through the data and create one circle marker for each listing object
+    for (var i = 0; i < d.length; i++) {
+      // Conditionals for coloring the circles for each listing based on reviewScore ratings 
+      var color = "";
+      if (neighbourhood === d[i].zipcode) {
+        var listing = d[i];
+        
+        // Conditionals for coloring the circles for each listing based on reviewScore ratings 
+        var color = "";
+        if ((listing.review_scores_rating/10) == 10) {
+              color = "green"
+            }
+            else {
+              color = "red"
+            }
+
+        L.circle([listing.latitude, listing.longitude], {
+          fillOpacity: 0.75,
+          color: "white",
+          fillColor: color,
+          // Adjust radius of circle marker 
+          radius: review_scores_rating/4
+        }).bindPopup("<h4>" + listing.id + "</h4> <hr> <p>Property Type: " + listing.property_type + "</p> <hr> <p>Rating: " + listing.review_scores_rating + "</p>")
+        .addTo(layerGroup);
+      }
+    }
+  });
+}
+
+// Create function for change in the event
+function optionChanged(neighbourhood){
+  layerGroup.clearLayers();
+  createMarker(neighbourhood);
+}
+
+// Create function for initial data rendering via dropdown begins
+function init() {
+  // Select dropdown menu
+  var dropdown =  d3.select('#zipCode');
+  // Read the data
+  d3.csv("static/data/neighbourhoods.csv").then((data) => {
+    console.log(data)
     
-    // ADD STREET MAP TILE LAYER USING MAPBOX 
-    // Add a tile layer to display the streets on the map using Mapbox tiles
-    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-      maxZoom: 18,
-      id: 'mapbox/streets-v11',
-      tileSize: 512,
-      zoomOffset: -1,
-      accessToken: API_KEY
-    }).addTo(myMap);
+    // Append zipcodes into the dropdown menu
+    for (i=0; i < data.length; i++) {
+      var area = data[i].neighbourhood
+      dropdown.append("option").text(area).property("value");
+    }
+  });
+};
 
-    // ADD CIRCLE MARKER LAYER TO SHOW RATING SCORE ON THE MAP FOR EACH LISTING
-    // Loop through the listingIds array and create one marker for each listing object
-    for (var i = 0; i < listingIds.length; i++) {
 
-    // Conditionals for coloring the circles for each listing based on reviewScore ratings 
-    var color = "";
-    if (listingRatings[i] > 96) {
-      color = "green";
-    }
-    else if (listingRatings[i] > 91) {
-      color = "yellow";
-    }
-    else if (listingRatings[i] > 81) {
-      color = "orange";
-    }
-    else {
-      color = "blue";
-    }
-
-    // Add circles to map L.circle([lat,lng], radius).addTo(map); Bind the id, price and rating and add to map
-    L.circle([listingLatitudes[i], listingLongitudes[i]], {
-      fillOpacity: 0.75,
-      color: "white",
-      fillColor: color,
-      // Adjust radius of circle marker 
-      radius: listingRatings[i]/4
-    }).bindPopup("<h4>" + listingIds[i] + "</h4> <hr> <p>Property Type: " + listingPropertyTypes[i] + "</p> <hr> <p>Rating: " + listingRatings[i] + "</p>").addTo(myMap);
-  };
-}); 
+// Call function init
+init();
 
