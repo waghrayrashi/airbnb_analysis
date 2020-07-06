@@ -15,7 +15,7 @@ var myMap = L.map("hoodsbypricemapid", {
   }).addTo(myMap);
   
   // Load in geojson data
-  var geoData = "static/data/rw_listings.json";
+  var geoData = "static/data/rw_listings.geojson";
   
   var geojson;
   
