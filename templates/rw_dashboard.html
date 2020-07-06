@@ -83,52 +83,66 @@
     <!-- Navigation Section Ends -->
     <!-- Content Section Begins -->
     <div class="container">
-        <div class="row">
-        <div>
-            <!-- Left box  -->
-            <div class="box">
-            <h3 class="title">Dashboard</h3>
-            <hr>
-            <p>Click any plot to get an in-depth analysis.</p>
-            
-            <div class="container" style="padding-bottom: 40px;">
-                
-                <div class="row">
-                    <div class="col-lg-6" style="padding: 30px;">
-                        <div class="title">Types of Listings</div>
-                            <a href="{{ url_for ('roomtypeplot') }}">
-                            <img class="panel" id="activeimage" src="static/images/roomtypeplot.png" alt="Types of Listings">
-                            </a>
-                        </div>
-
-                    <div class="col-lg-6" style="padding: 30px;">
-                        <div class="title">Listings by Neighbourhood</div>
-                            <a href="{{ url_for ('propertytypesplot') }}">
-                            <img class="panel" id="activeimage" src="static/images/propertytypesplot.png" alt="Listed Property Types">
-                            </a>
-                        </div>
-                    </div>
-
-                <div class="row">
-                    <div class="col-lg-6" style="padding: 30px;">
-                        <div class="title">Best Neighbourhoods by Rating</div>
-                            <a href="{{ url_for ('hoodavgratingsmap') }}">
-                            <img class="panel" id="activeimage" src="static/images/avgratingsplot.png" alt="Average Ratings by Neighbourhood">
-                            </a>
-                        </div>
-                    
-                    <div class="col-lg-6" style="padding: 30px;">
-                        <div class="title">Best Neighbourhoods by Price</div>
-                            <a href="{{ url_for ('hoodavgpricesmap') }}">
-                            <img class="panel" id="activeimage" src="static/images/avgpricesplot.png" alt="Average Price by Neighbourhood">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="row">
+        <!-- Left box  -->
+        <div class="box">
+          <h3 class="title">Dashboard</h3>
+          <hr>
+          <p>Click any plot to get an in-depth analysis.</p>
         </div>
+      </div>
     </div>
+      
+    <div class="container" style="padding-bottom: 40px;">
+      <div class="row">
+        <div class="col-lg-6" style="padding: 30px;">
+          <div class="title">Types of Listings</div>
+            <a href="{{ url_for ('roomtypeplot') }}">
+            <img class="panel" id="activeimage" src="static/images/roomtypeplot.png" alt="Types of Listings">
+            </a>
+        </div>
+
+        <div class="col-lg-6" style="padding: 30px;">
+          <div class="title">Listings by Neighbourhood</div>
+            <a href="{{ url_for ('propertytypesplot') }}">
+            <img class="panel" id="activeimage" src="static/images/propertytypesplot.png" alt="Listed Property Types">
+            </a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6" style="padding: 30px;">
+          <div class="title">Best Neighbourhoods by Rating</div>
+            <a href="{{ url_for ('hoodsavgratingsplot') }}">
+            <img class="panel" id="activeimage" src="static/images/avgratingsplot.png" alt="Average Ratings by Neighbourhood">
+            </a>
+        </div>
+                
+        <div class="col-lg-6" style="padding: 30px;">
+          <div class="title">Best Neighbourhoods by Price</div>
+            <a href="{{ url_for ('hoodsavgpricesplot') }}">
+            <img class="panel" id="activeimage" src="static/images/avgpricesplot.png" alt="Average Price by Neighbourhood">
+            </a>
+        </div>
+      </div>
+            
+      <div class="row">
+        <div class="col-lg-6" style="padding: 30px;">
+          <div class="title">Best Neighbourhoods by Rating</div>
+            <a href="{{ url_for ('hoodavgratingsmap') }}">
+            <img class="panel" id="activeimage" src="static/images/avgratingsmap.png" alt="Neighbourhood Ratings">
+            </a>
+        </div>
+                
+        <div class="col-lg-6" style="padding: 30px;">
+          <div class="title">Best Neighbourhoods by Price</div>
+            <a href="{{ url_for ('hoodavgpricesmap') }}">
+            <img class="panel" id="activeimage" src="static/images/avgpricesmap.png" alt="Neighbourhood Prices">
+            </a>
+        </div>
+      </div>
     </div>
+    <!-- Content section ends -->
 
     <!-- Footer Section -->
     <footer>
