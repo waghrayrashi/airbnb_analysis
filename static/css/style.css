@@ -15,7 +15,9 @@ a{
 
 /* Map ID */
 /* Set height of map */
-#mapid {height: 600px; width: 800px;}
+#ratingsmapid {height: 600px; width: 800px;}
+#hoodratingsmapid {height: 600px; width: 800px;}
+#hoodpricesmapid {height: 600px; width: 800px;}
 
 /* Navbar */
 .navigation{
@@ -65,7 +67,7 @@ img{
   width:100% !important;
   height:100% !important;
 }
-#activeimage:hover{
+.activeimage:hover{
   border-color:#13a56d;
   border-style: solid; 
   
