@@ -1,6 +1,6 @@
 // CREATE LEAFLET MAP OBJECT 
 // Create a map object centered at Asheville, NC [35.5950581, -82.5514869]
-  var myMap = L.map("mapid").setView([35.5950581, -82.5514869], 13);
+var myMap = L.map("ratingsmapid").setView([35.5950581, -82.5514869], 13);
     
 // ADD STREET MAP TILE LAYER USING MAPBOX 
 // Add a tile layer to display the streets on the map using Mapbox tiles
@@ -64,7 +64,7 @@ function init() {
   var dropdown =  d3.select('#zipCode');
   // Read the data
   d3.csv("static/data/neighbourhoods.csv").then((data) => {
-    console.log(data)
+    console.log(data);
     
     // Append zipcodes into the dropdown menu
     for (i=0; i < data.length; i++) {
@@ -73,7 +73,6 @@ function init() {
     }
   });
 };
-
 
 // Call function init
 init();
