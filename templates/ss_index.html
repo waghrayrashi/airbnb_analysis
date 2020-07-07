@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Basic Map</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+  integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+  crossorigin=""/>
+
+  <!--Bootstrap CSS-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Our CSS -->
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+
+<body style="background-color:floralwhite ;">
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"><b>Stay-Listings 'Dataset Mining @Asheville'</b></h1>
+        <a href="/templates/Attraction.html" class="btn btn-primary" role="button">Attractions</a>
+      <a href="#" class="btn btn-primary" role="button">Pricing</a>
+    </div>
+  </div>
+
+  
+
+  <!-- The div where we will inject our map -->
+  <div id="map-holder">
+
+    <div class="container1 fill">
+      <div id="map"></div>
+    </div>
+
+    <div class="container2">
+      <h5>Filter by Zip Code:</h5>
+      <select id="zipCode" onchange="optionChanged(this.value)"></select>
+    </div>
+
+  </div>
+
+  <!--Dependencies-->
+  <!-- D3 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+  integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+  crossorigin=""></script>
+  
+  <!-- API key -->
+  <script type="text/javascript" src="/static/js/config.js"></script>
+  
+  <!-- JS -->
+  <script type="text/javascript" src="/static/js/mapLogic.js"></script>
+  
+</body>
+</html>

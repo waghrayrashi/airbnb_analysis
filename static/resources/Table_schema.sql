@@ -8,7 +8,9 @@ DROP TABLE IF EXISTS rw_listings;
 DROP TABLE IF EXISTS rw_listings_by_roomtype;
 DROP TABLE IF EXISTS rw_listings_by_propertytype;
 DROP TABLE IF EXISTS rw_top_propertytypes;
-DROP TABLE IF EXISTS rw_highest_priced_neighbourhoods;
+DROP TABLE IF EXISTS rw_hoodlistings;
+DROP TABLE IF EXISTS rw_hoodprices;
+DROP TABLE IF EXISTS rw_hoodratings;
 DROP TABLE IF EXISTS rw_listings_by_neighbourhood;
 
 CREATE TABLE rw_listings (
@@ -16,10 +18,10 @@ CREATE TABLE rw_listings (
     latitude INT NOT NULL,
     longitude INT NOT NULL,
     neighbourhood_cleansed VARCHAR(30) NOT NULL,
-    city VARCHAR(30) NOT NULL, 
+    city VARCHAR(30) NOT NULL,
+	zipcode VARCHAR(30) NOT NULL,
     property_type VARCHAR(30) NOT NULL,
     room_type VARCHAR(30) NOT NULL,
-    accomodates INT, 
     bedrooms INT NOT NULL,
     bathrooms INT NOT NULL,
     price DECIMAL NOT NULL,
@@ -47,14 +49,25 @@ CREATE TABLE rw_listings_by_propertytype (
 
 CREATE TABLE rw_top_propertytypes (
     propertytype VARCHAR(30) NOT NULL,
-    listings INT NOT NULL
+    listings INT NOT NULL,
+	percent DECIMAL NOT NULL
 );
 
-CREATE TABLE rw_highest_priced_neighbourhoods (
+CREATE TABLE rw_hoodlistings (
+    neighbourhood VARCHAR(50) NOT NULL,
+    listings INT NOT NULL
+    );
+
+CREATE TABLE rw_hoodratings (
+    neighbourhood VARCHAR(50) NOT NULL,
+    avgrating DECIMAL NOT NULL
+    );
+	
+CREATE TABLE rw_hoodprices (
     neighbourhood VARCHAR(50) NOT NULL,
     avgprice DECIMAL NOT NULL
     );
-
+	
 CREATE TABLE rw_listings_by_neighbourhood (
     neighbourhood VARCHAR(50) NOT NULL,
     listings INT NOT NULL,

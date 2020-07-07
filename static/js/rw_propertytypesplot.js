@@ -1,7 +1,8 @@
   // PLOT LISTINGS BY PROPERTY TYPE
-  
+  url = "{{ url_for ('properties') }}"
+  d3.json(url, function(d) {
   // Load the property type data from rw_listings_by_propertytype.csv
-  d3.csv("static/data/rw_listings_by_propertytype.csv").then(function(d) {
+  // d3.csv("static/data/rw_listings_by_propertytype.csv").then(function(d) {
     // confirm that the data was read accurately
     console.log(d);
  
