@@ -18,8 +18,8 @@ var layerGroup = L.layerGroup().addTo(myMap);
 
 // FUNCTION TO CREATE MAP LAYERS TO SHOW RATING SCORE FOR EACH LISTING 
 function createMarker(neighbourhood){
-  // Load data from rw_listings.csv
-  d3.csv("static/data/listings_details.csv").then(function(d) {
+  // Load data from database
+  d3.json("/cleanlistings").then(function(d) {
     // Confirm that the listings data was read accurately
     console.log(d);
 
@@ -66,7 +66,7 @@ function init() {
   d3.csv("static/data/neighbourhoods.csv").then((data) => {
     console.log(data);
     
-    // Append zipcodes into the dropdown menu
+    // Append neighbourhoods into the dropdown menu
     for (j=0; j < data.length; j++) {
       var hood = data[j].neighbourhood
       dropdown.append("option").text(hood).property("value");

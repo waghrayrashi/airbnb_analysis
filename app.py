@@ -171,6 +171,63 @@ def roomtypes():
     session.close()
     # Return the json
     return jsonify(room_types)
+#######################################################
+# Render the database table neighbourhoodsummary
+#######################################################
+@app.route("/hoodssummary")
+def hoodssummary():
+    """Query the database for neighbourhoodsummary"""
+    # Create session
+    session = Session(bind=engine)
+    
+    # Query the table for columns of interest
+    hoodssummary = session.query(Hoodssummary).all()
+    
+    # Create an empty list
+    hoods_summary = []
+    
+    # Loop through each row and create dictionaries for each column
+    for hood in hoodssummary:
+        hoods_dict = {}
+        hoods_dict["neighbourhood"] = hood.neighbourhood
+        hoods_dict["listings"] = hood.listings
+        hoods_dict["avgprice"] = hood.avgprice
+        hoods_dict["avgrating"] = hood.avgrating
+        # Append all columns to the object
+        hoods_summary.append(hoods_dict)
+    
+    session.close()
+    # Return the json
+    return jsonify(hoods_summary)
+    
+#######################################################
+# Render the database table neighbourhoods
+#######################################################
+# @app.route("/hoods")
+# def hoods():
+#     """Query the database for neighbourhoods"""
+#     # Create session
+#     session = Session(bind=engine)
+    
+#     # Query the table for columns of interest
+#     roomtypes = session.query(Roomtypes).all()
+    
+#     # Create an empty list
+#     room_types = []
+    
+#     # Loop through each row and create dictionaries for each column
+#     for listing in roomtypes:
+#         rtypes_dict = {}
+#         rtypes_dict["propertytype"] = listing.roomtype
+#         rtypes_dict["listings"] = listing.listings
+#         rtypes_dict["percent"] = listing.percent
+        
+#         # Append all columns to the object
+#         room_types.append(rtypes_dict)
+    
+#     session.close()
+#     # Return the json
+#     return jsonify(room_types)
     
 #######################################################
 # Render the Rental Landscape HTML page HTML 

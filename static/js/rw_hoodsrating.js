@@ -1,6 +1,6 @@
 // PLOT RATINGS BY NEIGHBOURHOOD
   // Load Room type counts from the csv file
-  d3.csv("static/data/rw_listings_by_neighbourhood2.csv").then(function(d) {
+  d3.json("/hoodssummary").then(function(d) {
     // console.log(d);
     //  Load the data into arrays Room Types, Listings and Percent
     var hoods = d.map((item) => item.neighbourhood);
