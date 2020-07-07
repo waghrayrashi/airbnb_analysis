@@ -4,22 +4,21 @@
 -- DROP TABLE IF EXISTS reviews_details;
 
 -- Transformed Tables
-DROP TABLE IF EXISTS rw_listings;
-DROP TABLE IF EXISTS rw_listings_by_roomtype;
-DROP TABLE IF EXISTS rw_listings_by_propertytype;
-DROP TABLE IF EXISTS rw_top_propertytypes;
-DROP TABLE IF EXISTS rw_hoodlistings;
-DROP TABLE IF EXISTS rw_hoodprices;
-DROP TABLE IF EXISTS rw_hoodratings;
-DROP TABLE IF EXISTS rw_listings_by_neighbourhood;
+DROP TABLE IF EXISTS alllistings;
+DROP TABLE IF EXISTS roomtypes;
+DROP TABLE IF EXISTS propertytypes;
+DROP TABLE IF EXISTS toppropertytypes;
+DROP TABLE IF EXISTS hoodlistings;
+DROP TABLE IF EXISTS hoodprices;
+DROP TABLE IF EXISTS hoodratings;
+DROP TABLE IF EXISTS neighbourhoodsummary;
 
-CREATE TABLE rw_listings (
+CREATE TABLE alllistings (
     id INT PRIMARY KEY,
-    latitude INT NOT NULL,
-    longitude INT NOT NULL,
-    neighbourhood_cleansed VARCHAR(30) NOT NULL,
+    latitude DECIMAL NOT NULL,
+    longitude DECIMAL NOT NULL,
+    neighbourhood_cleansed INT NOT NULL,
     city VARCHAR(30) NOT NULL,
-	zipcode VARCHAR(30) NOT NULL,
     property_type VARCHAR(30) NOT NULL,
     room_type VARCHAR(30) NOT NULL,
     bedrooms INT NOT NULL,
@@ -35,41 +34,41 @@ CREATE TABLE rw_listings (
     cancellation_policy VARCHAR(30) NOT NULL
 );
 
-CREATE TABLE rw_listings_by_roomtype (
+CREATE TABLE roomtypes (
     roomtype VARCHAR(30) NOT NULL,
     listings INT NOT NULL,
 	percent DECIMAL NOT NULL
 );
 
-CREATE TABLE rw_listings_by_propertytype (
+CREATE TABLE propertytypes (
     propertytype VARCHAR(30) NOT NULL,
     listings INT NOT NULL,
 	percent DECIMAL NOT NULL
 );
 
-CREATE TABLE rw_top_propertytypes (
+CREATE TABLE toppropertytypes (
     propertytype VARCHAR(30) NOT NULL,
     listings INT NOT NULL,
 	percent DECIMAL NOT NULL
 );
 
-CREATE TABLE rw_hoodlistings (
-    neighbourhood VARCHAR(50) NOT NULL,
+CREATE TABLE hoodlistings (
+    neighbourhood INT NOT NULL,
     listings INT NOT NULL
     );
 
-CREATE TABLE rw_hoodratings (
-    neighbourhood VARCHAR(50) NOT NULL,
+CREATE TABLE hoodratings (
+    neighbourhood INT NOT NULL,
     avgrating DECIMAL NOT NULL
     );
 	
-CREATE TABLE rw_hoodprices (
-    neighbourhood VARCHAR(50) NOT NULL,
+CREATE TABLE hoodprices (
+    neighbourhood INT NOT NULL,
     avgprice DECIMAL NOT NULL
     );
 	
-CREATE TABLE rw_listings_by_neighbourhood (
-    neighbourhood VARCHAR(50) NOT NULL,
+CREATE TABLE neighbourhoodsummary (
+    neighbourhood INT NOT NULL,
     listings INT NOT NULL,
     avgprice DECIMAL NOT NULL,
     avgrating DECIMAL NOT NULL

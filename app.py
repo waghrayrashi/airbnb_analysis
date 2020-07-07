@@ -1,7 +1,6 @@
 ##########################################
 # Flask Application
 ##########################################
-
 # Dependencies and Setup
 import os
 from os import environ
@@ -17,11 +16,6 @@ from sqlalchemy import create_engine
 
 from flask import Flask, jsonify, render_template, url_for
 from flask_sqlalchemy import SQLAlchemy
-
-##########################################
-# Flask Set up
-##########################################
-app = Flask(__name__)
 
 ##########################################
 # Database Connection Set up
@@ -41,25 +35,29 @@ Base = automap_base()
 # Reflect the tables
 Base.prepare(engine, reflect=True)
 
-# Save references to each transformed data table 
-Listingsdetails = Base.classes.rw_listings
-Roomtypes = Base.classes.rw_listings_by_roomtype
-Propertytypes = Base.classes.rw_listings_by_propertytype
-Toppropertytypes = Base.classes.rw_top_propertytypes
-hoodlistings = Base.classes.rw_hoodlistings
-hooprices = Base.classes.rw_hoodprices
-hoodratings = Base.classes.rw_hoodratings
-hoodssummary = Base.classes.rw_listings_by_neighbourhood
+# Save references to each table in database 
+Alllistings = Base.classes.alllistings
+Roomtypes = Base.classes.roomtypes
+Propertytypes = Base.classes.propertytypes
+Toppropertytypes = Base.classes.toppropertytypes
+Hoodlistings = Base.classes.hoodlistings
+Hoodprices = Base.classes.hoodprices
+Hoodratings = Base.classes.hoodratings
+Hoodssummary = Base.classes.neighbourhoodsummary
 
 # Create a class for new table - trying this for just a small neighbourhood group table
 # class Neighbourhoods(db.Model):
-#         "Name" = db.Column(db.String)
-#         "zipcode" = db.Column(db.String)
+#         "Neighbourhood" = db.Column(db.String)
+#         "zipcode" = db.Column(db.Integer)
+
+##########################################
+# Flask Set up
+##########################################
+app = Flask(__name__)
 
 ###################################################################
 # SET FLASK ROUTES
 ###################################################################
-
 ######################################################
 # Render the Index HTML on the main route
 ######################################################
@@ -68,9 +66,9 @@ def index():
     """Return the homepage."""
     return render_template("index.html")
 
-#######################################################
-# Render the Database table Listings Details
-#######################################################
+######################################################
+# Render the database table alllistings
+######################################################
 @app.route("/cleanlistings")
 def cleanlistings():
     """Query the database for listings details table."""
@@ -79,7 +77,7 @@ def cleanlistings():
     session = Session(bind=engine)
     
     # Query the database table for columns of interest
-    alllistings = db.session.query(Listingsdetails).all()
+    alllistings = db.session.query(Alllistings).all()
     
     # Create an empty list
     listings_details = []
@@ -114,8 +112,9 @@ def cleanlistings():
     session.close()
     # Return the json
     return jsonify(listings_details)
+
 #######################################################
-# Render the Database table Listings by Property Type
+# Render the database table propertytypes
 #######################################################
 @app.route("/propertytypes")
 def propertytypes():
@@ -123,9 +122,6 @@ def propertytypes():
 
     # Create session
     session = Session(bind=engine)
-    
-    # Save references to the data table 
-    Propertytypes = Base.classes.rw_listings_by_propertytype
     
     # Query the table for columns of interest
     propertytypes = session.query(Propertytypes).all()
@@ -148,16 +144,13 @@ def propertytypes():
     return jsonify(property_types)
 
 #######################################################
-# Render the Database table Listings by Room Type
+# Render the database table roomtypes
 #######################################################
 @app.route("/roomtypes")
 def roomtypes():
     """Query the database for listings by property type"""
     # Create session
     session = Session(bind=engine)
-    
-    # Save references to the data table 
-    Roomtypes = Base.classes.rw_listings_by_roomtype
     
     # Query the table for columns of interest
     roomtypes = session.query(Roomtypes).all()
@@ -178,6 +171,7 @@ def roomtypes():
     session.close()
     # Return the json
     return jsonify(room_types)
+    
 #######################################################
 # Render the Rental Landscape HTML page HTML 
 #######################################################

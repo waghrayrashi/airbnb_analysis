@@ -1,7 +1,7 @@
   // PLOT LISTINGS BY ROOM TYPE
   // Load Room type counts from the csv file
-  d3.csv("static/data/rw_listings_by_roomtype.csv").then(function(d) {
-    // console.log(d);
+  d3.json("/roomtypes").then(function(d) {
+    console.log(d);
     //  Load the data into arrays Room Types, Listings and Percent
     var roomTypes = d.map((item) => item.roomtype);
     var roomTypeListings = d.map((item) => item.listings);
