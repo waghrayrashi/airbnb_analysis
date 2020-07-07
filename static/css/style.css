@@ -65,20 +65,20 @@ a{
 }
 
 /* Images */
-#dashboardimg{
+/* #dashboardimg{
   width:100% !important;
   height:100% !important;
-}
+} */
 .activeimage:hover{
   border-color:#13a56d;
   border-style: solid; 
-  
+ 
 } 
 /* For Asheville image */
-#ashevilleimage{
-  width: 850px;
-  height: 50px;
-}
+/* #ashevilleimage{
+  width: 100%;
+  height: 100%;
+} */
 
 .panel:hover{
   border-color:#13a56d;

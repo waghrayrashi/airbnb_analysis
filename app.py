@@ -141,8 +141,8 @@ def hoodavgratingsmap():
 #######################################################
 @app.route("/hoodavgpricesmap")
 def hoodavgpricesmap():
-    """Return the avgprices map page."""
-    return render_template("rw_hoodavgpricesmap.html")
+    """Return Janani's Neighbourhood prices map page."""
+    return render_template("airbnbpricing.html")
 
 #######################################################
 # Render the Analysis Methodology HTML
@@ -160,6 +160,13 @@ def acknowledgements():
     """Return the acknowledgements page."""
     return render_template("rw_acknowledgements.html")
 
+########################################################
+# Render Janani's Pricing Choropleth HTML 
+#######################################################
+# @app.route("/airbnbpricing")
+# def airbnbpricing():
+#     """Return the Janani's airbnbpricing page."""
+#     return render_template("airbnbpricing.html")
 ###################################################################
 # Code to actually run the app
 ###################################################################
