@@ -18,6 +18,11 @@ from flask import Flask, jsonify, render_template, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 ##########################################
+# Flask Set up
+##########################################
+app = Flask(__name__)
+
+##########################################
 # Database Connection Set up
 ##########################################
 # Setup SQLAlchemy with flask
@@ -50,10 +55,7 @@ Hoodssummary = Base.classes.neighbourhoodsummary
 #         "Neighbourhood" = db.Column(db.String)
 #         "zipcode" = db.Column(db.Integer)
 
-##########################################
-# Flask Set up
-##########################################
-app = Flask(__name__)
+
 
 ###################################################################
 # SET FLASK ROUTES
