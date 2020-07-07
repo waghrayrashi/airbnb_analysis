@@ -84,56 +84,108 @@
       </nav>
     </div>
     <!-- Navigation Section Ends -->
-
-    <!-- Asheville image section begins -->
-    <!-- <div>
-      <div id="ashevilleimage">
-        <img src="static/images/Asheville_at_dusk.jpg" alt="Asheville" width=100% height = 100%>
-      </div>
-    </div> -->
-    <!-- Asheville image section ends -->
-
+    
     <!--Content Section Begins-->
     <div class="container">
+      <!--Row 1 for Heading Section Begins-->
       <div class="row">
-        <div class="box">
-          <h3 class="title">Exploring Asheville's Airbnb Landscape</h3>
-          <br>
-          <h4 class="title">Airbnb</h4>
-          <p>Airbnb is the world's biggest accomodation sharing-site with listings across 81,000 cities and 191 countries in the world.
-            It provides more than 5 million spaces to stay of which over 660,000 listings are in the USA. 
-            With its ever growing number of online rental listings, it has successfully disrupted
-             the hospitality industry as more and more travellers ditch high-priced 
-            hotels and resorts in favor of premier, cost-effective accomodations provided by Airbnb.</p>
-          <h4 class="title">Asheville, North Carolina</h4>
-          <p>Located in the Blue Ridge Mountains, Asheville is the largest city in western North Carolina and is known for its breathtaking ladscapes, 
-            vibrant art-scene and historic architecture. As one of the most sought after vacation spots for mountain lovers, the city offers a variety
-             of stay options to travellers including about 2400 Airbnb rentals. Airbnb rental options in the city are a mixed bag of houses, apartments, secluded cabins, RV's and campers.</p>
-          <h4 class="title">Our Focus</h4>
-          <p>Through this project, our team of mountain loving Data Science Enthusiasts explore Airbnb's rental landscape in Asheville, North Carolina.
-            This site provides information about the data set, analysis tools & processes employed and the results of this exploratory analysis.
-            The results of the analysis are provided as static and interactive visualizations.</p>
-          <p>Due to time limitations, the focus of this exploratory analysis was limited to the following:</p>
-          <ol>
-            <li>Identify the different types of properties for rent in Asheville? How do they vary by neighbourhood?</li>
-            <li>Identify which listings and neighbourhoods are rated highly by guests?</li>
-            <li>Explore how rental prices vary by location?</li>
-          </ol>
+        <div class="col-md-12 text-center">
+          <h5>Airbnb Listings in Asheville, NC</h5>
+          <p>Select options to explore the Airbnb Listings in Asheville.</p>
         </div>
       </div>
+      <!--Row 1 for Heading Section ends-->   
+      
+      <!--Row 2 for main content Begins-->   
+      <div class="row">
+        <!--Row 2 small left pane for selectors begins --> 
+        <div class="col-md-2">
+          <!-- <select id="selDataset" onchange="optionChanged(this.value)"></select> -->
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Neighbourhood</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Room Type</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Property Type</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Bedrooms</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Bathrooms</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Superhost</label>
+            </div>
+            <button type="submit" id="filterlistings" class="btn btn-primary">Filter</button>
+          </form>
+        </div>
+        <!--Row 2 small left pane for selectors ends -->
+        <!--Row 2 large left pane for displaying content begins -->
+        <div class="col-md-10">
+          <p>content table/maps will be included on this section of teh page</p>
+        </div>
+        <!--Row 2 large left pane for displaying content ends -->
+      </div>
+      <!--Row 2 for main content ends-->  
     </div>
     <!--Content Section Ends-->
-  
+    
     <!-- Footer Section Begins-->
     <footer>
       <div class="footer">Copyright &copy; Data Science Enthusiasts 2020</div>
     </footer>
     <!-- Footer Section Ends-->
-    
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-  </body>
-</html>
+    <!-- Plot JavaScript Files-->
+    <script src="static/js/rw_landscape.js"></script>
+
+    <!--D3 Dependency -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  
+    </body>
+  </html>
