@@ -82,7 +82,7 @@ def cleanlistings():
     Alllistings = Base.classes.alllistings
 
     # Query the database table for columns of interest
-    rentals = db.session.query(Alllistings).all()
+    rentals = session.query(Alllistings).all()
     
     # Create an empty list
     listings_details = []
@@ -91,21 +91,21 @@ def cleanlistings():
     for listing in rentals:
         listings_dict = {
             "id": listing.id,
-            "latitude": listing.latitude,
-            "longitude": listing.longitude,
+            "latitude": float(listing.latitude),
+            "longitude": float(listing.longitude),
             "neighbourhood": listing.neighbourhood_cleansed,
             "city": listing.city,
             "property_type": listing.property_type,
             "room_type": listing.room_type,
             "bedrooms": listing.bedrooms,
             "bathrooms": listing.bathrooms,
-            "price": listing.price,
+            "price": float(listing.price),
             "host_since": listing.host_since,
             "host_is_superhost": listing.host_is_superhost,
             "guests_included": listing.guests_included,
             "minimum_nights": listing.minimum_nights,
             "number_of_reviews": listing.number_of_reviews,
-            "review_scores_rating": listing.review_scores_rating,
+            "review_scores_rating": float(listing.review_scores_rating),
             "instant_bookable": listing.instant_bookable,
             "cancellation_policy": listing.cancellation_policy }
         
