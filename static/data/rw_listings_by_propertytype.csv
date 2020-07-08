@@ -1,26 +1,26 @@
-propertytype,listings,percent
-House,903,41.59373560571165
-Apartment,355,16.3519115614924
-Guest suite,327,15.062183325656381
-Bungalow,109,5.020727775218793
-Condominium,92,4.237678489175495
-Guesthouse,92,4.237678489175495
-Cottage,69,3.178258866881621
-Cabin,57,2.62551819438047
-Townhouse,35,1.612160294795025
-Loft,30,1.381851681252879
-Bed and breakfast,18,0.8291110087517274
-Tiny house,17,0.7830492860432979
-Other,12,0.5527406725011516
-Camper/RV,10,0.4606172270842929
-Chalet,10,0.4606172270842929
-Campsite,8,0.36849378166743435
-Farm stay,7,0.32243205895900506
-Yurt,5,0.23030861354214646
-Boutique hotel,4,0.18424689083371718
-Treehouse,3,0.1381851681252879
-Hostel,3,0.1381851681252879
-Tent,2,0.09212344541685859
-Castle,1,0.046061722708429294
-Bus,1,0.046061722708429294
-Aparthotel,1,0.046061722708429294
+propertytype,listings
+House,903
+Apartment,355
+Guest suite,327
+Bungalow,109
+Condominium,92
+Guesthouse,92
+Cottage,69
+Cabin,57
+Townhouse,35
+Loft,30
+Bed and breakfast,18
+Tiny house,17
+Other,12
+Camper/RV,10
+Chalet,10
+Campsite,8
+Farm stay,7
+Yurt,5
+Boutique hotel,4
+Treehouse,3
+Hostel,3
+Tent,2
+Castle,1
+Bus,1
+Aparthotel,1
