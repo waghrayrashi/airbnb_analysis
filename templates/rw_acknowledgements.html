@@ -55,9 +55,10 @@
                 <a class="dropdown-item" href="{{ url_for ('roomtypeplot') }}">Types of Listings</a>
                 <a class="dropdown-item" href="{{ url_for ('propertytypesplot') }}">Listed Property Types</a>
                 <a class="dropdown-item" href="{{ url_for ('hoodsavgpricesplot') }}">Average Prices by Neighbourhood</a>
-                <a class="dropdown-item" href="{{ url_for ('hoodsavgratingsplot') }}">Growth Analysis</a>
-                <a class="dropdown-item" href="{{ url_for ('ratingsmap') }}">Highly Rated Listings</a>
-                <a class="dropdown-item" href="{{ url_for ('hoodavgpricesmap') }}">Neighbourhood Pricing</a>
+                <a class="dropdown-item" href="{{ url_for ('pg_growth') }}">Growth Analysis</a>
+                <!-- <a class="dropdown-item" href="{{ url_for ('ratingsmap') }}">Highly Rated Listings</a> -->
+                <a class="dropdown-item" href="{{ url_for ('ss_ratingsmap') }}">Highly Rated Listings</a>
+                <a class="dropdown-item" href="{{ url_for ('js_pricesmap') }}">Neighbourhood Pricing</a>
               </div>
             </li>
 
@@ -144,7 +145,7 @@
     <!-- Footer Section Ends-->
       
     <!-- Granim Javascript -->
-    <script src="static/js/granim.js-2.0.0/dist/granim.min.js"></script>
+    <script src="static/js/granim.min.js"></script>
     
     <!-- Script to create a granim instance begins-->
     <script>

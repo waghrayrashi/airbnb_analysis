@@ -31,10 +31,11 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for ('dashboard') }}">Dashboard</a>
             </li>
-            <!-- Landscape in the Navigation Section -->
+            <!-- Landscape in the Navigation Section
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for ('landscape') }}">Rental Landscape</a>
-            </li>
+            </li> -->
+            
             <!-- Listings in the Navigation Section -->
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for ('listings') }}">Listings</a>
@@ -49,9 +50,10 @@
                 <a class="dropdown-item" href="{{ url_for ('roomtypeplot') }}">Types of Listings</a>
                 <a class="dropdown-item" href="{{ url_for ('propertytypesplot') }}">Listed Property Types</a>
                 <a class="dropdown-item" href="{{ url_for ('hoodsavgpricesplot') }}">Average Prices by Neighbourhood</a>
-                <a class="dropdown-item" href="{{ url_for ('hoodsavgratingsplot') }}">Growth Analysis</a>
-                <a class="dropdown-item" href="{{ url_for ('ratingsmap') }}">Highly Rated Listings</a>
-                <a class="dropdown-item" href="{{ url_for ('hoodavgpricesmap') }}">Neighbourhood Pricing</a>
+                <a class="dropdown-item" href="{{ url_for ('pg_growth') }}">Growth Analysis</a>
+                <!-- <a class="dropdown-item" href="{{ url_for ('ratingsmap') }}">Highly Rated Listings</a> -->
+                <a class="dropdown-item" href="{{ url_for ('ss_ratingsmap') }}">Highly Rated Listings</a>
+                <a class="dropdown-item" href="{{ url_for ('js_pricesmap') }}">Neighbourhood Pricing</a>
               </div>
             </li>
 

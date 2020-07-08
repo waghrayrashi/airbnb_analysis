@@ -55,9 +55,10 @@
                 <a class="dropdown-item" href="{{ url_for ('roomtypeplot') }}">Types of Listings</a>
                 <a class="dropdown-item" href="{{ url_for ('propertytypesplot') }}">Listed Property Types</a>
                 <a class="dropdown-item" href="{{ url_for ('hoodsavgpricesplot') }}">Average Prices by Neighbourhood</a>
-                <a class="dropdown-item" href="{{ url_for ('hoodsavgratingsplot') }}">Growth Analysis</a>
-                <a class="dropdown-item" href="{{ url_for ('ratingsmap') }}">Highly Rated Listings</a>
-                <a class="dropdown-item" href="{{ url_for ('hoodavgpricesmap') }}">Neighbourhood Pricing</a>
+                <a class="dropdown-item" href="{{ url_for ('pg_growth') }}">Growth Analysis</a>
+                <!-- <a class="dropdown-item" href="{{ url_for ('ratingsmap') }}">Highly Rated Listings</a> -->
+                <a class="dropdown-item" href="{{ url_for ('ss_ratingsmap') }}">Highly Rated Listings</a>
+                <a class="dropdown-item" href="{{ url_for ('js_pricesmap') }}">Neighbourhood Pricing</a>
               </div>
             </li>
 
@@ -111,7 +112,7 @@
       <div class="row">
         <div class="col-lg-6">
           <div class="title">Airbnb Growth in Asheville</div>
-            <a href="{{ url_for ('hoodsavgratingsplot') }}">
+            <a href="{{ url_for ('pg_growth') }}">
             <img class="panel" id="activeimage" src="static/images/airbnbgrowth.png" alt="Growth Analysis" width="500px", height="300px">
             </a>
         </div>
@@ -128,14 +129,14 @@
       <div class="row">
         <div class="col-lg-6">
           <div class="title">Best Neighbourhoods by Rating</div>
-            <a href="{{ url_for ('ratingsmap') }}">
+            <a href="{{ url_for ('ss_ratingsmap') }}">
             <img class="panel" id="activeimage" src="static/images/ratingsmap.png" alt="Neighbourhood Ratings"width="500px", height="300px">
             </a>
         </div>
                 
         <div class="col-lg-6">
           <div class="title">Best Neighbourhoods by Price</div>
-            <a href="{{ url_for ('hoodavgpricesmap') }}">
+            <a href="{{ url_for ('js_pricesmap') }}">
             <img class="panel" id="activeimage" src="static/images/AshevilleChoropleth.png" target = "_blank" alt="Neighbourhood Prices" width="500px", height="300px" >
             </a>
         </div>

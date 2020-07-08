@@ -1,6 +1,6 @@
 // CREATE LEAFLET MAP OBJECT 
-// Create a map object centered at Asheville, NC [35.5950581, -82.5514869]
-var myMap = L.map("ratingsmapid").setView([35.5950581, -82.5514869], 13);
+// Create a map object centered at Asheville, NC [35.5950581, -82.5514869] Downtown: 35.5946, -82.5540 Asheville: 35.5950581, -82.5514869
+var myMap = L.map("ratingsmapid").setView([35.5950, -82.5514], 13);
     
 // ADD STREET MAP TILE LAYER USING MAPBOX 
 // Add a tile layer to display the streets on the map using Mapbox tiles

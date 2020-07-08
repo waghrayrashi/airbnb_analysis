@@ -237,7 +237,6 @@ def roomtypes():
         rtypes_dict = {
             "propertytype": listing.roomtype,
             "listings": listing.listings,
-            "percent": listing.percent
         }
         # Append all columns to the object
         room_types.append(rtypes_dict)
@@ -270,8 +269,8 @@ def hoodssummary():
         hoods_dict = {
             "neighbourhood": hood.neighbourhood,
             "listings": hood.listings,
-            "avgprice": hood.avgprice,
-            "avgrating": hood.avgrating }
+            "avgprice": float(hood.avgprice),
+            "avgrating": float(hood.avgrating) }
         # Append all columns to the object
         hoods_summary.append(hoods_dict)
     
@@ -279,13 +278,7 @@ def hoodssummary():
     # Return the json
     return jsonify(hoods_summary)
     
-#######################################################
-# Render the Rental Landscape HTML  
-#######################################################
-@app.route("/landscape")
-def landscape():
-    """Return the landscape page."""
-    return render_template("rw_landscape.html")
+
 #######################################################
 # Render the Dashboard HTML 
 #######################################################
@@ -329,31 +322,23 @@ def hoodsavgpricesplot():
 #######################################################
 # Render Growth Analysis plot HTML
 #######################################################
-@app.route("/hoodsavgratingsplot")
-def hoodsavgratingsplot():
-    """Return the avgratings plot page."""
+@app.route("/pg_growth")
+def growth():
+    """Return the Preethoika's Growth plot page."""
     return render_template("pg_growth.html")
-
-#######################################################
-# Render Listings by Neighbourhood Map HTML
-#######################################################
-@app.route("/hoodlistingsmap")
-def hoodlistingsmap():
-    """Return the listings map page."""
-    return render_template("rw_hoodlistingsmap.html")
 
 #######################################################
 # Render Neighbourhood Ratings Map HTML
 #######################################################
-@app.route("/ratingsmap")
-def ratingsmap():
+@app.route("/ss_ratingsmap")
+def ssratingsmap():
     """Return the Surabhi's ratings map page."""
-    return render_template("ratingsmap.html")
+    return render_template("ss_ratingsmap.html")
 
 #######################################################
 # Render Average Price by Neighbourhood Map HTML
 #######################################################
-@app.route("/hoodavgpricesmap")
+@app.route("/js_pricesmap")
 def hoodavgpricesmap():
     """Return Janani's Neighbourhood prices map page."""
     return render_template("airbnbpricing.html")
@@ -373,6 +358,41 @@ def methodology():
 def acknowledgements():
     """Return the acknowledgements page."""
     return render_template("rw_acknowledgements.html")
+
+#############################################################################################
+# Rashi's additional routes
+############################################################################################
+#######################################################
+# Render Neighbourhood Ratings Map HTML
+#######################################################
+@app.route("/ratingsmap")
+def ratingsmap():
+    """Return the Rashi's ratings map page."""
+    return render_template("rw_ratingsmap.html")
+
+#######################################################
+# Render Growth Analysis plot HTML
+#######################################################
+@app.route("/growth")
+def growth():
+    """Return the Rashi's growth plot page."""
+    return render_template("rw_growth.html")
+
+#######################################################
+# Render Listings by Neighbourhood Map HTML
+#######################################################
+@app.route("/hoodlistingsmap")
+def hoodlistingsmap():
+    """Return the listings map page."""
+    return render_template("rw_hoodlistingsmap.html")
+
+#######################################################
+# Render the Rental Landscape HTML  
+#######################################################
+@app.route("/landscape")
+def landscape():
+    """Return the landscape page."""
+    return render_template("rw_landscape.html")
 
 ###################################################################
 # Code to actually run the app

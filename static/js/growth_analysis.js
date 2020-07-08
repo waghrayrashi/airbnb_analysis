@@ -2,7 +2,7 @@ var year = [];
 var valueCount =[];
 
 function readData(){
-    d3.csv('static/data/listings_details.csv').then((data) => {
+    d3.json('/cleanlistings').then((data) => {
         console.log(data);
         var hostSince = data.map(row => row.host_since);
         //console.log(hostSince);
@@ -19,7 +19,7 @@ function readData(){
         for(var i=0;i<sorted.length;i++)
         {
         //    var splitValue = sorted[i].split("-",1);
-           var splitValue = sorted[i].split("/",1);
+           var splitValue = sorted[i].split("-",1);
            splitArray.push(splitValue);
         }
         console.log(splitArray);
