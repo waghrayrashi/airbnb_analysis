@@ -52,22 +52,6 @@ def index():
     """Return the homepage."""
     return render_template("index.html")
 
-######################################################
-# Render the test  HTML 
-######################################################
-@app.route("/testhtml")
-def testhtml():
-    """Return the testhtml."""
-    return render_template("test.html")
-
-######################################################
-# Return the list of classes in the database
-######################################################
-@app.route("/testdbclasses")
-def testdbclasses():
-    # Return the list of classes in the database
-    return f"All classes available in the database: {allclasses}"
-
 #####################################################
 # # Render the database table alllistings
 # ######################################################
@@ -139,8 +123,9 @@ def propertytypes():
     for listing in propertytypes:
         ptypes_dict = {
             "propertytype": listing.propertytype,
-            "listings": listing.listings,
-            "percent": listing.percent}
+            "listings": listing.listings
+            # "percent": listing.percent
+            }
         
         # Append all columns to the object
         property_types.append(ptypes_dict)
@@ -148,70 +133,6 @@ def propertytypes():
     session.close()
     # Return the json
     return jsonify(property_types)
-
-#######################################################
-# Render the database table propertytypes
-#######################################################
-@app.route("/propertytypesnofloat")
-def propertytypesnofloat():
-    """Query the database for listings by propertytypesnofloat"""
-
-    # Save references to each table in database 
-    Propertytypesnofloat = Base.classes.propertytypesnofloat
-
-    # Create session
-    session = Session(bind=engine)
-    
-    # Query the table for columns of interest
-    ptypesnofloat = session.query(Propertytypesnofloat).all()
-    
-    # Create an empty list
-    property_typesnofloat = []
-    
-    # Loop through each row and create dictionaries for each column   
-    for listing in ptypesnofloat:
-        ptypes_dict = {
-            "propertytype": listing.propertytype,
-            "listings": listing.listings }
-        
-        # Append all columns to the object
-        property_typesnofloat.append(ptypes_dict)
-    
-    session.close()
-    # Return the json
-    return jsonify(property_typesnofloat)
-    
-#######################################################
-# Render the database table roomtypes
-#######################################################
-@app.route("/roomtypesnofloat")
-def roomtypesnofloat():
-    """Query the database for listings by roomtypesnofloat"""
-    
-    # Save references to each table in database 
-    Roomtypesnofloat = Base.classes.roomtypesnofloat
-    
-    # Create session
-    session = Session(bind=engine)
-    
-    # Query the table for columns of interest
-    rtypesnofloat = session.query(Roomtypesnofloat).all()
-    
-    # Create an empty list
-    room_typesnofloat = []
-    
-    # Loop through each row and create dictionaries for each column
-    for listing in rtypesnofloat:
-        rtypes_dict = {
-            "roomtype": listing.roomtype,
-            "listings": listing.listings,
-        }
-        # Append all columns to the object
-        room_typesnofloat.append(rtypes_dict)
-    
-    session.close()
-    # Return the json
-    return jsonify(room_typesnofloat)
 
 #######################################################
 # Render the database table roomtypes
@@ -236,7 +157,7 @@ def roomtypes():
     for listing in roomtypes:
         rtypes_dict = {
             "propertytype": listing.roomtype,
-            "listings": listing.listings,
+            "listings": listing.listings
         }
         # Append all columns to the object
         room_types.append(rtypes_dict)
@@ -278,7 +199,6 @@ def hoodssummary():
     # Return the json
     return jsonify(hoods_summary)
     
-
 #######################################################
 # Render the Dashboard HTML 
 #######################################################
@@ -324,7 +244,7 @@ def hoodsavgpricesplot():
 #######################################################
 @app.route("/pg_growth")
 def growth():
-    """Return the Preethoika's Growth plot page."""
+    """Return the Preethika's Growth plot page."""
     return render_template("pg_growth.html")
 
 #######################################################
@@ -363,36 +283,115 @@ def acknowledgements():
 # Rashi's additional routes
 ############################################################################################
 #######################################################
+# Render the database table propertytypes
+#######################################################
+# @app.route("/propertytypesnofloat")
+# def propertytypesnofloat():
+#     """Query the database for listings by propertytypesnofloat"""
+
+#     # Save references to each table in database 
+#     Propertytypesnofloat = Base.classes.propertytypesnofloat
+
+#     # Create session
+#     session = Session(bind=engine)
+    
+#     # Query the table for columns of interest
+#     ptypesnofloat = session.query(Propertytypesnofloat).all()
+    
+#     # Create an empty list
+#     property_typesnofloat = []
+    
+#     # Loop through each row and create dictionaries for each column   
+#     for listing in ptypesnofloat:
+#         ptypes_dict = {
+#             "propertytype": listing.propertytype,
+#             "listings": listing.listings }
+        
+#         # Append all columns to the object
+#         property_typesnofloat.append(ptypes_dict)
+    
+#     session.close()
+#     # Return the json
+#     return jsonify(property_typesnofloat)
+    
+#######################################################
+# Render the database table roomtypes
+#######################################################
+# @app.route("/roomtypesnofloat")
+# def roomtypesnofloat():
+#     """Query the database for listings by roomtypesnofloat"""
+    
+#     # Save references to each table in database 
+#     Roomtypesnofloat = Base.classes.roomtypesnofloat
+    
+#     # Create session
+#     session = Session(bind=engine)
+    
+#     # Query the table for columns of interest
+#     rtypesnofloat = session.query(Roomtypesnofloat).all()
+    
+#     # Create an empty list
+#     room_typesnofloat = []
+    
+#     # Loop through each row and create dictionaries for each column
+#     for listing in rtypesnofloat:
+#         rtypes_dict = {
+#             "roomtype": listing.roomtype,
+#             "listings": listing.listings,
+#         }
+#         # Append all columns to the object
+#         room_typesnofloat.append(rtypes_dict)
+    
+#     session.close()
+#     # Return the json
+#     return jsonify(room_typesnofloat)
+    ######################################################
+# Render the test  HTML 
+######################################################
+# @app.route("/testhtml")
+# def testhtml():
+#     """Return the testhtml."""
+#     return render_template("test.html")
+
+######################################################
+# Return the list of classes in the database
+######################################################
+# @app.route("/testdbclasses")
+# def testdbclasses():
+#     # Return the list of classes in the database
+#     return f"All classes available in the database: {allclasses}"
+
+#######################################################
 # Render Neighbourhood Ratings Map HTML
 #######################################################
-@app.route("/ratingsmap")
-def ratingsmap():
-    """Return the Rashi's ratings map page."""
-    return render_template("rw_ratingsmap.html")
+# @app.route("/rw_ratingsmap")
+# def ratingsmap():
+#     """Return the Rashi's ratings map page."""
+#     return render_template("rw_ratingsmap.html")
 
 #######################################################
 # Render Growth Analysis plot HTML
 #######################################################
-@app.route("/growth")
-def growth():
-    """Return the Rashi's growth plot page."""
-    return render_template("rw_growth.html")
+# @app.route("/rw_growth")
+# def rw_growth():
+#     """Return the Rashi's growth plot page."""
+#     return render_template("rw_growth.html")
 
 #######################################################
 # Render Listings by Neighbourhood Map HTML
 #######################################################
-@app.route("/hoodlistingsmap")
-def hoodlistingsmap():
-    """Return the listings map page."""
-    return render_template("rw_hoodlistingsmap.html")
+# @app.route("/rw_hoodlistingsmap")
+# def hoodlistingsmap():
+#     """Return the listings map page."""
+#     return render_template("rw_hoodlistingsmap.html")
 
 #######################################################
 # Render the Rental Landscape HTML  
 #######################################################
-@app.route("/landscape")
-def landscape():
-    """Return the landscape page."""
-    return render_template("rw_landscape.html")
+# @app.route("/rw_landscape")
+# def landscape():
+#     """Return the landscape page."""
+#     return render_template("rw_landscape.html")
 
 ###################################################################
 # Code to actually run the app
