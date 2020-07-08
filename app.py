@@ -303,14 +303,6 @@ def listings():
     return render_template("rw_listings.html")
 
 #######################################################
-# Render the Reviews HTML 
-#######################################################
-@app.route("/reviews")
-def reviews():
-    """Return the reviews page."""
-    return render_template("rw_reviews.html")
-
-#######################################################
 # Render Room Type Plot HTML
 #######################################################
 @app.route("/roomtypeplot")
@@ -351,12 +343,12 @@ def hoodlistingsmap():
     return render_template("rw_hoodlistingsmap.html")
 
 #######################################################
-# Render Rating by Neighbourhood Map HTML
+# Render Neighbourhood Ratings Map HTML
 #######################################################
-@app.route("/hoodavgratingsmap")
-def hoodavgratingsmap():
+@app.route("/ratingsmap")
+def ratingsmap():
     """Return the Surabhi's ratings map page."""
-    return render_template("ss_ratingsmap.html")
+    return render_template("ratingsmap.html")
 
 #######################################################
 # Render Average Price by Neighbourhood Map HTML

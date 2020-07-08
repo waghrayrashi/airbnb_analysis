@@ -46,11 +46,6 @@
               <a class="nav-link" href="{{ url_for ('listings') }}">Listings</a>
             </li>
 
-            <!-- Reviews in the Navigation Section -->
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for ('reviews') }}">Reviews</a>
-            </li>
-
             <!-- Visualizations DropDown Menu in the Navigation Section -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -61,9 +56,8 @@
                 <a class="dropdown-item" href="{{ url_for ('propertytypesplot') }}">Listed Property Types</a>
                 <a class="dropdown-item" href="{{ url_for ('hoodsavgpricesplot') }}">Average Prices by Neighbourhood</a>
                 <a class="dropdown-item" href="{{ url_for ('hoodsavgratingsplot') }}">Growth Analysis</a>
-                <!-- <a class="dropdown-item" href="{{ url_for ('hoodlistingsmap') }}">Popular Neighbourhoods</a> -->
-                <a class="dropdown-item" href="{{ url_for ('hoodavgratingsmap') }}">Best Neighbourhoods by Rating</a>
-                <a class="dropdown-item" href="{{ url_for ('hoodavgpricesmap') }}">Best Neighbourhoods by Price</a>
+                <a class="dropdown-item" href="{{ url_for ('ratingsmap') }}">Highly Rated Listings</a>
+                <a class="dropdown-item" href="{{ url_for ('hoodavgpricesmap') }}">Neighbourhood Pricing</a>
               </div>
             </li>
 
@@ -84,65 +78,96 @@
 
     <!--Content Section Begins-->
     <div class="container">
-      <div class="box">
-        <h3>Thank You</h3>
-        <p>Although our primary goal was to meet the project requirements, the Data Enthusiasts also wanted to ensure that each member
-            of our team is able to successfully build a web application end-to-end individually. The instructional team has been a source
-            of inspiration in this journey and we appreciate and thank them for their support and guidance.</p>
-        <ul>
-          <li>Michael Dinh</li>
-          <li>Brianna McKelvey</li>
-          <li>Taylor Middlebrooks</li>
-        </ul>
-        <h3>Data Science Enthusiasts</h3>
-        <hr>
-        <table class="table table-lg">
-          <thead>
-            <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Email</th>
-              <th scope="col">GitHub</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Janani Sekar</th>
-              <td><a href="jananis@gmail.com">jananisi@gmail.com</a></td>
-              <td><a href="https://github.com/JananiS-lab">https://github.com/JananiS-lab</a></td>
+      <!-- Granim canvas wrapper begins-->
+      <div>
+        <canvas id="granim-canvas" width="1120px" height="150px"></canvas>
+        
+        <!--Content wrapper begins-->
+        <div class="container">
+          <div class="box">
+            <h3>Thank You</h3>
+            <p>Although our primary goal was to meet the project requirements, the Data Enthusiasts also wanted to ensure that each member
+                of our team is able to successfully build a web application end-to-end individually. The instructional team has been a source
+                of inspiration in this journey and we appreciate and thank them for their support and guidance.</p>
+            <ul>
+              <li>Michael Dinh</li>
+              <li>Brianna McKelvey</li>
+              <li>Taylor Middlebrooks</li>
+            </ul>
+            <h3>Data Science Enthusiasts</h3>
+            <hr>
+            <table class="table table-lg">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">GitHub</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Janani Sekar</th>
+                  <td><a href="jananis@gmail.com">jananisi@gmail.com</a></td>
+                  <td><a href="https://github.com/JananiS-lab">https://github.com/JananiS-lab</a></td>
 
-            </tr>
-            <tr>
-              <th scope="row">Preethika Gajendran</th>
-              <td><a href="gpreethika@g.com">gpreethika@gmail.com</a></td>
-              <td><a href="https://github.com/PreethikaG">https://github.com/PreethikaG</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">Preethika Gajendran</th>
+                  <td><a href="gpreethika@g.com">gpreethika@gmail.com</a></td>
+                  <td><a href="https://github.com/PreethikaG">https://github.com/PreethikaG</a></td>
 
-            </tr>
-            <tr>
-              <th scope="row">Rashi Waghray</th>
-              <td><a href="waghrayrashi@hotmail.com">waghrayrashi@hotmail.com</a></td>
-              <td><a href="https://github.com/waghrayrashi">https://github.com/waghrayrashi</a></td>
-            </tr>
-            <tr>
-              <th scope="row">Surabhi Sood</th>
-              <td><a href="surabhisood@gmail.com">surabhisood@gmail.com</a></td>
-              <td><a href="https://github.com/SurabhiSood">https://github.com/SurabhiSood</a></td>
-            </tr>
-          </tbody>
-        </table>
+                </tr>
+                <tr>
+                  <th scope="row">Rashi Waghray</th>
+                  <td><a href="waghrayrashi@hotmail.com">waghrayrashi@hotmail.com</a></td>
+                  <td><a href="https://github.com/waghrayrashi">https://github.com/waghrayrashi</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">Surabhi Sood</th>
+                  <td><a href="surabhisood@gmail.com">surabhisood@gmail.com</a></td>
+                  <td><a href="https://github.com/SurabhiSood">https://github.com/SurabhiSood</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
+    <br>
+    <br>
     <!--Content Section Ends-->
   
-  <!-- Footer Section Begins-->
-  <footer>
-    <div class="footer">Copyright &copy; Data Science Enthusiasts 2020</div>
-</footer>
- <!-- Footer Section Ends-->
-  
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- Footer Section Begins-->
+    <footer>
+      <div class="footer">Copyright &copy; Data Science Enthusiasts 2020</div>
+    </footer>
+    <!-- Footer Section Ends-->
+      
+    <!-- Granim Javascript -->
+    <script src="static/js/granim.js-2.0.0/dist/granim.min.js"></script>
+    
+    <!-- Script to create a granim instance begins-->
+    <script>
+      var granimInstance = new Granim({
+          element: '#granim-canvas',
+          name: 'granim',
+          opacity: [1, 1],
+          states : {
+              "default-state": {
+                  gradients: [
+                      ['#834D9B', '#D04ED6'],
+                      ['#1CD8D2', '#93EDC7']
+                  ]
+              }
+          }
+      });
+    </script>
+    <!-- Script to create a granim instance ends-->
 
-</body>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  </body>
 </html>

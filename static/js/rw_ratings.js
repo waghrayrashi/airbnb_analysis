@@ -44,7 +44,7 @@ function createMarker(neighbourhood){
           color: color,
           // Adjust radius of circle marker 
           // radius: review_scores_rating/4
-        }).bindPopup("<h5>" + listing.id + "</h5><hr><h6>Property Type: " + listing.property_type + "</h6><hr><p>Rating: " + listing.review_scores_rating + "</p>")
+        }).bindPopup("<h5>Listing ID: " + listing.id + "</h5><hr><h6>Property Type: " + listing.property_type + "</h6><hr><p>Rating: " + listing.review_scores_rating + "</p><hr><p>Price: " + listing.price + "</p>")
         .addTo(layerGroup);
       }
     }

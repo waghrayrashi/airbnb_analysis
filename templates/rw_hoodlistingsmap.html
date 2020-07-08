@@ -52,11 +52,6 @@
               <a class="nav-link" href="{{ url_for ('listings') }}">Listings</a>
             </li>
 
-            <!-- Reviews in the Navigation Section -->
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for ('reviews') }}">Reviews</a>
-            </li>
-
             <!-- Visualizations DropDown Menu in the Navigation Section -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -67,9 +62,8 @@
                 <a class="dropdown-item" href="{{ url_for ('propertytypesplot') }}">Listed Property Types</a>
                 <a class="dropdown-item" href="{{ url_for ('hoodsavgpricesplot') }}">Average Prices by Neighbourhood</a>
                 <a class="dropdown-item" href="{{ url_for ('hoodsavgratingsplot') }}">Growth Analysis</a>
-                <!-- <a class="dropdown-item" href="{{ url_for ('hoodlistingsmap') }}">Popular Neighbourhoods</a> -->
-                <a class="dropdown-item" href="{{ url_for ('hoodavgratingsmap') }}">Best Neighbourhoods by Rating</a>
-                <a class="dropdown-item" href="{{ url_for ('hoodavgpricesmap') }}">Best Neighbourhoods by Price</a>
+                <a class="dropdown-item" href="{{ url_for ('ratingsmap') }}">Highly Rated Listings</a>
+                <a class="dropdown-item" href="{{ url_for ('hoodavgpricesmap') }}">Neighbourhood Pricing</a>
               </div>
             </li>
 
