@@ -5,11 +5,14 @@
     min-height: 100%;
     min-width: 100%;
     display:block;
+    padding-right: 0.4em;
 }
 
 html, body
 {
     height: 100%;
+    background-color: #EDEDED;
+    width: 100%;
 }
 
 #map-holder{
@@ -27,8 +30,10 @@ html, body
 /* for map */
 .container1{   
     float: right;
-    max-width:60em;
-    padding: 0.4em;
+    max-width:70em;
+    padding-right: 5em;
+    padding-bottom: 5em;
+    padding-top: 5em;
 }
 
 /* zip code and other forms */
@@ -36,22 +41,77 @@ html, body
     float: left;
     height: 100%;
     max-width:100%;
-    padding: 0.4em;
+    padding-left: 5em;
+    padding-top: 5em;
  }
 
- .jumbotron{
-     background-image: url(https://www.wallpaperup.com/uploads/wallpapers/2016/09/30/1021583/27dc554d523ef3513f391ac1fb28ca38-700.jpg);
-     text-align: center;
-     padding-left: 0.4em;
-     padding-right: 0.4em;
-     margin-bottom: 0;
-     
-}
-
-.multicolortext {
-    background-image: linear-gradient(to left, violet, indigo, green, blue, yellow, orange, red);
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    color: transparent;
+ /* Navbar */
+.navigation{
+    margin-left: 30px; 
+    padding: inherit; 
+    font-weight: bold; 
+    background-color: #139ba5;
+    font-family: Georgia, 'Times New Roman', Times, serif;
   }
+  
+  .navbar-brand{
+    color: white; 
+    margin-left: 30px; 
+    padding: inherit; 
+    font-weight: bold; 
+    background-color: #13a56d;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  .navbar-brand:hover{
+    color: rgb(175, 175, 175) !important;
+    }
+  
+  .navbar{
+    max-height: 57px; 
+    background-color: white; 
+    font-size: 15px; 
+  }
+  .nav-link:hover{
+    background-color:#E7E7E7 !important;
+    float: right;
+   }
+  
+  .active, .dropdown-menu .dropdown-item:active a:hover{
+    background-color:#E7E7E7!important; 
+  
+  }
+  .dropdown-item{
+    color: #6D8092 !important; 
+  }
+  
+  .dropdown .dropdown-menu .dropdown-item:active, .dropdown .dropdown-menu .dropdown-item:hover{
+    background-color:#E7E7E7 !important; 
+  }
+  
+  /* Media Queries */
+@media(max-width: 992px){
+    .navbar-expand-lg{
+    background-color: #13a56d !important;
+    }
+    .navbar{
+      max-height: none; 
+      padding: inherit;
+    }
+    .navbar div{
+      margin: inherit; 
+      background-color: white;  
+    }
+    .navbar-brand{
+      padding: 10px !important; 
+    }
+    
+    button{
+      margin-right: 30px; 
+    }
+    button:focus {
+    
+      outline: 1px dotted;
+      /* outline: 5px auto -webkit-focusring-color; */
+      
+      }
+    }

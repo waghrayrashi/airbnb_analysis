@@ -1,5 +1,5 @@
 ##########################################
-# Flask Application
+# # Flask Application
 ##########################################
 # Dependencies and Setup
 import os
@@ -37,26 +37,28 @@ engine = create_engine(conn_str)
 # Reflect the database 
 Base = automap_base()
 
-# Reflect the tables
+# Reflect the tables into SQLAlchemy classes
 Base.prepare(engine, reflect=True)
+allclasses = Base.classes.keys()
+
 
 # Save references to each table in database 
-Alllistings = Base.classes.alllistings
-Roomtypes = Base.classes.roomtypes
-Propertytypes = Base.classes.propertytypes
-Toppropertytypes = Base.classes.toppropertytypes
-Hoodlistings = Base.classes.hoodlistings
-Hoodprices = Base.classes.hoodprices
-Hoodratings = Base.classes.hoodratings
-Hoodssummary = Base.classes.neighbourhoodsummary
+# Roomtypes = Base.classes.roomtypes
+# Propertytypes = Base.classes.propertytypes
+# Toppropertytypes = Base.classes.toppropertytypes
+# Hoodlistings = Base.classes.hoodlistings
+# Hoodprices = Base.classes.hoodprices
+# Hoodratings = Base.classes.hoodratings
+
 
 # Create a class for new table - trying this for just a small neighbourhood group table
 # class Neighbourhoods(db.Model):
-#         "Neighbourhood" = db.Column(db.String)
+#         "Neighbourhood" = db.Column(db.String(30))
 #         "zipcode" = db.Column(db.Integer)
 
-
-
+# @app.route("/addhood", methods=('POST', 'GET'))
+# def add_neighbourhood():
+#     return
 ###################################################################
 # SET FLASK ROUTES
 ###################################################################
@@ -68,9 +70,15 @@ def index():
     """Return the homepage."""
     return render_template("index.html")
 
-######################################################
-# Render the database table alllistings
-######################################################
+@app.route("/test")
+def text():
+
+    return f"All classes available in the database: {allclasses}"
+
+
+#####################################################
+# # Render the database table alllistings
+# ######################################################
 @app.route("/cleanlistings")
 def cleanlistings():
     """Query the database for listings details table."""
@@ -78,35 +86,36 @@ def cleanlistings():
     # Create session to link to the heroku Postgres database
     session = Session(bind=engine)
     
+    # Save references to each table in database 
+    Alllistings = Base.classes.alllistings
+
     # Query the database table for columns of interest
-    alllistings = db.session.query(Alllistings).all()
+    rentals = db.session.query(Alllistings).all()
     
     # Create an empty list
     listings_details = []
     
     # Loop through each row and create dictionaries for each column   
-    for listing in alllistings:
-        listings_dict = {}
-
-        listings_dict["id"] = listing.id
-        listings_dict["latitude"] = listing.latitude
-        listings_dict["longitude"] = listing.longitude
-        listings_dict["neighbourhood"] = listing.neighbourhood_cleansed
-        listings_dict["city"] = listing.city
-        listings_dict["zipcode"] = listing.zipcode
-        listings_dict["property_type"] = listing.property_type
-        listings_dict["room_type"] = listing.room_type
-        listings_dict["bedrooms"] = listing.bedrooms
-        listings_dict["bathrooms"] = listing.bathrooms
-        listings_dict["price"] = listing.price
-        listings_dict["host_since"] = listing.host_since
-        listings_dict["host_is_superhost"] = listing.host_is_superhost
-        listings_dict["guests_included"] = listing.guests_included
-        listings_dict["minimum_nights"] = listing.minimum_nights
-        listings_dict["number_of_reviews"] = listing.number_of_reviews
-        listings_dict["review_scores_rating"] = listing.review_scores_rating
-        listings_dict["instant_bookable"] = listing.instant_bookable
-        listings_dict["cancellation_policy"] = listing.cancellation_policy
+    for listing in rentals:
+        listings_dict = {
+            "id": listing.id,
+            "latitude": listing.latitude,
+            "longitude": listing.longitude,
+            "neighbourhood": listing.neighbourhood_cleansed,
+            "city": listing.city,
+            "property_type": listing.property_type,
+            "room_type": listing.room_type,
+            "bedrooms": listing.bedrooms,
+            "bathrooms": listing.bathrooms,
+            "price": listing.price,
+            "host_since": listing.host_since,
+            "host_is_superhost": listing.host_is_superhost,
+            "guests_included": listing.guests_included,
+            "minimum_nights": listing.minimum_nights,
+            "number_of_reviews": listing.number_of_reviews,
+            "review_scores_rating": listing.review_scores_rating,
+            "instant_bookable": listing.instant_bookable,
+            "cancellation_policy": listing.cancellation_policy }
         
         # Append all columns to the object
         listings_details.append(listings_dict)
@@ -122,6 +131,9 @@ def cleanlistings():
 def propertytypes():
     """Query the database for listings by property type"""
 
+    # Save references to each table in database 
+    Propertytypes = Base.classes.propertytypes
+
     # Create session
     session = Session(bind=engine)
     
@@ -133,10 +145,10 @@ def propertytypes():
     
     # Loop through each row and create dictionaries for each column   
     for listing in propertytypes:
-        ptypes_dict = {}
-        ptypes_dict["propertytype"] = listing.propertytype
-        ptypes_dict["listings"] = listing.listings
-        ptypes_dict["percent"] = listing.percent
+        ptypes_dict = {
+            "propertytype": listing.propertytype,
+            "listings": listing.listings,
+            "percent": listing.percent}
         
         # Append all columns to the object
         property_types.append(ptypes_dict)
@@ -146,11 +158,79 @@ def propertytypes():
     return jsonify(property_types)
 
 #######################################################
+# Render the database table propertytypes
+#######################################################
+@app.route("/propertytypesnofloat")
+def propertytypesnofloat():
+    """Query the database for listings by propertytypesnofloat"""
+
+    # Save references to each table in database 
+    Propertytypesnofloat = Base.classes.propertytypesnofloat
+
+    # Create session
+    session = Session(bind=engine)
+    
+    # Query the table for columns of interest
+    ptypesnofloat = session.query(Propertytypesnofloat).all()
+    
+    # Create an empty list
+    property_typesnofloat = []
+    
+    # Loop through each row and create dictionaries for each column   
+    for listing in ptypesnofloat:
+        ptypes_dict = {
+            "propertytype": listing.propertytype,
+            "listings": listing.listings }
+        
+        # Append all columns to the object
+        property_typesnofloat.append(ptypes_dict)
+    
+    session.close()
+    # Return the json
+    return jsonify(property_typesnofloat)
+    
+#######################################################
+# Render the database table roomtypes
+#######################################################
+@app.route("/roomtypesnofloat")
+def roomtypesnofloat():
+    """Query the database for listings by roomtypesnofloat"""
+    
+    # Save references to each table in database 
+    Roomtypesnofloat = Base.classes.roomtypesnofloat
+    
+    # Create session
+    session = Session(bind=engine)
+    
+    # Query the table for columns of interest
+    rtypesnofloat = session.query(Roomtypesnofloat).all()
+    
+    # Create an empty list
+    room_typesnofloat = []
+    
+    # Loop through each row and create dictionaries for each column
+    for listing in rtypesnofloat:
+        rtypes_dict = {
+            "roomtype": listing.roomtype,
+            "listings": listing.listings,
+        }
+        # Append all columns to the object
+        room_typesnofloat.append(rtypes_dict)
+    
+    session.close()
+    # Return the json
+    return jsonify(room_typesnofloat)
+
+#######################################################
 # Render the database table roomtypes
 #######################################################
 @app.route("/roomtypes")
 def roomtypes():
     """Query the database for listings by property type"""
+    
+    # Save references to each table in database 
+    Roomtypes = Base.classes.roomtypes
+    
     # Create session
     session = Session(bind=engine)
     
@@ -162,11 +242,11 @@ def roomtypes():
     
     # Loop through each row and create dictionaries for each column
     for listing in roomtypes:
-        rtypes_dict = {}
-        rtypes_dict["propertytype"] = listing.roomtype
-        rtypes_dict["listings"] = listing.listings
-        rtypes_dict["percent"] = listing.percent
-        
+        rtypes_dict = {
+            "propertytype": listing.roomtype,
+            "listings": listing.listings,
+            "percent": listing.percent
+        }
         # Append all columns to the object
         room_types.append(rtypes_dict)
     
@@ -179,6 +259,10 @@ def roomtypes():
 @app.route("/hoodssummary")
 def hoodssummary():
     """Query the database for neighbourhoodsummary"""
+    
+    # Save references to each table in database 
+    Hoodssummary = Base.classes.neighbourhoodsummary
+    
     # Create session
     session = Session(bind=engine)
     
@@ -190,46 +274,17 @@ def hoodssummary():
     
     # Loop through each row and create dictionaries for each column
     for hood in hoodssummary:
-        hoods_dict = {}
-        hoods_dict["neighbourhood"] = hood.neighbourhood
-        hoods_dict["listings"] = hood.listings
-        hoods_dict["avgprice"] = hood.avgprice
-        hoods_dict["avgrating"] = hood.avgrating
+        hoods_dict = {
+            "neighbourhood": hood.neighbourhood,
+            "listings": hood.listings,
+            "avgprice": hood.avgprice,
+            "avgrating": hood.avgrating }
         # Append all columns to the object
         hoods_summary.append(hoods_dict)
     
     session.close()
     # Return the json
     return jsonify(hoods_summary)
-    
-#######################################################
-# Render the database table neighbourhoods
-#######################################################
-# @app.route("/hoods")
-# def hoods():
-#     """Query the database for neighbourhoods"""
-#     # Create session
-#     session = Session(bind=engine)
-    
-#     # Query the table for columns of interest
-#     roomtypes = session.query(Roomtypes).all()
-    
-#     # Create an empty list
-#     room_types = []
-    
-#     # Loop through each row and create dictionaries for each column
-#     for listing in roomtypes:
-#         rtypes_dict = {}
-#         rtypes_dict["propertytype"] = listing.roomtype
-#         rtypes_dict["listings"] = listing.listings
-#         rtypes_dict["percent"] = listing.percent
-        
-#         # Append all columns to the object
-#         room_types.append(rtypes_dict)
-    
-#     session.close()
-#     # Return the json
-#     return jsonify(room_types)
     
 #######################################################
 # Render the Rental Landscape HTML page HTML 

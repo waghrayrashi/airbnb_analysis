@@ -1,17 +1,17 @@
   // PLOT LISTINGS BY PROPERTY TYPE
   // Load the property type data from rw_listings_by_propertytype.csv
-  d3.json("/properties").then(function(d) {
+  d3.json("/propertytypesnofloat").then(function(d) {
     // confirm that the data was read accurately
     console.log(d);
  
     //  Load the data into arrays Property Types, Listings and Percent
     var propertyTypes = d.map((item) => item.propertytype);
     var propertyTypeListings = d.map((item) => item.listings);
-    var propertyTypePercent = d.map((item) => item.percent);
+    // var propertyTypePercent = d.map((item) => item.percent);
 
     console.log(propertyTypes);
     console.log(propertyTypeListings);
-    console.log(propertyTypePercent);
+    // console.log(propertyTypePercent);
 
     // Create the Trace for the bar chart
       var propertyTypeTrace = {
@@ -29,10 +29,8 @@
       var propertyTypeLayout = {
         title: "Top Property Types by Listings",
         yaxis: { title: "Number of Listings" }
-
-  };
+      };
   
   // Plot the chart to a div tag with id "propertyType"
   Plotly.newPlot("propertytypesplotid", propertyTypeData, propertyTypeLayout);
-    });
-  // }
+});

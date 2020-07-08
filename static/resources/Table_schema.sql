@@ -12,6 +12,12 @@ DROP TABLE IF EXISTS hoodlistings;
 DROP TABLE IF EXISTS hoodprices;
 DROP TABLE IF EXISTS hoodratings;
 DROP TABLE IF EXISTS neighbourhoodsummary;
+DROP TABLE IF EXISTS roomtypesnofloat;
+
+CREATE TABLE roomtypesnofloat (
+    roomtype VARCHAR(30) PRIMARY KEY,
+    listings INT NOT NULL,
+);
 
 CREATE TABLE alllistings (
     id INT PRIMARY KEY,
@@ -35,40 +41,40 @@ CREATE TABLE alllistings (
 );
 
 CREATE TABLE roomtypes (
-    roomtype VARCHAR(30) NOT NULL,
+    roomtype VARCHAR(30) PRIMARY KEY,
     listings INT NOT NULL,
 	percent DECIMAL NOT NULL
 );
 
 CREATE TABLE propertytypes (
-    propertytype VARCHAR(30) NOT NULL,
+    propertytype VARCHAR(30) PRIMARY KEY,
     listings INT NOT NULL,
 	percent DECIMAL NOT NULL
 );
 
 CREATE TABLE toppropertytypes (
-    propertytype VARCHAR(30) NOT NULL,
+    propertytype VARCHAR(30) PRIMARY KEY,
     listings INT NOT NULL,
 	percent DECIMAL NOT NULL
 );
 
 CREATE TABLE hoodlistings (
-    neighbourhood INT NOT NULL,
+    neighbourhood INT PRIMARY KEY,
     listings INT NOT NULL
     );
 
 CREATE TABLE hoodratings (
-    neighbourhood INT NOT NULL,
+    neighbourhood INT PRIMARY KEY,
     avgrating DECIMAL NOT NULL
     );
 	
 CREATE TABLE hoodprices (
-    neighbourhood INT NOT NULL,
+    neighbourhood INT PRIMARY KEY,
     avgprice DECIMAL NOT NULL
     );
 	
 CREATE TABLE neighbourhoodsummary (
-    neighbourhood INT NOT NULL,
+    neighbourhood INT PRIMARY KEY,
     listings INT NOT NULL,
     avgprice DECIMAL NOT NULL,
     avgrating DECIMAL NOT NULL

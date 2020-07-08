@@ -16,15 +16,7 @@
   <link rel="stylesheet" type="text/css" href="/static/css/ss_style.css">
 </head>
 
-<body>
-
-  <!-- <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"><b>Stay-Listings 'Dataset Mining @Asheville'</b></h1>
-        <a href="/templates/Attraction.html" class="btn btn-primary" role="button">Attractions</a>
-      <a href="#" class="btn btn-primary" role="button">Pricing</a>
-    </div>
-  </div> -->
+<body>  
     <!-- Navigation Section Begins -->
     <div class="navigation">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -40,7 +32,10 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for ('dashboard') }}">Dashboard</a>
             </li>
-
+            <!-- Landscape in the Navigation Section -->
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for ('landscape') }}">Rental Landscape</a>
+            </li>
             <!-- Listings in the Navigation Section -->
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for ('listings') }}">Listings</a>
@@ -81,32 +76,21 @@
       </nav>
     </div>
     <!-- Navigation Section Ends -->
-    <!--Content Section Begins-->
-    <div class="container">
-      <!-- Row 1 Section Begins-->
-      <div class="row">
-        <!--Left pane for plot description begins-->
-          <div class="box">
-            <h5>Location, Location, Location!</h5>
-            <h6>Asheville's Popular Neighbourhoods</h6>
-            <p>Enter description....</p>
-          </div>
-      </div>
-      <!--Row 1 for plot description ends-->
-      <!--Row 2 for map begins-->
-      <div class="row">
-        <div class="container2">
-          <h5>Filter by Zip Code:</h5>
-          <select id="zipCode" onchange="optionChanged(this.value)"></select>
-          <!-- The div where we will inject our map -->
-          <div id="map-holder">
-            <div class="container1 fill">
-            <div id="map">
-          </div>
-        </div>
-      </div>
+  
+  <div id="map-holder">
+
+    <!-- The div where we will inject our map -->
+    <div class="container1 fill">
+      <div id="map"></div>
     </div>
-    <!--Content Section Ends-->
+
+    <!-- The div where we will inject dropdown -->
+    <div class="container2">
+      <h5>Filter by Zip Code:</h5>
+      <select id="zipCode" onchange="optionChanged(this.value)"></select>
+    </div>
+
+  </div>
 
   <!--Dependencies-->
   <!-- D3 -->
