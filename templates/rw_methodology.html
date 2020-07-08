@@ -83,135 +83,136 @@
     <!-- Navigation Section Ends -->
     <!--Content Section Begins-->
     <div class="container">
-        <div class="row">
-          <!-- Left Box for Project Overview Begins-->
-          <!-- <div class="col-lg-8 col-md-12"> -->
-            <div class="box">
-              <h3>Tools & Processes</h3>
-              <hr>
-                <!-- Process & tools explanation begins-->
-                <table class="table table-sm">
-                  <thead>
-                    <tr>
-                      <th scope="col">Data Source</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td scope="row">The dataset for the analysis was sourced from <a href="http://insideairbnb.com/get-the-data.html">Inside Airbnb</a> and consists of:</td>
-                    </tr>
-                    <tr>
-                      <td scope="row"> - Listings: Details of all Airbnb listings in Asheville with 106 attributes for each listing.</td>
-                    </tr>
-                    <tr>
-                      <td scope="row"> - Reviews/Ratings: Provides detailed reviews given by the guests with attributes - Date, listing_id, reviewer_id & comment.</td>
-                    </tr>
-                    <tr>
-                      <td scope="row"> - Calendar: Provides details of available booking times by listing_id, date, availability & price.</td>
-                    </tr>
-                  </tbody>
-                </table>
-  
-                <table class="table table-sm">
-                  <thead>
-                    <tr>
-                      <th scope="col">ETL Processes using Python, PostgreSQL, SQLAlchemy</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td scope="row">Changed datatypes of relevant attributes</td>
-                    </tr>
-                    <tr>
-                      <td scope="row">Filtered, grouped and performed aggregations on relevant attributes using Pandas</td>
-                    </tr>
-                    <tr>
-                      <td scope="row">Deleted null values from analysis</td>
-                    </tr>
-                    <tr>
-                      <td scope="row">Renamed attiributes for standardization and consistency</td>
-                    </tr>
-                    <tr>
-                      <td scope="row">Developed the table schema for load into PostgreSQL database</td>
-                    </tr>
-                    <tr>
-                      <td scope="row">Created a connection with the PostgreSQL database using SQLAlchemy</td>
-                    </tr>
-                    <tr>
-                      <td scope="row">Stored the final datasets into PostgreSQL using SQLAlchemy</td>
-                    </tr>
-                  </tbody>
-                </table>
-  
-                <table class="table table-sm">
-                  <thead>
-                    <tr>
-                      <th scope="col">Data Analysis using Python</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td scope="row">Analyzed the data in Python to identify trends and correlations</td>
-                    </tr>
-                    <tr>
-                      <td scope="row">Developed static and interactive charts</td>
-                    </tr>
-                    
-                  </tbody>
-                </table>
-  
-                <table class="table table-sm">
-                  <thead>
-                    <tr>
-                      <th scope="col">Web Visualizations using HTML, CSS, JavaScript</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td scope="row">Created a dashboard page with multiple, static and dynamic charts</td>
-                    </tr>
-                    <tr>
-                      <td scope="row">Created a user driven interface for property search</td>
-                    </tr>
-                    <tr>
-                      <td scope="row">Created web visualizations using Javascript Libraries (Leaflet, Chloropeth, Plotly)</td>
-                    </tr>
-                  </tbody>
-                </table>
-                
-                <table class="table table-sm">
-                  <thead>
-                    <tr>
-                      <th scope="col">Application Deployment using Python Flask</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td scope="row">Created a web application using Python Flask</td>
-                    </tr>
-                    <tr>
-                      <td scope="row">Deployed the web application on Heroku: <a href="https://waghrayrashi-ashville-airbnb.herokuapp.com/">https://waghrayrashi-ashville-airbnb.herokuapp.com/</a></td>
-                    </tr>
-                    <tr>
-                      <td scope="col">The source code is available on Github: <a href="https://github.com/waghrayrashi/airbnb_analysis">https://github.com/waghrayrashi/airbnb_analysis</a></td>
-                    </tr>
-                  </tbody>
-                </table>
-                <!-- Process & tools explanation ends-->
-                </hr>             
-            </div>
-        </div>
+      <!-- Project explanation Begins-->
+      <div class="box">
+        <h3>Data, Tools, Processes & Methodologies</h3>
+        <!-- Web app explanation begins-->
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th scope="col">Deployment of Web Application using Python Flask</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="row">Created a web application using Python Flask</td>
+            </tr>
+            <tr>
+              <td scope="row">Deployed the web application on Heroku: <a href="https://waghrayrashi-ashville-airbnb.herokuapp.com/">https://waghrayrashi-ashville-airbnb.herokuapp.com/</a></td>
+            </tr>
+            <tr>
+              <td scope="row">Provisioned a PostgreSQL database for the web application on Heroku: <a href="https://waghrayrashi-ashville-airbnb.herokuapp.com/">https://waghrayrashi-ashville-airbnb.herokuapp.com/</a></td>
+            </tr>
+            <tr>
+              <td scope="col"><strong>Source code is available on Github: </strong><a href="https://github.com/waghrayrashi/airbnb_analysis">https://github.com/waghrayrashi/airbnb_analysis</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Web app explanation ends-->
+        <!-- Datasource explanation begins-->
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th scope="col">Data Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="row">The dataset for the analysis was sourced from <a href="http://insideairbnb.com/get-the-data.html">Inside Airbnb</a> and consists of:</td>
+            </tr>
+            <tr>
+              <td scope="row"> - Listings: Details of 2171 Airbnb listings in Asheville with 106 attributes.</td>
+            </tr>
+            <tr>
+              <td scope="row"> - Reviews: Details of reviews given by the guests for listings by listing_id, date, reviewer_id & comment.</td>
+            </tr>
+            <tr>
+              <td scope="row"> - Calendar: Details of available booking times for listings by listing_id, date, availability & price.</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Datasource explanation ends-->
+        <!-- ETL explanation begins-->
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th scope="col">ETL Processes Employed for Anlaysis using Python, PostgreSQL, SQLAlchemy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="row">Filtered, grouped and performed aggregations on relevant attributes using Pandas</td>
+            </tr>
+            <tr>
+              <td scope="row">Changed datatypes of relevant attributes</td>
+            </tr>
+            <tr>
+              <td scope="row">Deleted null values from analysis</td>
+            </tr>
+            <tr>
+              <td scope="row">Renamed attiributes for standardization and consistency</td>
+            </tr>
+            <tr>
+              <td scope="row">Developed the table schema for loading the dataset into PostgreSQL database</td>
+            </tr>
+            <tr>
+              <td scope="row">Connected to the PostgreSQL database using SQLAlchemy</td>
+            </tr>
+            <tr>
+              <td scope="row">Stored the final dataset(s) into PostgreSQL using SQLAlchemy</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- ETL explanation ends-->
+        <!-- Data analysis explanation begins-->
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th scope="col">Data Analysis using Python</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="row">Analyzed the data in Python to identify trends and correlations</td>
+            </tr>
+            <tr>
+              <td scope="row">Developed static charts</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Data analysis explanation ends-->
+        <!-- Web visualization explanation begins-->
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th scope="col">Web Visualizations using HTML, CSS, JavaScript</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="row">Created a dashboard page with multiple, static and dynamic charts</td>
+            </tr>
+            <tr>
+              <td scope="row">Created web visualizations using Javascript Libraries <Strong>(Leaflet, Chloropeth, Plotly and Gramin)</Strong></td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Web visualization explanation begins-->
+      </div>
+      <!-- Project explanation ends-->  
     </div>
-<!-- Footer Section Begins-->
-<footer>
-    <div class="footer">Copyright &copy; Data Science Enthusiasts 2020</div>
-</footer>
-<!-- Footer Section Ends-->
+    <!-- Content Section ends -->
 
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- Footer Section Begins-->
+    <footer>
+        <div class="footer">Copyright &copy; Data Science Enthusiasts 2020</div>
+    </footer>
+    <!-- Footer Section Ends-->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
   </body> 
 </html>

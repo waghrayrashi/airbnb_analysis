@@ -7,7 +7,7 @@ var myMap = L.map("ratingsmapid").setView([35.5950581, -82.5514869], 13);
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
   maxZoom: 18,
-  id: 'mapbox/light-v10',
+  id: 'mapbox/streets-v11',
   tileSize: 512,
   zoomOffset: -1,
   accessToken: API_KEY
@@ -19,7 +19,8 @@ var layerGroup = L.layerGroup().addTo(myMap);
 // FUNCTION TO CREATE MAP LAYERS TO SHOW RATING SCORE FOR EACH LISTING 
 function createMarker(neighbourhood){
   // Load data from database
-  d3.json("/cleanlistings").then(function(d) {
+  // d3.json("/cleanlistings").then(function(d) {
+  d3.csv("static/data/rw_listings.csv").then((d) => {
     // Confirm that the listings data was read accurately
     console.log(d);
 
@@ -27,24 +28,22 @@ function createMarker(neighbourhood){
     for (var i = 0; i < d.length; i++) {
       // Conditionals for coloring the circles for each listing based on reviewScore ratings 
       var color = "";
-      if (neighbourhood === d[i].zipcode) {
+      if (neighbourhood === d[i].neighbourhood_cleansed) {
         var listing = d[i];
         
         // Conditionals for coloring the circles for each listing based on reviewScore ratings 
-        var fillcolor = "";
-        if ((listing.review_scores_rating/10) == 10) {
-              fillcolor = "green"
-            }
-            else {
-              fillcolor = "red"
-            }
+        var color = "";
+        if (listing.review_scores_rating > 96) {color = "green"}
+          else if (listing.review_scores_rating >91) {color = "orange"}
+            else if (listing.review_scores_rating >81) {color = "yellow"}
+              else {color = "red"}
 
         L.circle([listing.latitude, listing.longitude], {
           fillOpacity: 0.65,
-          color: "white",
-          fillColor: fillcolor,
+          radius:100,
+          color: color,
           // Adjust radius of circle marker 
-          radius: review_scores_rating/4
+          // radius: review_scores_rating/4
         }).bindPopup("<h5>" + listing.id + "</h5><hr><h6>Property Type: " + listing.property_type + "</h6><hr><p>Rating: " + listing.review_scores_rating + "</p>")
         .addTo(layerGroup);
       }
@@ -58,7 +57,7 @@ function optionChanged(neighbourhood){
   createMarker(neighbourhood);
 }
 
-// Create function for initial data rendering via dropdown begins
+// Create function for initializing the hood dropdown 
 function init() {
   // Select dropdown menu
   var dropdown =  d3.select('#zipCode');

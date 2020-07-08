@@ -85,6 +85,7 @@
       <div class="row">
         <!--Left pane for description begins-->
         <div class="col-md-4">
+          <br>
           <h5>Which listings are highly rated?</h5>
           <br>  
           <p>Airbnb hosts are given an overall rating by their guests based on several criteria including, location, cleanliness, check-in process, communication and overall value.</p>
@@ -124,25 +125,30 @@
               </tr>
             </tbody>
           </table>
-        </div>
+          </div>
         <!--Left pane for description ends-->
 
-        <!--Right pane for map begins-->
+        <!--Right pane section begins-->
         <div class="col-md-8">
-        <!--Div for map begins-->
-          <!--Div for map dropdown begins-->
-          <div class="container">
+          
+          <!--Div for hood dropdown begins-->
+          <div>
             <h6>Choose a neighbourhood to view listings:</h6>
             <select id="zipCode" onchange="optionChanged(this.value)"></select>
           </div>
-          <!--Div for map dropdown ends-->
-          <div id="ratingsmapid">       
+          <!--Div for hood dropdown ends-->
+
+          <!-- Div for ratings map begins -->
+          <div id="ratingsmapid">  
           </div>
-          <!--Div for map ends-->
+          <!--Div for ratings map ends-->
+        
         </div>
-        <!--Right pane for map ends-->
+        <!--Right pane section ends-->
+      
       </div>
       <!--Row 1 Section ends -->
+    
     </div>
     <!--Content Section ends-->
     
@@ -171,5 +177,5 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   
-    </body>
-  </html>
+  </body>
+</html>

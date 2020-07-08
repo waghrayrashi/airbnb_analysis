@@ -41,24 +41,6 @@ Base = automap_base()
 Base.prepare(engine, reflect=True)
 allclasses = Base.classes.keys()
 
-
-# Save references to each table in database 
-# Roomtypes = Base.classes.roomtypes
-# Propertytypes = Base.classes.propertytypes
-# Toppropertytypes = Base.classes.toppropertytypes
-# Hoodlistings = Base.classes.hoodlistings
-# Hoodprices = Base.classes.hoodprices
-# Hoodratings = Base.classes.hoodratings
-
-
-# Create a class for new table - trying this for just a small neighbourhood group table
-# class Neighbourhoods(db.Model):
-#         "Neighbourhood" = db.Column(db.String(30))
-#         "zipcode" = db.Column(db.Integer)
-
-# @app.route("/addhood", methods=('POST', 'GET'))
-# def add_neighbourhood():
-#     return
 ###################################################################
 # SET FLASK ROUTES
 ###################################################################
@@ -70,11 +52,21 @@ def index():
     """Return the homepage."""
     return render_template("index.html")
 
-@app.route("/test")
-def text():
+######################################################
+# Render the test  HTML 
+######################################################
+@app.route("/testhtml")
+def testhtml():
+    """Return the testhtml."""
+    return render_template("test.html")
 
+######################################################
+# Return the list of classes in the database
+######################################################
+@app.route("/testdbclasses")
+def testdbclasses():
+    # Return the list of classes in the database
     return f"All classes available in the database: {allclasses}"
-
 
 #####################################################
 # # Render the database table alllistings
@@ -253,6 +245,7 @@ def roomtypes():
     session.close()
     # Return the json
     return jsonify(room_types)
+
 #######################################################
 # Render the database table neighbourhoodsummary
 #######################################################
@@ -287,7 +280,7 @@ def hoodssummary():
     return jsonify(hoods_summary)
     
 #######################################################
-# Render the Rental Landscape HTML page HTML 
+# Render the Rental Landscape HTML  
 #######################################################
 @app.route("/landscape")
 def landscape():
@@ -318,7 +311,7 @@ def reviews():
     return render_template("rw_reviews.html")
 
 #######################################################
-# Render Room Type Plot
+# Render Room Type Plot HTML
 #######################################################
 @app.route("/roomtypeplot")
 def roomtypeplot():
@@ -326,7 +319,7 @@ def roomtypeplot():
     return render_template("rw_roomtypeplot.html")
 
 #######################################################
-# Render Listed Property Types Plot
+# Render Listed Property Types Plot HTML
 #######################################################
 @app.route("/propertytypesplot")
 def propertytypesplot():
@@ -334,7 +327,7 @@ def propertytypesplot():
     return render_template("rw_propertytypesplot.html")
 
 #######################################################
-# Render Average Price by Neighbourhood plot
+# Render Average Price by Neighbourhood plot HTML
 #######################################################
 @app.route("/hoodsavgpricesplot")
 def hoodsavgpricesplot():
@@ -342,7 +335,7 @@ def hoodsavgpricesplot():
     return render_template("rw_hoodsavgpricesplot.html")
 
 #######################################################
-# Render Growth Analysis plot
+# Render Growth Analysis plot HTML
 #######################################################
 @app.route("/hoodsavgratingsplot")
 def hoodsavgratingsplot():
@@ -350,7 +343,7 @@ def hoodsavgratingsplot():
     return render_template("pg_growth.html")
 
 #######################################################
-# Render Listings by Neighbourhood Map
+# Render Listings by Neighbourhood Map HTML
 #######################################################
 @app.route("/hoodlistingsmap")
 def hoodlistingsmap():
@@ -358,7 +351,7 @@ def hoodlistingsmap():
     return render_template("rw_hoodlistingsmap.html")
 
 #######################################################
-# Render Rating by Neighbourhood Map
+# Render Rating by Neighbourhood Map HTML
 #######################################################
 @app.route("/hoodavgratingsmap")
 def hoodavgratingsmap():
@@ -366,7 +359,7 @@ def hoodavgratingsmap():
     return render_template("ss_ratingsmap.html")
 
 #######################################################
-# Render Average Price by Neighbourhood Map
+# Render Average Price by Neighbourhood Map HTML
 #######################################################
 @app.route("/hoodavgpricesmap")
 def hoodavgpricesmap():
@@ -389,6 +382,29 @@ def acknowledgements():
     """Return the acknowledgements page."""
     return render_template("rw_acknowledgements.html")
 
+###################################################################
+# Code to actually run the app
+###################################################################
+if __name__ == "__main__":
+    app.run(debug = True)
+##################### END OF APP #############################################
+
+# Save references to each table in database 
+# Toppropertytypes = Base.classes.toppropertytypes
+# Hoodlistings = Base.classes.hoodlistings
+# Hoodprices = Base.classes.hoodprices
+# Hoodratings = Base.classes.hoodratings
+
+
+# Create a class for new table - trying this for just a small neighbourhood group table
+# class Neighbourhoods(db.Model):
+#         "Neighbourhood" = db.Column(db.String(30))
+#         "zipcode" = db.Column(db.Integer)
+
+# @app.route("/addhood", methods=('POST', 'GET'))
+# def add_neighbourhood():
+#     return
+
 ########################################################
 # Render Janani's Pricing Choropleth HTML 
 #######################################################
@@ -396,9 +412,3 @@ def acknowledgements():
 # def airbnbpricing():
 #     """Return the Janani's airbnbpricing page."""
 #     return render_template("airbnbpricing.html")
-###################################################################
-# Code to actually run the app
-###################################################################
-if __name__ == "__main__":
-    app.run(debug = True)
-##################### END OF APP #############################################

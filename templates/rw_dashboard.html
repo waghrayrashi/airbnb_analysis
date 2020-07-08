@@ -87,9 +87,9 @@
         <!-- Left box  -->        
         <div class="col-lg-12">
           <div class="box">
-            <h3 class="title">Dashboard</h3>
+            <h3>Dashboard</h3>
             <hr>
-            <p>Click any plot to get an in-depth analysis.</p>
+            <p>Click the plots below for an in-depth analysis.</p>
           </div>
         </div>
       </div>
@@ -101,14 +101,14 @@
         <div class="col-lg-6">
           <div class="title">Types of Listings</div>
             <a href="{{ url_for ('roomtypeplot') }}">
-            <img class="panel" id="activeimage" src="static/images/roomtypeplot.png" alt="Types of Listings">
+            <img class="panel" id="activeimage" src="static/images/roomtypeplot.png" alt="Types of Listings"width="500px", height="300px">
             </a>
         </div>
 
         <div class="col-lg-6">
           <div class="title">Listed Property Types</div>
             <a href="{{ url_for ('propertytypesplot') }}">
-            <img class="panel" id="activeimage" src="static/images/propertytypesplot.png" alt="Listed Property Types">
+            <img class="panel" id="activeimage" src="static/images/propertytypesplot.png" alt="Listed Property Types"width="500px", height="300px">
             </a>
         </div>
       </div>
@@ -116,16 +116,16 @@
       <!-- Row 2 for plots 3 & 4 plots begins -->
       <div class="row">
         <div class="col-lg-6">
-          <div class="title">Growth Analysis</div>
+          <div class="title">Airbnb Growth in Asheville</div>
             <a href="{{ url_for ('hoodsavgratingsplot') }}">
-            <img class="panel" id="activeimage" src="" alt="Growth Analysis">
+            <img class="panel" id="activeimage" src="" alt="Growth Analysis" width="500px", height="300px">
             </a>
         </div>
                 
         <div class="col-lg-6">
-          <div class="title">Best Neighbourhoods by Price</div>
+          <div class="title">Average Prices by Neighbourhood</div>
             <a href="{{ url_for ('hoodsavgpricesplot') }}">
-            <img class="panel" id="activeimage" src="static/images/avgpricesplot.png" alt="Average Price by Neighbourhood">
+            <img class="panel" id="activeimage" src="static/images/avgpricesplot.png" alt="Average Price by Neighbourhood"width="500px", height="300px">
             </a>
         </div>
       </div>
@@ -135,14 +135,14 @@
         <div class="col-lg-6">
           <div class="title">Best Neighbourhoods by Rating</div>
             <a href="{{ url_for ('hoodavgratingsmap') }}">
-            <img class="panel" id="activeimage" src="static/images/ratingsmap.png" alt="Neighbourhood Ratings">
+            <img class="panel" id="activeimage" src="static/images/ratingsmap.png" alt="Neighbourhood Ratings"width="500px", height="300px">
             </a>
         </div>
                 
         <div class="col-lg-6">
           <div class="title">Best Neighbourhoods by Price</div>
             <a href="{{ url_for ('hoodavgpricesmap') }}">
-            <img class="panel" id="activeimage" src="static/images/AshevilleChoropleth.png" target = "_blank" alt="Neighbourhood Prices" width="700px", height="400px" >
+            <img class="panel" id="activeimage" src="static/images/AshevilleChoropleth.png" target = "_blank" alt="Neighbourhood Prices" width="500px", height="300px" >
             </a>
         </div>
       </div>

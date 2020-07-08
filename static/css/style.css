@@ -31,15 +31,15 @@ a{
 }
 
 .navbar-brand{
-  color: white; 
+  /* color: white;  */
   margin-left: 30px; 
   padding: inherit; 
   font-weight: bold; 
-  background-color: #13a56d;
+  background-color: #6D8092 !important;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .navbar-brand:hover{
-  color: rgb(175, 175, 175) !important;
+  color:#183ee6 !important;
   }
 
 .navbar{
@@ -48,12 +48,13 @@ a{
   font-size: 15px; 
 }
 .nav-link:hover{
-  background-color:#E7E7E7 !important;
+  color:#183ee6 !important;
   float: right;
  }
 
 .active, .dropdown-menu .dropdown-item:active a:hover{
-  background-color:#E7E7E7!important; 
+  /* background-color:#E7E7E7 !important;  */
+  color:#183ee6 !important;
 
 }
 .dropdown-item{
@@ -62,6 +63,7 @@ a{
 
 .dropdown .dropdown-menu .dropdown-item:active, .dropdown .dropdown-menu .dropdown-item:hover{
   background-color:#E7E7E7 !important; 
+  color:#183ee6 !important;
 }
 
 /* Images */
@@ -74,11 +76,6 @@ a{
   border-style: solid; 
  
 } 
-/* For Asheville image */
-/* #ashevilleimage{
-  width: 100%;
-  height: 100%;
-} */
 
 .panel:hover{
   border-color:#13a56d;
@@ -99,11 +96,26 @@ a{
   padding-top: 25px; 
 }
 
+/* Gramin Canvas wrapper Class */
+.canvas-wrapper {
+  margin-top: 5px; 
+  /* margin-bottom: 5px; */
+  padding: 10px 10px 10px; 
+}
 /* Box Class*/
 .box {
-  margin-top: 60px; 
-  margin-bottom: 62px; 
-  padding: 10px 20px 15px; 
+  margin-top: 10px; 
+  margin-bottom: 10px; 
+  padding: 20px 10px 5px; 
+  color:black;
+  background-color: white; 
+}
+/* leftBox Class*/
+.leftbox {
+  max-width: 300px;
+  margin-top: 10px; 
+  margin-bottom: 10px; 
+  padding: 20px 10px 5px; 
   color:black;
   background-color: white; 
 }
@@ -133,30 +145,37 @@ padding-top: 15px;
 }
 
 /* Media Queries */
-@media(max-width: 992px){
+@media(max-width: 1140px){
 .navbar-expand-lg{
 background-color: #13a56d !important;
-}
+  }
+
 .navbar{
   max-height: none; 
   padding: inherit;
-}
+  }
+
 .navbar div{
   margin: inherit; 
   background-color: white;  
-}
+  }
+
 .navbar-brand{
   padding: 10px !important; 
-}
+  }
 
 button{
   margin-right: 30px; 
-}
-button:focus {
+  }
 
+button:focus {
   outline: 1px dotted;
   /* outline: 5px auto -webkit-focusring-color; */
-  
   }
+
+.box {
+  min-width: 1140px;
+  }
+
 }
   
