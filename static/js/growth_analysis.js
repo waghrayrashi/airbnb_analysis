@@ -2,27 +2,26 @@ var year = [];
 var valueCount =[];
 
 function readData(){
-    d3.json('/cleanlistings').then((data) => {
+    d3.json('/growth_analysis').then((data) => {
         console.log(data);
         var hostSince = data.map(row => row.host_since);
-        //console.log(hostSince);
+        // //console.log(hostSince);
         sorted = hostSince.sort();
         //console.log(sorted);
-        // splitArray = sorted.split("-",1);
-        // console.log(splitArray);
-        // sorted.forEach((object) => {
-        //   console.log(object.split("-",1));
-        // });
+        // // splitArray = sorted.split("-",1);
+        // // console.log(splitArray);
+        // // sorted.forEach((object) => {
+        // //   console.log(object.split("-",1));
+        // // });
         var splitArray =[];
         var yearDict = {};
         
         for(var i=0;i<sorted.length;i++)
         {
-        //    var splitValue = sorted[i].split("-",1);
-           var splitValue = sorted[i].split("-",1);
-           splitArray.push(splitValue);
+           var splitValue = sorted[i].split(" ",4);
+           splitArray.push(splitValue[3]);
         }
-        console.log(splitArray);
+        // console.log(splitArray);
 
         for (var i=0; i<splitArray.length; i++)
         {
@@ -41,7 +40,7 @@ function readData(){
             
         }
         console.log(yearDict);
-        // console.log(Object.entries(yearDict));
+        console.log(Object.entries(yearDict));
         Object.entries(yearDict).forEach(function([key,value]){
             year.push(key);
             valueCount.push(value);
@@ -55,8 +54,7 @@ function readData(){
             x: year,
             y: valueCount,
             //text: valueCount,
-            // type:'scatter'
-            type: 'line'
+            type:'scatter'
         }
 
         data =[trace];

@@ -12,34 +12,7 @@ DROP TABLE IF EXISTS hoodlistings;
 DROP TABLE IF EXISTS hoodprices;
 DROP TABLE IF EXISTS hoodratings;
 DROP TABLE IF EXISTS neighbourhoodsummary;
-DROP TABLE IF EXISTS roomtypesnofloat;
-DROP TABLE IF EXISTS alllistingsnofloat;
 
-CREATE TABLE alllistingsnofloat (
-    id INT PRIMARY KEY,
-    latitude VARCHAR(30) NOT NULL,
-    longitude VARCHAR(30) NOT NULL,
-    neighbourhood_cleansed INT NOT NULL,
-    city VARCHAR(30) NOT NULL,
-    property_type VARCHAR(30) NOT NULL,
-    room_type VARCHAR(30) NOT NULL,
-    bedrooms INT NOT NULL,
-    bathrooms INT NOT NULL,
-    price VARCHAR(30) NOT NULL,
-    host_since DATE NOT NULL,
-    host_is_superhost BOOLEAN NOT NULL,
-    guests_included INT NOT NULL,
-    minimum_nights INT NOT NULL,
-    number_of_reviews INT NOT NULL,
-    review_scores_rating INT NOT NULL,
-    instant_bookable BOOLEAN NOT NULL,
-    cancellation_policy VARCHAR(30) NOT NULL
-);
-
-CREATE TABLE roomtypesnofloat (
-    roomtype VARCHAR(30) PRIMARY KEY,
-    listings INT NOT NULL
-);
 
 CREATE TABLE alllistings (
     id INT PRIMARY KEY,
