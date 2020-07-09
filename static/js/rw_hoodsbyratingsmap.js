@@ -18,7 +18,7 @@ console.log(myMap);
   
   // Load in geojson data
   // var geoData = "static/data/rw_listings.geojson";
-  var geoData = "static/data/rw_listings.geojson";
+  var geoData = "/cleanlistings";
   var geojson;
   
   // Grab data with d3

@@ -243,7 +243,7 @@ def hoodsavgpricesplot():
 # Render Growth Analysis plot HTML
 #######################################################
 @app.route("/pg_growth")
-def growth():
+def pg_growth():
     """Return the Preethika's Growth plot page."""
     return render_template("pg_growth.html")
 
@@ -251,7 +251,7 @@ def growth():
 # Render Neighbourhood Ratings Map HTML
 #######################################################
 @app.route("/ss_ratingsmap")
-def ssratingsmap():
+def ss_ratingsmap():
     """Return the Surabhi's ratings map page."""
     return render_template("ss_ratingsmap.html")
 
@@ -259,7 +259,7 @@ def ssratingsmap():
 # Render Average Price by Neighbourhood Map HTML
 #######################################################
 @app.route("/js_pricesmap")
-def hoodavgpricesmap():
+def js_pricesmap():
     """Return Janani's Neighbourhood prices map page."""
     return render_template("airbnbpricing.html")
 

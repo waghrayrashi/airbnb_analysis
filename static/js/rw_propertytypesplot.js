@@ -1,6 +1,6 @@
   // PLOT LISTINGS BY PROPERTY TYPE
   // Load the property type data from rw_listings_by_propertytype.csv
-  d3.json("/propertytypesnofloat").then(function(d) {
+  d3.json("/propertytypes").then(function(d) {
     // confirm that the data was read accurately
     console.log(d);
  

@@ -20,7 +20,7 @@ var layerGroup = L.layerGroup().addTo(myMap);
 function createMarker(neighbourhood){
   // Load data from database
   // d3.json("/cleanlistings").then(function(d) {
-  d3.csv("static/data/rw_listings.csv").then((d) => {
+  d3.csv("/cleanlistings").then((d) => {
     // Confirm that the listings data was read accurately
     console.log(d);
 
