@@ -2,7 +2,7 @@ var year = [];
 var valueCount =[];
 
 function readData(){
-    d3.json('/pg_growth').then((data) => {
+    d3.json('/growth_analysis').then((data) => {
         console.log(data);
         var hostSince = data.map(row => row.host_since);
         // //console.log(hostSince);

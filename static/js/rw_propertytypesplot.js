@@ -27,7 +27,7 @@
   
   // Define the plot layout
       var propertyTypeLayout = {
-        title: "Top Property Types by Listings",
+        title: "Property Types by Listings",
         yaxis: { title: "Number of Listings" }
       };
   

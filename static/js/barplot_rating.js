@@ -34,12 +34,12 @@ function barplot() {
         var data =[trace];
     
         var layout = {
-            title : 'Areas/Zipcodes based on user rating (4-5 star ratings)',
+            title : 'Top Rated Neighbourhoods based on Ratings',
             xaxis :{
-                title:'Number of rentals'
+                title:'Listings'
             },
             yaxis : {
-                title:'Zipcode'
+                title:'Neighbourhood'
             }
         }
         

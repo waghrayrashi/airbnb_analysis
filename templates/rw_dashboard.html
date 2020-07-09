@@ -54,10 +54,11 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="{{ url_for ('roomtypeplot') }}">Types of Listings</a>
                 <a class="dropdown-item" href="{{ url_for ('propertytypesplot') }}">Listed Property Types</a>
-                <a class="dropdown-item" href="{{ url_for ('hoodsavgpricesplot') }}">Average Prices by Neighbourhood</a>
                 <a class="dropdown-item" href="{{ url_for ('pg_growth') }}">Growth Analysis</a>
+                <a class="dropdown-item" href="{{ url_for ('hoodsavgpricesplot') }}">Average Prices by Neighbourhood</a>
                 <a class="dropdown-item" href="{{ url_for ('ss_ratingsmap') }}">Highly Rated Listings</a>
                 <a class="dropdown-item" href="{{ url_for ('js_pricesmap') }}">Neighbourhood Pricing</a>
+                <a class="dropdown-item" href="{{ url_for ('pg_ratings') }}">Neighbourhood Ratings</a>
               </div>
             </li>
 
@@ -127,9 +128,9 @@
       <!-- Row 3 for plots 5 & 6 maps begins -->            
       <div class="row">
         <div class="col-lg-6">
-          <div class="title">Best Neighbourhoods by Rating</div>
+          <div class="title">Listings by Rating</div>
             <a href="{{ url_for ('ss_ratingsmap') }}">
-            <img class="panel" id="activeimage" src="static/images/ratingsmap.PNG" alt="Neighbourhood Ratings"width="500px", height="300px">
+            <img class="panel" id="activeimage" src="static/images/ratingsmap.PNG" alt="Listings by Rating"width="500px", height="300px">
             </a>
         </div>
                 
@@ -141,7 +142,25 @@
         </div>
       </div>
       <!-- Row 3 for plots 5 & 6 maps ends --> 
+      <!-- Row 4 for plots 7 & 8 maps begins -->            
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="title">Best Neighbourhoods by Rating</div>
+            <a href="{{ url_for ('pg_ratings') }}">
+            <img class="panel" id="activeimage" src="static/images/topratedneighborhoods" alt="Neighbourhood Ratings"width="500px", height="300px">
+            </a>
+        </div>
+                
+        <div class="col-lg-6">
+          <div class="title"></div>
+            
+        </div>
+      </div>
+      <!-- Row 3 for plots 5 & 6 maps ends --> 
     </div>
+    <br>
+    <br>
+    <br>
     <!-- Content section ends -->
 
     <!-- Footer Section begins -->

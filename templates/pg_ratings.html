@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
   
-    <title>Average Ratings by Neighbourhood</title>
+    <title>Airbnb's Growth in Asheville</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -82,64 +82,25 @@
 
     <!--Content Section Begins-->
     <div class="container">
-      <!--Row 1 content begins-->
+      <!-- Row 1 Section Begins-->
       <div class="row">
         <!--Left pane for plot description begins-->
-        <div class="col-md-4" style="background-color:white">
+        <div class="col-md-4">
+          <h5>Neighbourhood Ratings</h5>
           <br>
-          <br>
-          <h5>Airbnb's Growth in Asheville</h5>
-          <br>
-          <p>Started in 2009 to slow growth and peaked in 2018 with 60 new listings added.</p>
-          <table class="table table-sm">
-            <thead>
-              <tr>
-                <th scope="col">Year</th>
-                <th scope="col">New Listings</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">209</th>
-                <td>2</td>
-              </tr>
-              <tr>
-                <th scope="row">2012</th>
-                <td>167</td>
-              </tr>
-              <tr>
-                <th scope="row">2014</th>
-                <td>710</td>
-              </tr>
-              <tr>                            
-                <th scope="row">2016</th>
-                <td>410</td>
-              </tr>
-              <tr>                            
-                <th scope="row">2018</th>
-                <td>273</td>
-              </tr>
-              <tr>                            
-                <th scope="row">2020</th>
-                <td>35</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <!--Left pane for plot description ends-->
-        
-        <!--Right pane for plot begins-->  
-        <div class="col-md-8">
-          <!--Div for plot Begins-->
-          <div id="hoodsratingplotid"> 
+          <p>Add plot description</p>
           </div>
-        <!--Div for plot Ends-->
+        <!--Left pane for plot description ends-->
+        <!--Right pane for plot begins-->
+        <div class="col-md-8">
+          <!--Div for plot begins-->
+          <div id="bar_rating"> 
+          </div>
+          <!--Div for plot ends-->
         </div>
         <!--Right pane for plot ends-->
-      
       </div>
-      <!--Row 1 content ends-->
-    
+      <!-- Row 1 Section Ends-->
     </div>
     <!--Content Section Ends-->
   
@@ -150,7 +111,7 @@
     <!-- Footer Section Ends-->
       
     <!-- Plot JavaScript Files-->
-    <script src="static/js/rw_hoodsrating.js"></script>
+    <script src="static/js/barplot_rating.js"></script>
 
     <!--D3 Dependency -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
@@ -160,5 +121,5 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-  </body> 
+    </body> 
 </html>

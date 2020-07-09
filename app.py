@@ -191,14 +191,62 @@ def hoodssummary():
             "neighbourhood": hood.neighbourhood,
             "listings": hood.listings,
             "avgprice": float(hood.avgprice),
-            "avgrating": float(hood.avgrating) }
+            "avgrating": float(hood.avgrating),
+            "locality": hood.locality }
         # Append all columns to the object
         hoods_summary.append(hoods_dict)
     
     session.close()
     # Return the json
     return jsonify(hoods_summary)
-    
+#######################################################
+# Render the Preethikas listings by rating  
+#######################################################
+#Save reference to the table
+Listingratingcount = Base.classes.listing_rating_count
+Hostdetails = Base.classes.host_details
+@app.route("/listing_rating_count")
+def listingbyrating():
+    # Create session
+    session = Session(engine)
+    # Query the table for columns of interest
+    listings = session.query(Listingratingcount).all()
+    #Close the session
+    session.close()
+    # Create a list of dictionaries for each column
+    listings_list = []
+    for Eachlisting in listings:
+        listings_dict = {}
+        listings_dict["id"] = Eachlisting.id
+        listings_dict["zipcode"] = Eachlisting.zipcode
+        listings_dict["review_score_group"] = Eachlisting.review_score_group
+        listings_dict["review_scores_rating"] = Eachlisting.review_scores_rating
+        listings_dict["review_score_normalized"] = Eachlisting.review_score_normalized
+        listings_list.append(listings_dict)
+    # Return the json
+    return jsonify(listings_list)
+
+#######################################################
+# Render the Preethikas growth analysis  
+#######################################################
+@app.route("/growth_analysis")
+def growthanalysis():
+    # Create session
+    session = Session(engine)
+    # Query the table for columns of interest
+    hostsince = session.query(Hostdetails).all()
+    #Close the session
+    session.close()
+    # Create a list of dictionaries for each column
+    hosts_list = []
+    for Eachhost in hostsince:
+        hosts_dict = {}
+        hosts_dict["id"] = Eachhost.id
+        hosts_dict["host_since"] = Eachhost.host_since
+        hosts_list.append(hosts_dict)
+    # Return the json
+    return jsonify(hosts_list)
+
 #######################################################
 # Render the Dashboard HTML 
 #######################################################
@@ -240,13 +288,21 @@ def hoodsavgpricesplot():
     return render_template("rw_hoodsavgpricesplot.html")
 
 #######################################################
-# Render Growth Analysis plot HTML
+# Render Preethika's Growth Analysis plot HTML
 #######################################################
 @app.route("/pg_growth")
 def pg_growth():
     """Return the Preethika's Growth plot page."""
     return render_template("pg_growth.html")
 
+#######################################################
+# Render Preethika's ratings plot HTML 
+#######################################################
+@app.route("/pg_ratings")
+def pg_ratings():
+    """Return Preethika's Ratings plot page."""
+    return render_template("pg_ratings.html")
+    
 #######################################################
 # Render Neighbourhood Ratings Map HTML
 #######################################################
