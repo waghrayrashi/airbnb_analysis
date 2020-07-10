@@ -13,9 +13,9 @@
     
     // Create the Trace for the bar chart
       var roomTypeTrace = {
-        x: roomTypes,
-        y: roomTypeListings,
-        type: "bar",
+        labels: roomTypes,
+        values: roomTypeListings,
+        type: "pie",
       };
     
     // Create the data array for the plot
@@ -24,8 +24,8 @@
     // Define the plot layout
       var roomTypeLayout = {
         title: "Types of Listings",
-        // innerHeight: 100,
-        // outerHeight: 150
+        height: 400,
+        width: 650
       
       // xaxis: { title: "Room Type" }
       // yaxis: { title: "Room Type" }
