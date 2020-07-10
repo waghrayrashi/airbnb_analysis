@@ -60,7 +60,7 @@ function readData(){
         data =[trace];
 
         layout = {
-            title : 'Growth analysis of Airbnb',
+            title : 'Airbnb Growth in Asheville (2009-2020)',
                 xaxis :{
                     title:'Year'
                 },

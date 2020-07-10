@@ -24,119 +24,112 @@
   </head>
 
   <body>
-    
-    <!-- Navigation Section Begins -->
-    <div class="navigation">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{{ url_for ('index') }}">Overview</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <div id="canvas-wrapper" style="position: absolute; width: 100%; height: 100%; top: 0; bottom: 0; right: 0; left: 0;">
+      <canvas id="granim-canvas" width="1120px" height="150px" style="position: absolute; height: 100%; width: 100%; z-index: -1; background-size: cover; background-position: 0 85%;"></canvas>
       
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <!-- List of items in the Navigation section -->
-          <ul class="navbar-nav">
-            <!-- Dashboard in the Navigation Section -->
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for ('dashboard') }}">Dashboard</a>
-            </li>
-
-            <!-- Listings in the Navigation Section -->
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for ('listings') }}">Listings</a>
-            </li>
-
-            <!-- Visualizations DropDown Menu in the Navigation Section -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Visualizations
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="{{ url_for ('roomtypeplot') }}">Types of Listings</a>
-                <a class="dropdown-item" href="{{ url_for ('propertytypesplot') }}">Listed Property Types</a>
-                <a class="dropdown-item" href="{{ url_for ('hoodsavgpricesplot') }}">Average Prices by Neighbourhood</a>
-                <a class="dropdown-item" href="{{ url_for ('pg_growth') }}">Growth Analysis</a>
-                <a class="dropdown-item" href="{{ url_for ('ss_ratingsmap') }}">Highly Rated Listings</a>
-                <a class="dropdown-item" href="{{ url_for ('js_pricesmap') }}">Neighbourhood Pricing</a>
-              </div>
-            </li>
-
-            <!-- Analysis Methodology in the Navigation Section -->
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for ('methodology') }}">Methodology</a>
-            </li>
-
-            <!-- Acknowledgements in the Navigation Section -->
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for ('acknowledgements') }}">Acknowledgements</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <!-- Navigation Section Ends -->
-
-    <!--Content Section Begins-->
-    <div class="container">
-      <!-- Granim canvas wrapper begins-->
-      <div>
-        <canvas id="granim-canvas" width="1120px" height="150px"></canvas>
+      <!-- Navigation Section Begins -->
+      <div class="navigation">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="{{ url_for ('index') }}">Overview</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
         
-        <!--Content wrapper begins-->
-        <div class="container">
-          <div class="box">
-            <h3>Thank You</h3>
-            <p>Although our primary goal was to meet the project requirements, the Data Enthusiasts also wanted to ensure that each member
-                of our team is able to successfully build a web application end-to-end individually. The instructional team has been a source
-                of inspiration in this journey and we appreciate and thank them for their support and guidance.</p>
-            <ul>
-              <li>Michael Dinh</li>
-              <li>Brianna McKelvey</li>
-              <li>Taylor Middlebrooks</li>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <!-- List of items in the Navigation section -->
+            <ul class="navbar-nav">
+              <!-- Dashboard in the Navigation Section -->
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for ('dashboard') }}">Dashboard</a>
+              </li>
+
+              <!-- Listings in the Navigation Section -->
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for ('listings') }}">Listings</a>
+              </li>
+
+              <!-- Visualizations DropDown Menu in the Navigation Section -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Visualizations
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="{{ url_for ('roomtypeplot') }}">Types of Listings</a>
+                  <a class="dropdown-item" href="{{ url_for ('propertytypesplot') }}">Listed Property Types</a>
+                  <a class="dropdown-item" href="{{ url_for ('hoodsavgpricesplot') }}">Average Prices by Neighbourhood</a>
+                  <a class="dropdown-item" href="{{ url_for ('pg_growth') }}">Growth Analysis</a>
+                  <a class="dropdown-item" href="{{ url_for ('ss_ratingsmap') }}">Highly Rated Listings</a>
+                  <a class="dropdown-item" href="{{ url_for ('js_pricesmap') }}">Neighbourhood Pricing</a>
+                </div>
+              </li>
+
+              <!-- Analysis Methodology in the Navigation Section -->
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for ('methodology') }}">Methodology</a>
+              </li>
+
+              <!-- Acknowledgements in the Navigation Section -->
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for ('acknowledgements') }}">Acknowledgements</a>
+              </li>
             </ul>
-            <h3>Data Science Enthusiasts</h3>
-            <hr>
-            <table class="table table-lg">
-              <thead>
-                <tr>
-                  <th scope="col">Name</th>
-                  <th scope="col">Email</th>
-                  <th scope="col">GitHub</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Janani Sekar</th>
-                  <td><a href="jananis@gmail.com">jananisi@gmail.com</a></td>
-                  <td><a href="https://github.com/JananiS-lab">https://github.com/JananiS-lab</a></td>
-
-                </tr>
-                <tr>
-                  <th scope="row">Preethika Gajendran</th>
-                  <td><a href="gpreethika@g.com">gpreethika@gmail.com</a></td>
-                  <td><a href="https://github.com/PreethikaG">https://github.com/PreethikaG</a></td>
-
-                </tr>
-                <tr>
-                  <th scope="row">Rashi Waghray</th>
-                  <td><a href="waghrayrashi@hotmail.com">waghrayrashi@hotmail.com</a></td>
-                  <td><a href="https://github.com/waghrayrashi">https://github.com/waghrayrashi</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">Surabhi Sood</th>
-                  <td><a href="surabhisood@gmail.com">surabhisood@gmail.com</a></td>
-                  <td><a href="https://github.com/SurabhiSood">https://github.com/SurabhiSood</a></td>
-                </tr>
-              </tbody>
-            </table>
           </div>
-        </div>
+        </nav>
       </div>
+      <!-- Navigation Section Ends -->
+
+      <!--Content Section Begins-->          
+      <div class="container">
+        <br>
+        <h3>Thank You</h3>
+        <p>Although our primary goal was to meet the project requirements, the Data Enthusiasts also wanted to ensure that each member
+            of our team is able to successfully build a web application end-to-end individually. The instructional team has been a source
+            of inspiration in this journey and we appreciate and thank them for their support and guidance.</p>
+        <ul>
+          <li>Michael Dinh</li>
+          <li>Brianna McKelvey</li>
+          <li>Taylor Middlebrooks</li>
+        </ul>
+        <h3>Data Science Enthusiasts</h3>
+        <hr>
+        <table class="table table-lg">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">GitHub</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Janani Sekar</th>
+              <td><a href="jananis@gmail.com">jananisi@gmail.com</a></td>
+              <td><a href="https://github.com/JananiS-lab">https://github.com/JananiS-lab</a></td>
+
+            </tr>
+            <tr>
+              <th scope="row">Preethika Gajendran</th>
+              <td><a href="gpreethika@g.com">gpreethika@gmail.com</a></td>
+              <td><a href="https://github.com/PreethikaG">https://github.com/PreethikaG</a></td>
+
+            </tr>
+            <tr>
+              <th scope="row">Rashi Waghray</th>
+              <td><a href="waghrayrashi@hotmail.com">waghrayrashi@hotmail.com</a></td>
+              <td><a href="https://github.com/waghrayrashi">https://github.com/waghrayrashi</a></td>
+            </tr>
+            <tr>
+              <th scope="row">Surabhi Sood</th>
+              <td><a href="surabhisood@gmail.com">surabhisood@gmail.com</a></td>
+              <td><a href="https://github.com/SurabhiSood">https://github.com/SurabhiSood</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--Content Section Ends-->
     </div>
-    <br>
-    <br>
-    <!--Content Section Ends-->
-  
+    <!-- Gramin canvas ends -->
+
     <!-- Footer Section Begins-->
     <footer>
       <div class="footer">Copyright &copy; Data Science Enthusiasts 2020</div>

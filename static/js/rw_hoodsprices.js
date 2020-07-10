@@ -23,7 +23,7 @@
     
     // Define the plot layout
     var layout = {
-      title: "Average Prices of Neighbourhoods"
+      title: "Average Prices by Neighbourhood"
     };
 
     // Define a variable to make the chart responsive

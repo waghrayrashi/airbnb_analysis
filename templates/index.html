@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
-    <title>Exploring Asheville's Airbnb Landscape</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Exploring Asheville's Airbnb Landscape</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+
+<body>
+  <div id="canvas-wrapper" style="position: absolute; width: 100%; height: 100%; top: 0; bottom: 0; right: 0; left: 0;">
+    <canvas id="granim-canvas" width="1120px" height="150px" style="position: absolute; height: 100%; width: 100%; z-index: -1; background-size: cover; background-position: 0 85%;"></canvas>
     
-    <!-- Main CSS -->
-    <link rel="stylesheet" type="text/css" href="static/css/style.css">
-  </head>
-
-  <body>
     <!-- Navigation Section Begins -->
     <div class="navigation">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="{{ url_for ('index') }}">Overview</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      
+
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <!-- List of items in the Navigation section -->
           <ul class="navbar-nav">
@@ -31,7 +37,7 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for ('dashboard') }}">Dashboard</a>
             </li>
-            
+
             <!-- Listings in the Navigation Section -->
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for ('listings') }}">Listings</a>
@@ -39,8 +45,9 @@
 
             <!-- Visualizations DropDown Menu in the Navigation Section -->
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Visualizations
+              <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Visualizations
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="{{ url_for ('roomtypeplot') }}">Types of Listings</a>
@@ -67,85 +74,89 @@
       </nav>
     </div>
     <!-- Navigation Section Ends -->
-    
+
     <!--Content section begins-->
     <div class="container">
-      <!-- Granim canvas wrapper begins-->
-      <div>
-        <canvas id="granim-canvas" width="1120px" height="150px"></canvas>
-        
-        <!--Content wrapper begins-->
-        <div class="container">
-          <!-- Row 1 section begins -->
-          <div class="row">
-            <!-- Boxed content begins -->
-            <div class="box">
-              <h3 class="title">Exploring Asheville's Airbnb Landscape</h3>
-              <h4 class="title">Airbnb</h4>
-              <p>Airbnb is the world's biggest accomodation sharing-site with listings across 81,000 cities and 191 countries in the world.
-                It provides more than 5 million spaces to stay of which over 660,000 listings are in the USA. 
-                With its ever growing number of online rental listings, it has successfully disrupted
-                the hospitality industry as more and more travellers ditch high-priced 
-                hotels and resorts in favor of premier, cost-effective accomodations provided by Airbnb.</p>
-              <h4 class="title">Asheville, North Carolina</h4>
-              <p>Located in the Blue Ridge Mountains, Asheville is the largest city in western North Carolina and is known for its breathtaking ladscapes, 
-                vibrant art-scene and historic architecture. As one of the most sought after vacation spots for mountain lovers, the city offers a variety
-                of stay options to travellers including about 2400 Airbnb rentals. Airbnb rental options in the city are a mixed bag of houses, apartments, secluded cabins, RV's and campers.</p>
-              <h4 class="title">Our Focus - Exploratory Analysis with Web Visualizations</h4>
-              <p>Through this project, our team of mountain loving Data Science Enthusiasts explore Airbnb's rental landscape in Asheville, North Carolina through various static and 
-                interactive web visualizations. This site provides information about the data set, analysis tools & processes employed and the results of this <strong><u>exploratory analysis</u></strong>.
-                </p>
-              <p>Due to time limitations, the focus of this exploratory analysis is limited to the following:</p>
-              <ol>
-                <li><strong>Identify the different types of properties for rent in Asheville</strong></li>
-                <li><strong>Explore which Airbnb listings are rated highly by guests</strong></li>
-                <li><strong>Explore how Airbnb rental prices vary by neighbourhood</strong></li>
-              </ol>
-            </div>
-            <!-- Boxed content ends -->
-          </div>
-          <!-- Row 1 section ends -->
+      <!-- Row 1 section begins -->
+      <div class="row">
+        <!-- Boxed content begins -->
+        <div>
+          <h3 class="title">Exploring Asheville's Airbnb Landscape</h3>
+          <h4 class="title">Airbnb</h4>
+          <p>Airbnb is the world's biggest accomodation sharing-site with listings across 81,000 cities and 191
+            countries in the world.
+            It provides more than 5 million spaces to stay of which over 660,000 listings are in the USA.
+            With its ever growing number of online rental listings, it has successfully disrupted
+            the hospitality industry as more and more travellers ditch high-priced
+            hotels and resorts in favor of premier, cost-effective accomodations provided by Airbnb.</p>
+          <h4 class="title">Asheville, North Carolina</h4>
+          <p>Located in the Blue Ridge Mountains, Asheville is the largest city in western North Carolina and is
+            known for its breathtaking ladscapes,
+            vibrant art-scene and historic architecture. As one of the most sought after vacation spots for mountain
+            lovers, the city offers a variety
+            of stay options to travellers including about 2400 Airbnb rentals. Airbnb rental options in the city are
+            a mixed bag of houses, apartments, secluded cabins, RV's and campers.</p>
+          <h4 class="title">Our Focus - Exploratory Analysis with Web Visualizations</h4>
+          <p>Through this project, our team of mountain loving Data Science Enthusiasts explore Airbnb's rental
+            landscape in Asheville, North Carolina through various static and
+            interactive web visualizations. This site provides information about the data set, analysis tools &
+            processes employed and the results of this <strong><u>exploratory analysis</u></strong>.
+          </p>
+          <p>Due to time limitations, the focus of this exploratory analysis is limited to the following:</p>
+          <ol>
+            <li><strong>Identify the different types of properties for rent in Asheville</strong></li>
+            <li><strong>Explore which Airbnb listings are rated highly by guests</strong></li>
+            <li><strong>Explore how Airbnb rental prices vary by neighbourhood</strong></li>
+          </ol>
         </div>
-        <!--Content wrapper ends -->
+        <!-- Boxed content ends -->
       </div>
-      <!-- Granim Canvas wrapper ends -->
+      <!-- Row 1 section ends -->
     </div>
     <!--Content section ends-->
     <br>
     <br>
+  </div>
 
-    <!-- Footer section begins-->
-    <footer>
-      <div class="footer">Copyright &copy; Data Science Enthusiasts 2020</div>
-    </footer>
-    <!-- Footer section Ends-->
-    
-    <!-- Granim Javascript -->
-    <!-- <script src="static/js/granim.js-2.0.0/dist/granim.min.js"></script> -->
-    <script src="static/js/granim.min.js"></script>
-    
-    <!-- Script to create a granim instance begins-->
-    <script>
-      var granimInstance = new Granim({
-         element: '#granim-canvas',
-         name: 'granim',
-         opacity: [1, 1],
-         states : {
-             "default-state": {
-                 gradients: [
-                     ['#834D9B', '#D04ED6'],
-                     ['#1CD8D2', '#93EDC7']
-                 ]
-             }
-         }
-      });
-      </script>
-      <!-- Script to create a granim instance ends-->
+  <!-- Footer section begins-->
+  <footer>
+    <div class="footer">Copyright &copy; Data Science Enthusiasts 2020</div>
+  </footer>
+  <!-- Footer section Ends-->
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    
-  </body>
+  <!-- Granim Javascript -->
+  <!-- <script src="static/js/granim.js-2.0.0/dist/granim.min.js"></script> -->
+  <script src="static/js/granim.min.js"></script>
+
+  <!-- Script to create a granim instance begins-->
+  <script>
+    var granimInstance = new Granim({
+      element: '#granim-canvas',
+      name: 'granim',
+      opacity: [1, 1],
+      states: {
+        "default-state": {
+          gradients: [
+            ['#834D9B', '#D04ED6'],
+            ['#1CD8D2', '#93EDC7']
+          ]
+        }
+      }
+    });
+  </script>
+  <!-- Script to create a granim instance ends-->
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+</body>
+
 </html>

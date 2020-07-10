@@ -156,7 +156,7 @@ def roomtypes():
     # Loop through each row and create dictionaries for each column
     for listing in roomtypes:
         rtypes_dict = {
-            "propertytype": listing.roomtype,
+            "roomtype": listing.roomtype,
             "listings": listing.listings
         }
         # Append all columns to the object
