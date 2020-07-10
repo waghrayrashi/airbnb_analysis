@@ -48,24 +48,46 @@ function readData(){
 
         console.log(year);
         console.log(valueCount);
-    
 
-        var trace ={
+        var totalCount =[];
+        var total_temp = valueCount[0];
+        totalCount.push(total_temp);
+
+        for(var i=1; i<=valueCount.length; i++)
+        {
+            temp = valueCount[i]+totalCount[i-1];
+            //total=total_temp
+
+            totalCount.push(temp);
+
+        }
+        
+        console.log(temp);
+
+        var trace1 ={
             x: year,
             y: valueCount,
             //text: valueCount,
-            type:'scatter'
+            type:'scatter',
+            name:'New Listings'
         }
 
-        data =[trace];
+        var trace2 ={
+            x: year,
+            y: totalCount,
+            type:'scatter',
+            name:'Total Listings'
+        }
+
+        data =[trace1 , trace2];
 
         layout = {
-            title : 'Airbnb Growth in Asheville (2009-2020)',
+            title : 'Growth Analysis of Airbnb in Asheville',
                 xaxis :{
                     title:'Year'
                 },
                 yaxis : {
-                    title:'New listings'
+                    title:'Numner of listings'
                 }
         }
 

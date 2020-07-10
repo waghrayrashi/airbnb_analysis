@@ -17,62 +17,66 @@
 </head>
 
 <body>  
-    <!-- Navigation Section Begins -->
-    <div class="navigation">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{{ url_for ('index') }}">Overview</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <!-- List of items in the Navigation section -->
-          <ul class="navbar-nav">
-            <!-- Dashboard in the Navigation Section -->
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for ('dashboard') }}">Dashboard</a>
-            </li>
 
-            <!-- Listings in the Navigation Section -->
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for ('listings') }}">Listings</a>
-            </li>
+  <!-- Navigation Section Begins -->
+  <div class="navigation">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="{{ url_for ('index') }}">Overview</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <!-- List of items in the Navigation section -->
+        <ul class="navbar-nav">
+          <!-- Dashboard in the Navigation Section -->
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for ('dashboard') }}">Dashboard</a>
+          </li>
 
-            <!-- Visualizations DropDown Menu in the Navigation Section -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Visualizations
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="{{ url_for ('roomtypeplot') }}">Types of Listings</a>
-                <a class="dropdown-item" href="{{ url_for ('propertytypesplot') }}">Listed Property Types</a>
-                <a class="dropdown-item" href="{{ url_for ('pg_growth') }}">Growth Analysis</a>
-                <a class="dropdown-item" href="{{ url_for ('hoodsavgpricesplot') }}">Average Prices by Neighbourhood</a>
-                <a class="dropdown-item" href="{{ url_for ('ss_ratingsmap') }}">Highly Rated Listings</a>
-                <a class="dropdown-item" href="{{ url_for ('js_pricesmap') }}">Neighbourhood Pricing</a>
-                <a class="dropdown-item" href="{{ url_for ('pg_ratings') }}">Neighbourhood Ratings</a>
-              </div>
-            </li>
+          <!-- Listings in the Navigation Section -->
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for ('listings') }}">Listings</a>
+          </li>
 
-            <!-- Analysis Methodology in the Navigation Section -->
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for ('methodology') }}">Methodology</a>
-            </li>
+          <!-- Visualizations DropDown Menu in the Navigation Section -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Visualizations
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="{{ url_for ('roomtypeplot') }}">Types of Listings</a>
+              <a class="dropdown-item" href="{{ url_for ('propertytypesplot') }}">Listed Property Types</a>
+              <a class="dropdown-item" href="{{ url_for ('pg_growth') }}">Growth Analysis</a>
+              <a class="dropdown-item" href="{{ url_for ('hoodsavgpricesplot') }}">Average Prices by Neighbourhood</a>
+              <a class="dropdown-item" href="{{ url_for ('ss_ratingsmap') }}">Highly Rated Listings</a>
+              <a class="dropdown-item" href="{{ url_for ('js_pricesmap') }}">Neighbourhood Pricing</a>
+              <a class="dropdown-item" href="{{ url_for ('pg_ratings') }}">Neighbourhood Ratings</a>
+            </div>
+          </li>
 
-            <!-- Acknowledgements in the Navigation Section -->
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for ('acknowledgements') }}">Acknowledgements</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <!-- Navigation Section Ends -->
+          <!-- Analysis Methodology in the Navigation Section -->
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for ('methodology') }}">Methodology</a>
+          </li>
+
+          <!-- Acknowledgements in the Navigation Section -->
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for ('acknowledgements') }}">Acknowledgements</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <!-- Navigation Section Ends -->
   
   <div id="map-holder">
 
     <!-- The div where we will inject our map -->
     <div class="container1 fill">
+    </br></br>
+      <h4 style="text-align: center;"> Visual Representation of 'Star Ratings' in the Area</h4> 
+      <p>Ratings for hosts from 1 (worst) to 5 (best) for the overall experience and for specific categories, including: overall experience, cleanliness, accuracy, value, communication, check-in, and location. Host needs to get 3 star ratings before the overall rating appears on the listing/profile</p>
       <div id="map"></div>
     </div>
 
@@ -80,6 +84,83 @@
     <div class="container2">
       <h5>Filter by Zip Code:</h5>
       <select id="zipCode" onchange="optionChanged(this.value)"></select>
+    </br></br>
+        <table class="table table-striped">
+          <thead> 
+            <tr style="text-align: right;">     
+              <th> City </th>     
+              <th> Zipcode </th>      
+              <th> BnBs </th>  
+            </tr>
+          </thead>  
+          <tbody>    
+            <tr>     
+              <td>Alexander</td>   
+              <td>28701</td>     
+              <td>1</td>    
+            </tr>    
+            <tr>      
+              <td>Arden</td>      
+              <td>28704</td>      
+              <td>132</td>    
+            </tr>   
+            <tr>     
+              <td>Asheville</td>    
+              <td>28801</td>    
+              <td>567</td>    
+            </tr>
+            <tr>      
+              <td>Asheville</td>     
+              <td>28803</td>    
+              <td>331</td>    
+            </tr>
+            <tr>      
+              <td>Asheville</td>     
+              <td>28805</td>    
+              <td>272</td>    
+            </tr>
+            <tr>      
+              <td>Asheville</td>     
+              <td>28806</td>    
+              <td>665</td>    
+            </tr>
+            <tr>      
+              <td>Asheville</td>     
+              <td>28814</td>      
+              <td>1</td>  
+            </tr>
+            <tr>      
+              <td>Asheville</td>     
+              <td>28815</td>    
+              <td>1</td>  
+            </tr>
+            <tr>      
+              <td>Candler</td>   
+              <td>28715</td>      
+              <td>50</td>   
+            </tr>
+            <tr>      
+              <td>Fairview</td>    
+              <td>28730</td>     
+              <td>1</td>  
+            </tr>
+            <tr>      
+              <td>Fletcher</td>    
+              <td>28732</td>     
+              <td>52</td>   
+            </tr>
+            <tr>      
+              <td>Leicester</td>      
+              <td>28748</td>    
+              <td>2</td>  
+            </tr>
+            <tr>      
+              <td>Woodfin</td>     
+              <td>28804</td>      
+              <td>290</td>    
+            </tr> 
+          </tbody>
+        </table>
     </div>
 
   </div>

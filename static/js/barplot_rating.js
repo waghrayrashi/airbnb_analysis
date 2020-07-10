@@ -12,13 +12,16 @@ function barplot() {
         console.log(sortedArray);
         var reversedArray = sortedArray.reverse();
         console.log(reversedArray);
-
-
-        
+      
+        var city_name = ['Bent Creek','Woodfin-01','Biltmore','Woodfin-04','Azalea','Arden','Fletcher',
+                          'Candler','Leicester','Fairview','Asheville-15','Alexander','Asheville-14' ];
+      
+      
         // Store the x axis values, y axis values, text labels needed for the bar plot
 
         x_bar = reversedArray.map((row) => row[1]['review_scores_rating']);
-        y_bar = reversedArray.map((row) => 'z' + row[1]['zipcode']);
+        // y_bar = reversedArray.map((row) => 'z' + row[1]['zipcode']);
+        y_bar = city_name ;
         // //text_labels = reversedArray.map((row) => row[1]['review_scores_rating']);
 
         var trace ={
@@ -26,7 +29,8 @@ function barplot() {
             y: y_bar,
             //text: text_labels,
             type:"bar",
-            orientation:'h'
+            orientation:'h',
+            color:'r'
             
             
         }
@@ -36,11 +40,11 @@ function barplot() {
         var layout = {
             title : 'Top Rated Neighbourhoods based on Ratings',
             xaxis :{
-                title:'Listings'
-            },
-            yaxis : {
-                title:'Neighbourhood'
+                title:'Number of listings'
             }
+            // yaxis : {
+            //     title:'Zipcode'
+            // }
         }
         
         Plotly.newPlot("bar_rating",data,layout);
