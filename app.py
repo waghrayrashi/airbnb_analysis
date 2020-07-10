@@ -317,7 +317,7 @@ def ss_ratingsmap():
 @app.route("/js_pricesmap")
 def js_pricesmap():
     """Return Janani's Neighbourhood prices map page."""
-    return render_template("airbnbpricing.html")
+    return render_template("js_airbnbpricing.html")
 
 #######################################################
 # Render the Analysis Methodology HTML
