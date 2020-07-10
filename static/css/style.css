@@ -136,9 +136,9 @@ padding-top: 15px;
 
 /* Media Queries */
 @media(max-width: 1140px){
-.navbar-expand-lg{
+/* .navbar-expand-lg{
 background-color: #135ea5 !important;
-  }
+  } */
 
 .navbar{
   max-height: none; 
